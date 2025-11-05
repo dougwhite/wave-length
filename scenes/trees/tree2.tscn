@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhld7233440xa"]
+
+[ext_resource type="Texture2D" uid="uid://cb4tdn72kwf58" path="res://art/trees.png" id="1_hyyiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyyiy"]
+atlas = ExtResource("1_hyyiy")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_viusy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyyiy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avsvi"]
+radius = 24.083189
+
+[node name="Tree2" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, 1)
+sprite_frames = SubResource("SpriteFrames_viusy")
+autoplay = "default"
+frame_progress = 0.4228677
+offset = Vector2(0, -118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(-1, -16)
+shape = SubResource("CircleShape2D_avsvi")

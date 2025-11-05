@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxi8yk6fod8v1"]
+[gd_scene load_steps=5 format=3 uid="uid://bxi8yk6fod8v1"]
 
 [ext_resource type="Texture2D" uid="uid://cb4tdn72kwf58" path="res://art/trees.png" id="1_avsvi"]
 
@@ -6,18 +6,11 @@
 atlas = ExtResource("1_avsvi")
 region = Rect2(0, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vplca"]
-atlas = ExtResource("1_avsvi")
-region = Rect2(256, 0, 256, 256)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_viusy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_avsvi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vplca")
 }],
 "loop": true,
 "name": &"default",
@@ -27,14 +20,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_avsvi"]
 radius = 26.019224
 
-[node name="Tree" type="StaticBody2D"]
+[node name="Tree1" type="StaticBody2D"]
 y_sort_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_viusy")
 autoplay = "default"
-frame_progress = 0.76739824
+frame_progress = 0.5809681
 offset = Vector2(0, -122)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
