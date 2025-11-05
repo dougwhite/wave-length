@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://5s53qigdv6r7"]
+
+[ext_resource type="FontFile" uid="uid://m5i6ula2m2pt" path="res://fonts/nimblebeastscollective.itch.io/KarenFat.ttf" id="1_p6dhs"]
+[ext_resource type="Script" uid="uid://dxq5bsvl07654" path="res://scripts/title.gd" id="1_pyl7j"]
+[ext_resource type="FontFile" uid="uid://djanuc3wln34u" path="res://fonts/nimblebeastscollective.itch.io/TinyUnicode.ttf" id="2_pyl7j"]
+[ext_resource type="FontFile" uid="uid://bflvrjrnrrjgu" path="res://fonts/nimblebeastscollective.itch.io/Habbo.ttf" id="3_b3w7a"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pyl7j")
+
+[node name="WAVE" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 315.0
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(1, 0.24705882, 0.6431373, 1)
+theme_override_colors/font_outline_color = Color(0.22745098, 0.11372549, 0.45882353, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_p6dhs")
+theme_override_font_sizes/font_size = 128
+text = "WAVE"
+
+[node name="slash" type="Label" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 11.0
+offset_right = 364.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(1, 0.6392157, 0.42352942, 1)
+theme_override_colors/font_outline_color = Color(0.16470589, 0.07450981, 0.34901962, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_p6dhs")
+theme_override_font_sizes/font_size = 112
+text = "/"
+
+[node name="LENGTH" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 46.0
+offset_right = 346.0
+offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.16862746, 0.72156864, 1, 1)
+theme_override_colors/font_outline_color = Color(0.050980393, 0.41568628, 0.5254902, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_pyl7j")
+theme_override_font_sizes/font_size = 200
+text = "LENGTH"
+
+[node name="prompt" type="Label" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 278.0
+offset_right = 295.0
+offset_bottom = 306.0
+theme_override_colors/font_color = Color(1, 0.6392157, 0.42352942, 1)
+theme_override_colors/font_outline_color = Color(0.050980393, 0.41568628, 0.5254902, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_b3w7a")
+theme_override_font_sizes/font_size = 32
+text = "[ PRESS SPACE TO BEGIN ]"

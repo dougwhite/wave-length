@@ -1,11 +1,16 @@
 extends CharacterBody2D
 
+var input_enabled = false
+
 @onready var animated_sprite = $AnimatedSprite2D
 
 const SPEED = 300.0
-var last_dir = 2 	# 0 - right, 1 - left, 2 - down, 3 - up
+var last_dir = 1 	# 0 - right, 1 - left, 2 - down, 3 - up
 
 func _physics_process(_delta):
+	
+	if not input_enabled:
+		return;
 
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
