@@ -57,6 +57,8 @@ func fade_in_sequence() -> void:
 			tween.tween_property(l, "modulate:a", 1.0, FADE_IN_TIME) \
 			.set_trans(Tween.TRANS_SINE) \
 			.set_ease(Tween.EASE_IN)
+				# Switch state to idle
+			_state = 1
 		else:
 			tween.tween_property(l, "visible_ratio", 1.0, fade_in)
 		
@@ -65,9 +67,6 @@ func fade_in_sequence() -> void:
 		
 		# Pause before next label
 		await get_tree().create_timer(DELAY_BETWEEN).timeout
-	
-	# Switch state to idle
-	_state = 1
 
 func _unhandled_input(event) -> void:
 	# If we aren't awaiting a keypress (idle), then do nothing

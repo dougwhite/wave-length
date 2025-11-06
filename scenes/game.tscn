@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=26 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://cs3iyof5qcfoy" path="res://music/ocean-min.mp3" id="15_ca42v"]
 [ext_resource type="PackedScene" uid="uid://5s53qigdv6r7" path="res://scenes/title.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://djpxudwymmlx4" path="res://scenes/Doodads/fishing_pole.tscn" id="17_rysoc"]
+[ext_resource type="PackedScene" uid="uid://xow1frt4gcs7" path="res://scenes/ui/dialog_box.tscn" id="18_ssvqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -2092,7 +2093,7 @@ y_sort_enabled = true
 
 [node name="Fishing Pole" parent="Objects/Doodads" instance=ExtResource("17_rysoc")]
 y_sort_enabled = true
-position = Vector2(181, 221)
+position = Vector2(185, 238)
 
 [node name="Audio" type="Node" parent="."]
 
@@ -2113,4 +2114,9 @@ offset_right = -268.0
 offset_bottom = -251.0
 force_cinematic = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogBox" parent="CanvasLayer" instance=ExtResource("18_ssvqc")]
+
 [connection signal="start_game" from="Title" to="." method="_on_title_start_game"]
+[connection signal="dialogue_finished" from="CanvasLayer/DialogBox" to="." method="_on_dialog_box_dialogue_finished"]
