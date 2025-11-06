@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=27 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://5s53qigdv6r7" path="res://scenes/title.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://djpxudwymmlx4" path="res://scenes/Doodads/fishing_pole.tscn" id="17_rysoc"]
 [ext_resource type="PackedScene" uid="uid://xow1frt4gcs7" path="res://scenes/ui/dialog_box.tscn" id="18_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://du8cjcs10ux5q" path="res://scenes/Doodads/starfish.tscn" id="19_264po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -2095,6 +2096,27 @@ y_sort_enabled = true
 y_sort_enabled = true
 position = Vector2(185, 238)
 
+[node name="Starfish" parent="Objects/Doodads" instance=ExtResource("19_264po")]
+position = Vector2(403, -1936)
+
+[node name="Starfish4" parent="Objects/Doodads" instance=ExtResource("19_264po")]
+position = Vector2(112, -1662)
+
+[node name="Starfish5" parent="Objects/Doodads" instance=ExtResource("19_264po")]
+position = Vector2(4523, -686)
+
+[node name="Starfish6" parent="Objects/Doodads" instance=ExtResource("19_264po")]
+position = Vector2(3581, 735)
+
+[node name="Starfish7" parent="Objects/Doodads" instance=ExtResource("19_264po")]
+position = Vector2(3102, 969)
+
+[node name="Starfish2" parent="Objects/Doodads" instance=ExtResource("19_264po")]
+position = Vector2(454, 617)
+
+[node name="Starfish3" parent="Objects/Doodads" instance=ExtResource("19_264po")]
+position = Vector2(899, 465)
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="Background Music" type="AudioStreamPlayer" parent="Audio"]
@@ -2112,7 +2134,6 @@ offset_left = -308.0
 offset_top = -291.0
 offset_right = -268.0
 offset_bottom = -251.0
-force_cinematic = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://du8cjcs10ux5q"]
+
+[ext_resource type="Texture2D" uid="uid://dnglkbvv5viv2" path="res://art/doodads.png" id="1_2y3gl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vfur"]
+atlas = ExtResource("1_2y3gl")
+region = Rect2(128, 0, 32, 32)
+
+[node name="Starfish" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_6vfur")
