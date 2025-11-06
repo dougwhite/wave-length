@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=25 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dssx28ig6jy5j" path="res://music/pizzadoggy.itch.io/Floating Dream.ogg" id="13_kvuet"]
 [ext_resource type="AudioStream" uid="uid://cs3iyof5qcfoy" path="res://music/ocean-min.mp3" id="15_ca42v"]
 [ext_resource type="PackedScene" uid="uid://5s53qigdv6r7" path="res://scenes/title.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://djpxudwymmlx4" path="res://scenes/Doodads/fishing_pole.tscn" id="17_rysoc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1267,7 +1268,7 @@ metadata/_edit_lock_ = true
 y_sort_enabled = true
 
 [node name="Player" parent="Objects" instance=ExtResource("3_lnu2h")]
-position = Vector2(173, 251)
+position = Vector2(307, 279)
 
 [node name="Camera2D" type="Camera2D" parent="Objects/Player"]
 position = Vector2(-90, -279)
@@ -2086,6 +2087,12 @@ position = Vector2(1280, -1050)
 [node name="Tree268" parent="Objects/Trees" instance=ExtResource("11_dinhu")]
 position = Vector2(1568, -748)
 
+[node name="Doodads" type="Node2D" parent="Objects"]
+y_sort_enabled = true
+
+[node name="Fishing Pole" parent="Objects/Doodads" instance=ExtResource("17_rysoc")]
+position = Vector2(269, 228)
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="Background Music" type="AudioStreamPlayer" parent="Audio"]
@@ -2103,6 +2110,5 @@ offset_left = -308.0
 offset_top = -291.0
 offset_right = -268.0
 offset_bottom = -251.0
-force_cinematic = true
 
 [connection signal="start_game" from="Title" to="." method="_on_title_start_game"]

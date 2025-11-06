@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djpxudwymmlx4"]
+
+[ext_resource type="Texture2D" uid="uid://dnglkbvv5viv2" path="res://art/doodads.png" id="1_f0c7r"]
+
+[node name="Fishing Pole" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f0c7r")
