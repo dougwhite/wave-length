@@ -2091,7 +2091,8 @@ position = Vector2(1568, -748)
 y_sort_enabled = true
 
 [node name="Fishing Pole" parent="Objects/Doodads" instance=ExtResource("17_rysoc")]
-position = Vector2(256, 160)
+y_sort_enabled = true
+position = Vector2(181, 221)
 
 [node name="Audio" type="Node" parent="."]
 
