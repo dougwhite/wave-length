@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://6qbwqkaei480"]
+[gd_scene load_steps=55 format=3 uid="uid://6qbwqkaei480"]
 
 [ext_resource type="Texture2D" uid="uid://cjvcw2s5oykwu" path="res://art/harry.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://85pb6qh8oce0" path="res://scripts/player.gd" id="1_g2els"]
@@ -66,6 +66,14 @@ region = Rect2(256, 512, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(384, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e8lb"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 1024, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gdjj"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(128, 1024, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("1_3vyb7")
@@ -267,6 +275,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6e8lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gdjj")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tuyoq")
 }, {
 "duration": 1.0,
@@ -392,8 +411,9 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"idle_left"
-autoplay = "idle_left"
+animation = &"sleep"
+autoplay = "sleep"
+frame_progress = 0.20211205
 offset = Vector2(0, -60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

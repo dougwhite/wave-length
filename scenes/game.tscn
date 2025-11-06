@@ -1268,10 +1268,10 @@ metadata/_edit_lock_ = true
 y_sort_enabled = true
 
 [node name="Player" parent="Objects" instance=ExtResource("3_lnu2h")]
-position = Vector2(307, 279)
+position = Vector2(225, 271)
 
 [node name="Camera2D" type="Camera2D" parent="Objects/Player"]
-position = Vector2(-90, -279)
+position = Vector2(-88, -286)
 position_smoothing_enabled = true
 
 [node name="Trees" type="Node2D" parent="Objects"]
@@ -2091,7 +2091,7 @@ position = Vector2(1568, -748)
 y_sort_enabled = true
 
 [node name="Fishing Pole" parent="Objects/Doodads" instance=ExtResource("17_rysoc")]
-position = Vector2(269, 228)
+position = Vector2(256, 160)
 
 [node name="Audio" type="Node" parent="."]
 
@@ -2110,5 +2110,6 @@ offset_left = -308.0
 offset_top = -291.0
 offset_right = -268.0
 offset_bottom = -251.0
+force_cinematic = true
 
 [connection signal="start_game" from="Title" to="." method="_on_title_start_game"]
