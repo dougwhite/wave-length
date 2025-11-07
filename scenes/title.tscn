@@ -22,44 +22,44 @@ theme_override_colors/font_color = Color(1, 0.24705882, 0.6431373, 1)
 theme_override_colors/font_outline_color = Color(0.22745098, 0.11372549, 0.45882353, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_p6dhs")
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 256
 text = "WAVE"
 
 [node name="slash" type="Label" parent="."]
 layout_mode = 0
-offset_left = 315.0
-offset_top = 11.0
-offset_right = 364.0
-offset_bottom = 123.0
+offset_left = 625.0
+offset_top = 20.0
+offset_right = 723.0
+offset_bottom = 244.0
 theme_override_colors/font_color = Color(1, 0.6392157, 0.42352942, 1)
 theme_override_colors/font_outline_color = Color(0.16470589, 0.07450981, 0.34901962, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_p6dhs")
-theme_override_font_sizes/font_size = 112
+theme_override_font_sizes/font_size = 224
 text = "/"
 
 [node name="LENGTH" type="Label" parent="."]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 46.0
-offset_right = 346.0
-offset_bottom = 205.0
+offset_top = 90.0
+offset_right = 683.0
+offset_bottom = 407.0
 theme_override_colors/font_color = Color(0.16862746, 0.72156864, 1, 1)
 theme_override_colors/font_outline_color = Color(0.050980393, 0.41568628, 0.5254902, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_pyl7j")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 400
 text = "LENGTH"
 
 [node name="prompt" type="Label" parent="."]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 278.0
-offset_right = 305.0
-offset_bottom = 306.0
+offset_left = 68.0
+offset_top = 581.0
+offset_right = 600.0
+offset_bottom = 632.0
 theme_override_colors/font_color = Color(1, 0.6392157, 0.42352942, 1)
 theme_override_colors/font_outline_color = Color(0.050980393, 0.41568628, 0.5254902, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_b3w7a")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "[ PRESS SPACE TO BEGIN ]"

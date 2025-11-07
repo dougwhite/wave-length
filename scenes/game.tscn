@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=29 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://djpxudwymmlx4" path="res://scenes/Doodads/fishing_pole.tscn" id="17_rysoc"]
 [ext_resource type="PackedScene" uid="uid://xow1frt4gcs7" path="res://scenes/ui/dialog_box.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://du8cjcs10ux5q" path="res://scenes/Doodads/starfish.tscn" id="19_264po"]
+[ext_resource type="PackedScene" uid="uid://wjmb2bbxsq6q" path="res://scenes/radiohut.tscn" id="21_5newe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1276,11 +1277,16 @@ position = Vector2(225, 271)
 [node name="Camera2D" type="Camera2D" parent="Objects/Player"]
 position = Vector2(-88, -286)
 position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="RadioHut" parent="Objects" instance=ExtResource("21_5newe")]
+y_sort_enabled = true
+position = Vector2(2307, -880)
 
 [node name="Trees" type="Node2D" parent="Objects"]
 y_sort_enabled = true
-metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Tree" parent="Objects/Trees" instance=ExtResource("4_lbhrr")]
 position = Vector2(670, 195)
@@ -2158,10 +2164,10 @@ autoplay = true
 bus = &"Ambience"
 
 [node name="Title" parent="." instance=ExtResource("15_ir15t")]
-offset_left = -308.0
-offset_top = -291.0
-offset_right = -268.0
-offset_bottom = -251.0
+offset_left = -681.0
+offset_top = -430.0
+offset_right = -641.0
+offset_bottom = -390.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

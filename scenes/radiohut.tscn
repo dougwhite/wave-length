@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://wjmb2bbxsq6q"]
+
+[ext_resource type="Texture2D" uid="uid://bg1n75h2twe7l" path="res://art/radio-hut.png" id="1_oo65x"]
+
+[node name="RadioHut" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(42, -13)
+texture = ExtResource("1_oo65x")
+offset = Vector2(0, -350.32)
+region_rect = Rect2(0, 0, 256, 512)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-203, 126)
+polygon = PackedVector2Array(-16, -33, 97, -182, 222, -177, 107, -26, 127, -22, 255, -22, 492, -89, 484, -129, 475, -178, 87, -188, 76, -173, -23, -46)
