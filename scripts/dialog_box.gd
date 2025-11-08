@@ -10,7 +10,7 @@ const CHARS_PER_SEC: float = 20.0
 const FADE_IN_TIME: float = 0.25
 const FADE_OUT_TIME: float = 0.25
 
-var _messages: Array[String] = []
+var _messages: Array[DialogueMessage] = []
 
 var _index = 0
 var _visible = false
@@ -22,11 +22,11 @@ func _ready():
 	main_text.visible_ratio = 0.0
 	prompt.visible = false
 
-func start(messages: Array[String]) -> void:
+func start(messages: Array) -> void:
 	if messages.is_empty():
 		return
 	
-	_messages = messages
+	_messages = messages as Array[DialogueMessage]
 	_index = 0
 	fade_in_panel()
 	show_message()
@@ -57,7 +57,8 @@ func fade_out_panel():
 
 func show_message():
 	var message = _messages[_index]
-	main_text.text = message
+	main_text.text = message.formatted()
+	main_text.modulate = message.color
 	main_text.visible_characters = 0
 	_elapsed = 0.0
 	_typing = true

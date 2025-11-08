@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var input_enabled = false
+var input_enabled = true
 
 @onready var animated_sprite = $AnimatedSprite2D
 

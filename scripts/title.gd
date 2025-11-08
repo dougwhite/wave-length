@@ -2,7 +2,7 @@ extends Control
 
 signal start_game  # emit when the fade out finishes
 
-@export var force_cinematic: bool = false
+@export var camera_start: Vector2
 
 @onready var wave_label = $WAVE
 @onready var slash_label = $slash
@@ -21,11 +21,6 @@ const TIME_PER_CHAR = .25
 func _ready():
 	# prep the labels array
 	_labels = [wave_label, slash_label, length_label, prompt_label]
-	
-	if OS.is_debug_build() and not force_cinematic:
-		fade_out_and_start()
-		return
-	
 	# set all the labels to invisible
 	for l in _labels:
 		# The prompt label fades in, the other labels "type" in
@@ -33,9 +28,6 @@ func _ready():
 			l.modulate.a = 0.0
 		else:
 			l.visible_ratio = 0.0
-	
-	# start the fade in
-	fade_in_sequence()
 
 func fade_in_sequence() -> void:
 	# make sure everything is ready

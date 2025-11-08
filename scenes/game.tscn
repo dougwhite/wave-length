@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=31 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://xow1frt4gcs7" path="res://scenes/ui/dialog_box.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://du8cjcs10ux5q" path="res://scenes/Doodads/starfish.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://wjmb2bbxsq6q" path="res://scenes/radiohut.tscn" id="21_5newe"]
+[ext_resource type="Script" uid="uid://cjsf4ynd541vd" path="res://scripts/narrative/narrative_manager.gd" id="22_37s47"]
+[ext_resource type="PackedScene" uid="uid://dl6ltjuc0nrh1" path="res://scenes/objectives.tscn" id="22_bt5mj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1275,7 +1277,6 @@ y_sort_enabled = true
 position = Vector2(225, 271)
 
 [node name="Camera2D" type="Camera2D" parent="Objects/Player"]
-position = Vector2(-88, -286)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
@@ -2192,11 +2193,13 @@ offset_left = -681.0
 offset_top = -430.0
 offset_right = -641.0
 offset_bottom = -390.0
-force_cinematic = true
+camera_start = Vector2(-88, -286)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogBox" parent="CanvasLayer" instance=ExtResource("18_ssvqc")]
 
-[connection signal="start_game" from="Title" to="." method="_on_title_start_game"]
-[connection signal="dialogue_finished" from="CanvasLayer/DialogBox" to="." method="_on_dialog_box_dialogue_finished"]
+[node name="Objectives" parent="CanvasLayer" instance=ExtResource("22_bt5mj")]
+
+[node name="NarrativeManager" type="Node" parent="."]
+script = ExtResource("22_37s47")
