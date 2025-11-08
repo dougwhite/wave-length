@@ -109,7 +109,7 @@ func _stage_wake_on_beach():
 	# Harry stands up
 	player.animated_sprite.play("idle_down")
 	
-	# Harry speaks
+	# Harry is abashed
 	await dialog([
 		Harry.say("Oh man... What time is it?"),
 		Harry.say("I'd better head back to the tower")
@@ -120,12 +120,16 @@ func _stage_wake_on_beach():
 	start_story()
 
 func _stage_walk_to_tower():
+	
+	# Give the player their first objective
 	objectives.show_objective("Head back to the radio tower\nUse WSAD to move")
 	var radio_hut = zone("RadioHutZone")
 	arrow.objective = radio_hut
 	
+	# Wait for players to find their way to the tower
 	await radio_hut.player_entered
 	
+	# Complete the objective
 	objectives.complete_objective()
 	arrow.objective = null
 	
@@ -134,16 +138,18 @@ func _stage_walk_to_tower():
 	start_story()
 
 func _stage_receive_message():
+	
 	# If we are in debug, start next to the radio tower
 	teleport(zone("RadioHutZone"))
 	
-	## Focus player on the radio hut
+	# Focus camera on the radio hut
 	await zoom(zone("RadioHutZoom"))
 	
-	# Harry speaks
+	# Harry is confused
 	await dialog([
 		Harry.say("A message!?"),
 		Harry.say("Must be a mistake...")
 	])
-	
+
+	# Focus camera back on harry
 	await zoom(player)
