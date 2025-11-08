@@ -181,7 +181,7 @@ func _stage_use_radio():
 	radio.light_on = true
 	
 	# Teach the player how to interact with things
-	objectives.show_objective("Check the missed message\n\nInteract with objects by pressing 'E'")
+	objectives.show_objective("Move closer to the radio and press 'E' to interact with it")
 	arrow.objective = radio
 	
 	# Wait for players to find their way to the tower
@@ -208,7 +208,8 @@ func _stage_use_radio():
 	
 	# Harry is in denial, but "good" at his job
 	await dialog([
-		Harry.say("Definitely a mistake..."),
+		Harry.say("..."),
+		Harry.say("Definitely a mistake."),
 		Harry.say("Still... Protocol says I should boost the signal if a Mayday is in range."),
 		Harry.say("What was that damn frequency again?")
 	])
