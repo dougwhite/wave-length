@@ -6,6 +6,8 @@ signal dialogue_finished
 @onready var main_text : Label = $Panel/MarginContainer/VBoxContainer/MainText
 @onready var prompt : Label = $Panel/SPACE
 
+var stylebox: StyleBox
+
 const CHARS_PER_SEC: float = 20.0
 const FADE_IN_TIME: float = 0.25
 const FADE_OUT_TIME: float = 0.25
@@ -18,6 +20,7 @@ var _typing = false
 var _elapsed = 0.0
 
 func _ready():
+	stylebox = panel.get_theme_stylebox("panel")
 	panel.modulate.a = 0.0
 	main_text.visible_ratio = 0.0
 	prompt.visible = false
@@ -59,6 +62,8 @@ func show_message():
 	var message = _messages[_index]
 	main_text.text = message.formatted()
 	main_text.modulate = message.color
+	stylebox.border_color = message.color
+	prompt.modulate = message.color
 	main_text.visible_characters = 0
 	_elapsed = 0.0
 	_typing = true
