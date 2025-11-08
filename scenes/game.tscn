@@ -2217,7 +2217,6 @@ camera_start = Vector2(-88, -286)
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
-start_stage = 4
 
 [node name="Locations" type="Node2D" parent="NarrativeManager"]
 metadata/_edit_group_ = true

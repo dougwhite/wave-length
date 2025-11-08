@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bflvrjrnrrjgu" path="res://fonts/nimblebeastscollective.itch.io/Habbo.ttf" id="1_svbij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5g3t"]
-bg_color = Color(0.03529412, 0.007843138, 0.10980392, 0.6156863)
+bg_color = Color(0.03498002, 0.007699999, 0.11, 0.9411765)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2

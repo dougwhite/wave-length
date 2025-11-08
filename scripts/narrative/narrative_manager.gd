@@ -21,8 +21,8 @@ enum Stage {
 var current_stage: int
 
 # Narrative actors
-var Harry = DialogueSpeaker.new("Harry", Color("#34A5FF"))
-var Voice = DialogueSpeaker.new("", Color("#3A1D75"))
+var Harry = DialogueSpeaker.new("Harry", Color("#6ef0ff"))
+var Voice = DialogueSpeaker.new("", Color("#ff3fa4"))
 var Radio = DialogueSpeaker.new("Radio", Color("#FFA36C"))
 
 # Set up and start the story
