@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=34 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -22,7 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://du8cjcs10ux5q" path="res://scenes/Doodads/starfish.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://wjmb2bbxsq6q" path="res://scenes/radiohut.tscn" id="21_5newe"]
 [ext_resource type="Script" uid="uid://cjsf4ynd541vd" path="res://scripts/narrative/narrative_manager.gd" id="22_37s47"]
-[ext_resource type="PackedScene" uid="uid://dl6ltjuc0nrh1" path="res://scenes/objectives.tscn" id="22_bt5mj"]
+[ext_resource type="PackedScene" uid="uid://dl6ltjuc0nrh1" path="res://scenes/ui/objectives.tscn" id="22_bt5mj"]
+[ext_resource type="PackedScene" uid="uid://csdp4uljpxkua" path="res://scenes/arrow.tscn" id="23_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://bdjp6yrn2nh0v" path="res://scenes/narrative/zone.tscn" id="25_pl11u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1252,6 +1254,9 @@ terrain_set_0/terrain_0/color = Color(1, 1, 1, 1)
 sources/3 = SubResource("TileSetAtlasSource_yqjtg")
 sources/4 = SubResource("TileSetAtlasSource_iywne")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
+size = Vector2(910, 700)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ca42v")
 
@@ -1273,12 +1278,15 @@ metadata/_edit_lock_ = true
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Objects" instance=ExtResource("3_lnu2h")]
+[node name="Player" parent="Objects" groups=["player"] instance=ExtResource("3_lnu2h")]
 position = Vector2(225, 271)
 
 [node name="Camera2D" type="Camera2D" parent="Objects/Player"]
 position_smoothing_enabled = true
-position_smoothing_speed = 3.0
+
+[node name="Arrow" parent="Objects/Player" node_paths=PackedStringArray("player") instance=ExtResource("23_e1j6l")]
+z_index = 1
+player = NodePath("..")
 
 [node name="RadioHut" parent="Objects" instance=ExtResource("21_5newe")]
 y_sort_enabled = true
@@ -2203,3 +2211,20 @@ camera_start = Vector2(-88, -286)
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
+
+[node name="Locations" type="Node2D" parent="NarrativeManager"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="PlayerStart" type="Node2D" parent="NarrativeManager/Locations"]
+position = Vector2(225, 271)
+
+[node name="RadioHutZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+position = Vector2(2252, -573)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/RadioHutZone"]
+position = Vector2(78, -340)
+shape = SubResource("RectangleShape2D_e1j6l")
+
+[node name="RadioHutZoom" type="Node2D" parent="NarrativeManager/Locations"]
+position = Vector2(2413, -1198)

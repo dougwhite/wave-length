@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl6ltjuc0nrh1"]
+
+[ext_resource type="FontFile" uid="uid://bflvrjrnrrjgu" path="res://fonts/nimblebeastscollective.itch.io/Habbo.ttf" id="1_bvcxi"]
+[ext_resource type="Script" uid="uid://rbas2oqlygt4" path="res://scripts/ui/objectives.gd" id="1_qldaq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvcxi"]
+bg_color = Color(0.03498002, 0.007699999, 0.11, 0.85882354)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.43137255, 0.9411765, 1, 1)
+
+[node name="Objectives" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_qldaq")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -397.0
+offset_top = 40.0
+offset_right = -39.0
+offset_bottom = 111.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bvcxi")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 6
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_bvcxi")
+theme_override_font_sizes/font_size = 32
+text = "Head back to the radio tower
+Use WSAD to move"
+autowrap_mode = 2

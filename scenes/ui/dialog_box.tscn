@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xow1frt4gcs7"]
 
-[ext_resource type="Script" uid="uid://p0uyq8avi36h" path="res://scripts/dialog_box.gd" id="1_i22jp"]
+[ext_resource type="Script" uid="uid://p0uyq8avi36h" path="res://scripts/ui/dialog_box.gd" id="1_i22jp"]
 [ext_resource type="FontFile" uid="uid://bflvrjrnrrjgu" path="res://fonts/nimblebeastscollective.itch.io/Habbo.ttf" id="1_svbij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5g3t"]

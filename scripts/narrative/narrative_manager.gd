@@ -4,12 +4,16 @@ extends Node
 @onready var camera_2d = $"../Objects/Player/Camera2D"
 @onready var title = $"../Title"
 @onready var dialog_box = $"../CanvasLayer/DialogBox"
+@onready var objectives = $"../CanvasLayer/Objectives"
+@onready var arrow = $"../Objects/Player/Arrow"
+@onready var locations = $Locations
 
 # Enum stages of the game
 enum Stage {
 	OPENING_TITLE,
 	WAKE_ON_BEACH,
-	WALK_TO_TOWER
+	WALK_TO_TOWER,
+	RECEIVE_MESSAGE,
 }
 @export var start_stage = Stage.OPENING_TITLE
 var current_stage: int
@@ -25,6 +29,9 @@ func _ready() -> void:
 	else:
 		current_stage = Stage.OPENING_TITLE
 	
+	# Ensure the player starts at the start zone
+	player.global_position = zone("PlayerStart").global_position
+	
 	start_story()
 
 func start_story() -> void:
@@ -38,6 +45,35 @@ func _run_current_stage() -> void:
 			await _stage_wake_on_beach()
 		Stage.WALK_TO_TOWER:
 			await _stage_walk_to_tower()
+		Stage.RECEIVE_MESSAGE:
+			await _stage_receive_message()
+
+func dialog(messages: Array[DialogueMessage]):
+	# Whenever there is dialogue we need to freeze the player
+	player.input_enabled = false
+	
+	# Kick off the dialog and await completion
+	dialog_box.start(messages)
+	await dialog_box.dialogue_finished
+	
+	# Re-enable player input
+	player.input_enabled = true
+
+func zone(_name: NodePath) -> Node2D:
+	return locations.get_node_or_null(_name) as Node2D
+
+# Helper to teleport the player when starting at non standard stages
+func teleport(target: Node2D) -> void:
+	if OS.is_debug_build() and current_stage == start_stage:
+		player.global_position = target.global_position
+
+# Helper for camera zooms
+func zoom(target: Node2D, duration: float = 1.0) -> void:
+	var tween = create_tween()
+	tween.tween_property(camera_2d, "global_position", target.global_position, duration) \
+			.set_trans(Tween.TRANS_SINE) \
+			.set_ease(Tween.EASE_OUT)
+	await tween.finished
 
 # Fade in the title menu, wait for them to press space
 func _stage_opening_title():
@@ -53,14 +89,10 @@ func _stage_opening_title():
 	await title.start_game
 	
 	# Turn back on position smoothing 
-	camera_2d.position_smoothing_enabled = false
+	camera_2d.position_smoothing_enabled = true
 	
-	# Create a tween for the camera position to center it on the player
-	var tween = create_tween()
-	tween.tween_property(camera_2d, "position", Vector2(0, -64.0), 1.0) \
-			.set_trans(Tween.TRANS_SINE) \
-			.set_ease(Tween.EASE_OUT)
-	await tween.finished
+	# Focus camera on the player
+	await zoom(player)
 	
 	# Re-enable player input once the game starts
 	player.input_enabled = true
@@ -88,15 +120,30 @@ func _stage_wake_on_beach():
 	start_story()
 
 func _stage_walk_to_tower():
-	return
+	objectives.show_objective("Head back to the radio tower\nUse WSAD to move")
+	var radio_hut = zone("RadioHutZone")
+	arrow.objective = radio_hut
+	
+	await radio_hut.player_entered
+	
+	objectives.complete_objective()
+	arrow.objective = null
+	
+	# Start the next stage
+	current_stage = Stage.RECEIVE_MESSAGE
+	start_story()
 
-func dialog(messages: Array[DialogueMessage]):
-	# Whenever there is dialogue we need to freeze the player
-	player.input_enabled = false
+func _stage_receive_message():
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
 	
-	# Kick off the dialog and await completion
-	dialog_box.start(messages)
-	await dialog_box.dialogue_finished
+	## Focus player on the radio hut
+	await zoom(zone("RadioHutZoom"))
 	
-	# Re-enable player input
-	player.input_enabled = true
+	# Harry speaks
+	await dialog([
+		Harry.say("A message!?"),
+		Harry.say("Must be a mistake...")
+	])
+	
+	await zoom(player)

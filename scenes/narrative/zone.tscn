@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdjp6yrn2nh0v"]
+
+[ext_resource type="Script" uid="uid://d24olu7c1q7bs" path="res://scripts/narrative/zone.gd" id="1_6wi2d"]
+
+[node name="Zone" type="Area2D"]
+script = ExtResource("1_6wi2d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
