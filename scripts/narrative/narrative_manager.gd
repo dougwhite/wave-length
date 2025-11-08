@@ -7,6 +7,7 @@ extends Node
 @onready var objectives = $"../CanvasLayer/Objectives"
 @onready var arrow = $"../Objects/Player/Arrow"
 @onready var locations = $Locations
+@onready var radio = $"../Objects/Radio"
 
 # Enum stages of the game
 enum Stage {
@@ -14,13 +15,15 @@ enum Stage {
 	WAKE_ON_BEACH,
 	WALK_TO_TOWER,
 	RECEIVE_MESSAGE,
+	USE_RADIO,
 }
 @export var start_stage = Stage.OPENING_TITLE
 var current_stage: int
 
 # Narrative actors
-var Harry = DialogueSpeaker.new("Harry", Color.WHITE)
-var Voice = DialogueSpeaker.new("", Color.CYAN)
+var Harry = DialogueSpeaker.new("Harry", Color("#34A5FF"))
+var Voice = DialogueSpeaker.new("", Color("#3A1D75"))
+var Radio = DialogueSpeaker.new("Radio", Color("#FFA36C"))
 
 # Set up and start the story
 func _ready() -> void:
@@ -47,6 +50,8 @@ func _run_current_stage() -> void:
 			await _stage_walk_to_tower()
 		Stage.RECEIVE_MESSAGE:
 			await _stage_receive_message()
+		Stage.USE_RADIO:
+			await _stage_use_radio()
 
 func dialog(messages: Array[DialogueMessage]):
 	# Whenever there is dialogue we need to freeze the player
@@ -69,11 +74,18 @@ func teleport(target: Node2D) -> void:
 
 # Helper for camera zooms
 func zoom(target: Node2D, duration: float = 1.0) -> void:
+	# Halt the player input while we move the camera
+	player.input_enabled = false
+	
+	# Pan the camera to the target
 	var tween = create_tween()
 	tween.tween_property(camera_2d, "global_position", target.global_position, duration) \
 			.set_trans(Tween.TRANS_SINE) \
 			.set_ease(Tween.EASE_OUT)
 	await tween.finished
+	
+	# Re-enable player input when we are done
+	player.input_enabled = true
 
 # Fade in the title menu, wait for them to press space
 func _stage_opening_title():
@@ -142,6 +154,9 @@ func _stage_receive_message():
 	# If we are in debug, start next to the radio tower
 	teleport(zone("RadioHutZone"))
 	
+	# Turn on the radio light
+	radio.light_on = true
+	
 	# Focus camera on the radio hut
 	await zoom(zone("RadioHutZoom"))
 	
@@ -153,3 +168,47 @@ func _stage_receive_message():
 
 	# Focus camera back on harry
 	await zoom(player)
+	
+	# Start the next stage
+	current_stage = Stage.USE_RADIO
+	start_story()
+
+func _stage_use_radio():
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Turn on the radio light in case we started here in debug mode
+	radio.light_on = true
+	
+	# Teach the player how to interact with things
+	objectives.show_objective("Check the missed message\n\nInteract with objects by pressing 'E'")
+	arrow.objective = radio
+	
+	# Wait for players to find their way to the tower
+	await radio.interacted
+	
+	# complete the objective
+	objectives.complete_objective()
+	arrow.objective = null
+	
+	# disable the radio
+	radio.disabled = true
+	
+	# The radio transmission
+	await dialog([
+		Radio.say("*kssshhh* ...MAYDAY... MAYDAY... coastal station, do you copy... *krrt*"),
+		Radio.say("...multiple entities detected... signal origin unknown... *kssssht*"),
+		Radio.say("*krrt* ...closing fast on your island... repeat: on your island... *ksssh*"),
+		Radio.say("ETA... *kssshh* ...any minute... standby... *krrt*"),
+		Radio.say("*ksssh* ...you must prepare... do you underst- *signal lost*"),
+	])
+	
+	# Turn the radio light off
+	radio.light_on = false
+	
+	# Harry is in denial, but "good" at his job
+	await dialog([
+		Harry.say("Definitely a mistake..."),
+		Harry.say("Still... Protocol says I should boost the signal if a Mayday is in range."),
+		Harry.say("What was that damn frequency again?")
+	])

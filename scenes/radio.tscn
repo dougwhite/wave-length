@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn024kiw0kc6v"]
+
+[ext_resource type="Script" uid="uid://dimbog4ae788d" path="res://scripts/radio.gd" id="1_ldjbc"]
+[ext_resource type="Texture2D" uid="uid://cgeel4uo4wg82" path="res://art/radio.png" id="1_y83x7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldjbc"]
+size = Vector2(49, 40)
+
+[node name="Radio" type="StaticBody2D"]
+script = ExtResource("1_ldjbc")
+
+[node name="base" type="Sprite2D" parent="."]
+position = Vector2(41, -23)
+texture = ExtResource("1_y83x7")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 64)
+
+[node name="glow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(57, -23)
+texture = ExtResource("1_y83x7")
+region_enabled = true
+region_rect = Rect2(0, 64, 128, 64)
+
+[node name="light" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(25, -39)
+texture = ExtResource("1_y83x7")
+region_enabled = true
+region_rect = Rect2(96, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24.5, -20)
+shape = SubResource("RectangleShape2D_ldjbc")

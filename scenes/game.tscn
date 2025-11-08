@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=35 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dl6ltjuc0nrh1" path="res://scenes/ui/objectives.tscn" id="22_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://csdp4uljpxkua" path="res://scenes/arrow.tscn" id="23_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bdjp6yrn2nh0v" path="res://scenes/narrative/zone.tscn" id="25_pl11u"]
+[ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/radio.tscn" id="26_bhx41"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1285,7 +1286,7 @@ position = Vector2(225, 271)
 position_smoothing_enabled = true
 
 [node name="Arrow" parent="Objects/Player" node_paths=PackedStringArray("player") instance=ExtResource("23_e1j6l")]
-z_index = 1
+z_index = 2
 player = NodePath("..")
 
 [node name="RadioHut" parent="Objects" instance=ExtResource("21_5newe")]
@@ -2184,6 +2185,11 @@ position = Vector2(808, -2246)
 [node name="Shell8" parent="Objects/Doodads" instance=ExtResource("16_1kice")]
 position = Vector2(2073, -1085)
 
+[node name="Radio" parent="Objects" groups=["selectables"] instance=ExtResource("26_bhx41")]
+z_index = 1
+position = Vector2(2310, -977)
+disabled = true
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="Background Music" type="AudioStreamPlayer" parent="Audio"]
@@ -2211,6 +2217,7 @@ camera_start = Vector2(-88, -286)
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
+start_stage = 4
 
 [node name="Locations" type="Node2D" parent="NarrativeManager"]
 metadata/_edit_group_ = true
@@ -2220,6 +2227,7 @@ metadata/_edit_lock_ = true
 position = Vector2(225, 271)
 
 [node name="RadioHutZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+visible = false
 position = Vector2(2252, -573)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/RadioHutZone"]

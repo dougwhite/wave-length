@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://6qbwqkaei480"]
+[gd_scene load_steps=56 format=3 uid="uid://6qbwqkaei480"]
 
 [ext_resource type="Texture2D" uid="uid://cjvcw2s5oykwu" path="res://art/harry.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://85pb6qh8oce0" path="res://scripts/player.gd" id="1_g2els"]
@@ -405,6 +405,9 @@ animations = [{
 radius = 20.0
 height = 68.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 145.08618
+
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_g2els")
@@ -413,10 +416,18 @@ script = ExtResource("1_g2els")
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"sleep"
 autoplay = "sleep"
-frame_progress = 0.20211205
 offset = Vector2(0, -60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 position = Vector2(0, -34)
 shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="SelectionRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionRadius"]
+position = Vector2(0, -61)
+shape = SubResource("CircleShape2D_g2els")
+
+[connection signal="body_entered" from="SelectionRadius" to="." method="_on_selection_radius_body_entered"]
+[connection signal="body_exited" from="SelectionRadius" to="." method="_on_selection_radius_body_exited"]
