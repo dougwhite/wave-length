@@ -13,10 +13,10 @@ var stylebox: StyleBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	stylebox = panel.get_theme_stylebox("panel")
 	panel.modulate.a = 0.0
 
 func show_objective(objective: String):
-	stylebox = panel.get_theme_stylebox("panel")
 	label.text = objective
 	label.modulate = PROG_COLOR
 	stylebox.border_color = PROG_COLOR
