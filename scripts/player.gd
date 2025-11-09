@@ -17,6 +17,8 @@ var fine_tuning = false
 func _physics_process(_delta):
 	
 	if not input_enabled:
+		if not animated_sprite.animation == "sleep":
+			idle_sprite()
 		return;
 
 	var direction = Input.get_axis("move_left", "move_right")
@@ -46,19 +48,28 @@ func _physics_process(_delta):
 			last_dir = 3
 		
 	else:
-		if last_dir == 0:
-			animated_sprite.play("idle_right")
-		elif last_dir == 1:
-			animated_sprite.play("idle_left")
-		elif last_dir == 2:
-			animated_sprite.play("idle_down")
-		elif last_dir == 3:
-			animated_sprite.play("idle_up")
+		idle_sprite()
 			
 	move_and_slide()
 
+func idle_sprite():
+	if last_dir == 0:
+		animated_sprite.play("idle_right")
+	elif last_dir == 1:
+		animated_sprite.play("idle_left")
+	elif last_dir == 2:
+		animated_sprite.play("idle_down")
+	elif last_dir == 3:
+		animated_sprite.play("idle_up")
+
 func _input(event):
 	if not input_enabled:
+		# If input was disabled and we were still in tune mode, we better fix that
+		if tune_mode:
+			tune_mode = false
+			fine_tuning = false
+			tuner.fade_out()
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return
 
 	# If the player presses interact, send an interact event to any selectables in the area

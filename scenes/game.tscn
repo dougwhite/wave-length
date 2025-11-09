@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=38 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://br73t6t1qwemr" path="res://scenes/trees/tree3.tscn" id="6_gee14"]
 [ext_resource type="PackedScene" uid="uid://bd3tk45rckh25" path="res://scenes/trees/tree4.tscn" id="7_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://bns3tbjq6lgrm" path="res://scenes/trees/tree5.tscn" id="8_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://bkn22v61wdeqk" path="res://scenes/tunables/radio_tower.tscn" id="8_sww3w"]
 [ext_resource type="PackedScene" uid="uid://6p7tluls4xk2" path="res://scenes/trees/tree6.tscn" id="9_vtaks"]
 [ext_resource type="PackedScene" uid="uid://cpj3orbqvdpt0" path="res://scenes/trees/tree7.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://bl8fgawafljpl" path="res://scenes/trees/tree8.tscn" id="11_dinhu"]
@@ -27,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bdjp6yrn2nh0v" path="res://scenes/narrative/zone.tscn" id="25_pl11u"]
 [ext_resource type="PackedScene" uid="uid://bp1nxrnma1gb8" path="res://scenes/ui/tuner.tscn" id="25_qnb83"]
 [ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/radio.tscn" id="26_bhx41"]
+[ext_resource type="Script" uid="uid://lr7y35dk5eok" path="res://scripts/game_manager.gd" id="29_suyxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1295,6 +1297,10 @@ player = NodePath("..")
 y_sort_enabled = true
 position = Vector2(2307, -880)
 
+[node name="RadioTower" parent="Objects" groups=["tunables"] instance=ExtResource("8_sww3w")]
+y_sort_enabled = true
+position = Vector2(2435, -888)
+
 [node name="Trees" type="Node2D" parent="Objects"]
 y_sort_enabled = true
 metadata/_edit_group_ = true
@@ -2231,11 +2237,15 @@ position = Vector2(225, 271)
 
 [node name="RadioHutZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
 visible = false
-position = Vector2(2252, -573)
+position = Vector2(2252, -604)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/RadioHutZone"]
-position = Vector2(78, -340)
+position = Vector2(80, -289)
 shape = SubResource("RectangleShape2D_e1j6l")
 
 [node name="RadioHutZoom" type="Node2D" parent="NarrativeManager/Locations"]
 position = Vector2(2413, -1198)
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("29_suyxu")

@@ -8,6 +8,7 @@ extends Node
 @onready var arrow = $"../Objects/Player/Arrow"
 @onready var locations = $Locations
 @onready var radio = $"../Objects/Radio"
+@onready var radio_tower = $"../Objects/RadioTower"
 
 # Enum stages of the game
 enum Stage {
@@ -206,11 +207,11 @@ func _stage_use_radio():
 	
 	# The radio transmission
 	await dialog([
-		Radio.say("*kssshhh* ...MAYDAY... MAYDAY... coastal station, do you copy... *krrt*"),
-		Radio.say("...multiple entities detected... signal origin unknown... *kssssht*"),
-		Radio.say("*krrt* ...closing fast on your island... repeat: on your island... *ksssh*"),
-		Radio.say("ETA... *kssshh* ...any minute... standby... *krrt*"),
-		Radio.say("*ksssh* ...you must prepare... do you underst- *signal lost*"),
+		Radio.say("*kssshhh* ...MAYDAY! MAYDAY, COASTAL STATION... *krrt*"),
+		Radio.say("*kssssht* ...multiple entities... *kssssht*"),
+		Radio.say("*krrt* ...closing fast on your island... *ksssh*"),
+		Radio.say("*kssshh* ...any minute... *krrt*"),
+		Radio.say("*ksssh* ...you must prepa-...*signal lost*"),
 	])
 	
 	# Turn the radio light off
@@ -237,8 +238,30 @@ func _stage_boost_tower():
 	
 	# Teach the player how to tune his radio
 	objectives.show_objective("\n\n".join([
-		"Hold Q to enter tuning mode. Then move your mouse to locate the frequency",
-		"You can also tune using mouse wheel (hold shift for fine tuning)",
-		"Jump to one of the color bands by pressing numbers 1-7 (+/- for manual tuning)",
-		"Find the correct frequency using 1 of the 3 tuning methods"
+		"Find the frequency of the radio tower",
+		"Hold Q to enter tuning mode",
+		"Move your mouse left and right until you see the radio tower glowing",
+	]))
+	arrow.objective = radio_tower
+	
+	# Wait for the player to find the right frequency
+	await radio_tower.frequency_tuned
+	
+	# Look you did it Harry!
+	objectives.complete_objective()
+	arrow.objective = null
+	
+	# Hint to the player where they need to aim
+	await zoom(radio_tower)
+	await dialog([
+		Harry.say("Got it. Now I just need to aim at the tower and emit a quick signal pulse..."),
+	])
+	
+	# Ok zoom back on the player
+	await zoom(player)
+	
+	# Give them the next objective
+	objectives.show_objective("\n\n".join([
+		"Left Click to activate your frequency emitter",
+		"Remember to aim at the tower"
 	]))

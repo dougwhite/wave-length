@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkn22v61wdeqk"]
+
+[ext_resource type="Texture2D" uid="uid://dpg2tetnd8da4" path="res://art/radio-tower.png" id="1_7cxyx"]
+[ext_resource type="Script" uid="uid://1xnx8hqw8bs7" path="res://scripts/tunables/radio_tower.gd" id="1_efylt"]
+
+[node name="RadioTower" type="Node2D"]
+script = ExtResource("1_efylt")
+band = 26
+
+[node name="glow" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1)
+texture = ExtResource("1_7cxyx")
+offset = Vector2(0, -384)
+region_enabled = true
+region_rect = Rect2(384, 0, 384, 1024)
+
+[node name="tower" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_7cxyx")
+offset = Vector2(0, -384)
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 1024)

@@ -4,11 +4,12 @@
 [ext_resource type="Script" uid="uid://bhornm1w3a44g" path="res://scripts/ui/tuner.gd" id="1_tekav"]
 
 [node name="TunerUI" type="Control"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_vertical = 0
 script = ExtResource("1_tekav")
 
@@ -19,7 +20,7 @@ region_enabled = true
 region_rect = Rect2(32, 32, 448, 288)
 
 [node name="needle" type="Sprite2D" parent="."]
-position = Vector2(380, -202)
+position = Vector2(60, -202)
 texture = ExtResource("1_it6y5")
 region_enabled = true
 region_rect = Rect2(544, 32, 64, 160)
