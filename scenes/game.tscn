@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=36 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dl6ltjuc0nrh1" path="res://scenes/ui/objectives.tscn" id="22_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://csdp4uljpxkua" path="res://scenes/arrow.tscn" id="23_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bdjp6yrn2nh0v" path="res://scenes/narrative/zone.tscn" id="25_pl11u"]
+[ext_resource type="PackedScene" uid="uid://bp1nxrnma1gb8" path="res://scenes/ui/tuner.tscn" id="25_qnb83"]
 [ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/radio.tscn" id="26_bhx41"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -1279,8 +1280,9 @@ metadata/_edit_lock_ = true
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Objects" groups=["player"] instance=ExtResource("3_lnu2h")]
+[node name="Player" parent="Objects" node_paths=PackedStringArray("tuner") groups=["player"] instance=ExtResource("3_lnu2h")]
 position = Vector2(225, 271)
+tuner = NodePath("../../CanvasLayer/TunerUI")
 
 [node name="Camera2D" type="Camera2D" parent="Objects/Player"]
 position_smoothing_enabled = true
@@ -2214,6 +2216,8 @@ camera_start = Vector2(-88, -286)
 [node name="DialogBox" parent="CanvasLayer" instance=ExtResource("18_ssvqc")]
 
 [node name="Objectives" parent="CanvasLayer" instance=ExtResource("22_bt5mj")]
+
+[node name="TunerUI" parent="CanvasLayer" instance=ExtResource("25_qnb83")]
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")

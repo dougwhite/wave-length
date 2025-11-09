@@ -16,6 +16,7 @@ enum Stage {
 	WALK_TO_TOWER,
 	RECEIVE_MESSAGE,
 	USE_RADIO,
+	BOOST_TOWER,
 }
 @export var start_stage = Stage.OPENING_TITLE
 var current_stage: int
@@ -34,7 +35,8 @@ func _ready() -> void:
 	
 	# Ensure the player starts at the start zone
 	player.global_position = zone("PlayerStart").global_position
-	
+
+	feature_gate()
 	start_story()
 
 func start_story() -> void:
@@ -52,6 +54,14 @@ func _run_current_stage() -> void:
 			await _stage_receive_message()
 		Stage.USE_RADIO:
 			await _stage_use_radio()
+		Stage.BOOST_TOWER:
+			await _stage_boost_tower()
+
+# Ensures unlocked features are available when jumping to a scene
+func feature_gate() -> void:
+	if current_stage > Stage.BOOST_TOWER:
+		player.feature_tuning = true
+
 
 func dialog(messages: Array[DialogueMessage]):
 	# Whenever there is dialogue we need to freeze the player
@@ -213,3 +223,22 @@ func _stage_use_radio():
 		Harry.say("Still... Protocol says I should boost the signal if a Mayday is in range."),
 		Harry.say("What was that damn frequency again?")
 	])
+	
+	# Start the next stage
+	current_stage = Stage.BOOST_TOWER
+	start_story()
+
+func _stage_boost_tower():
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+
+	# Enable tuning
+	player.feature_tuning = true
+	
+	# Teach the player how to tune his radio
+	objectives.show_objective("\n\n".join([
+		"Hold Q to enter tuning mode. Then move your mouse to locate the frequency",
+		"You can also tune using mouse wheel (hold shift for fine tuning)",
+		"Jump to one of the color bands by pressing numbers 1-7 (+/- for manual tuning)",
+		"Find the correct frequency using 1 of the 3 tuning methods"
+	]))

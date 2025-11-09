@@ -5,15 +5,19 @@ var input_enabled = true
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var selection_radius = $SelectionRadius
 
+@export var tuner: RadioTuner
+
+var feature_tuning = false
+
 const SPEED = 300.0
 var last_dir = 1 	# 0 - right, 1 - left, 2 - down, 3 - up
+var tune_mode = false
+var fine_tuning = false
 
 func _physics_process(_delta):
 	
 	if not input_enabled:
 		return;
-
-	_handle_other_input()
 
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
@@ -53,13 +57,102 @@ func _physics_process(_delta):
 			
 	move_and_slide()
 
-# handles any non movement based input (interaction, radio signals etc)
-func _handle_other_input():
+func _input(event):
+	if not input_enabled:
+		return
+
 	# If the player presses interact, send an interact event to any selectables in the area
-	if Input.is_action_just_pressed("interact"):
+	if event.is_action_pressed("interact"):
 		for body in selection_radius.get_overlapping_bodies():
 			if body.is_in_group("selectables"):
 				body.interact()
+	# Handle input for radio tuning
+	_input_tuning(event)
+
+func _input_tuning(event):
+	# Player must unlock tuning feature via story progression first
+	if not feature_tuning:
+		return
+	
+	# If the player presses Q we start tuning mode
+	if event.is_action_pressed("tune_mode"):
+		tune_mode = true
+		fade_tuner_in()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	# If the player releases Q stop tuning
+	elif event.is_action_released("tune_mode"):
+		tune_mode = false
+		fade_tuner_out()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	# While tuning mode is on, mouse movement changes the station
+	elif tune_mode and event is InputEventMouseMotion:
+		tuner.move_needle(event.relative.x)	
+	
+	# Scrolling the mouse wheel change the station (only when not in tune mode)
+	elif not tune_mode and event is InputEventMouseButton and event.pressed:
+		match event.button_index:
+			MOUSE_BUTTON_WHEEL_UP:
+				tuner.move_band(-1 if fine_tuning else -3)
+				fade_tuner_in()
+				fade_tuner_out()
+			MOUSE_BUTTON_WHEEL_DOWN:
+				tuner.move_band(1 if fine_tuning else 3)
+				fade_tuner_in()
+				fade_tuner_out()
+	# Holding shift enables fine tuning for mouse wheel
+	elif event.is_action_pressed("fine_tune"):
+		fine_tuning = true
+	elif event.is_action_released("fine_tune"):
+		fine_tuning = false
+
+	# +/- tune up and down too
+	elif event.is_action_pressed("tune_up"):
+		tuner.move_band(1)
+		fade_tuner_in()
+		fade_tuner_out()
+	elif event.is_action_pressed("tune_down"):
+		tuner.move_band(-1)
+		fade_tuner_in()
+		fade_tuner_out()
+	
+	# Numbers 1-7 select an exact color band
+	elif event.is_action_pressed("tune_1"):
+		tuner.set_band(0)
+		fade_tuner_in()
+		fade_tuner_out()
+	elif event.is_action_pressed("tune_2"):
+		tuner.set_band(6)
+		fade_tuner_in()
+		fade_tuner_out()
+	elif event.is_action_pressed("tune_3"):
+		tuner.set_band(12)
+		fade_tuner_in()
+		fade_tuner_out()
+	elif event.is_action_pressed("tune_4"):
+		tuner.set_band(18)
+		fade_tuner_in()
+		fade_tuner_out()
+	elif event.is_action_pressed("tune_5"):
+		tuner.set_band(24)
+		fade_tuner_in()
+		fade_tuner_out()
+	elif event.is_action_pressed("tune_6"):
+		tuner.set_band(30)
+		fade_tuner_in()
+		fade_tuner_out()
+	elif event.is_action_pressed("tune_7"):
+		tuner.set_band(36)
+		fade_tuner_in()
+		fade_tuner_out()
+
+func fade_tuner_in():
+	tuner.fade_in()
+
+func fade_tuner_out():
+	if tune_mode:
+		return
+	tuner.hide_later()
 
 func _on_selection_radius_body_entered(body):
 	if body.is_in_group("selectables"):
