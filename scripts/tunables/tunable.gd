@@ -9,6 +9,7 @@ extends Node2D
 @export var strong_hit_level = 0.9
 @export var medium_hit_level = 0.6
 @export var weak_hit_level = 0.3
+@export var default_stop_waves = true
 
 const GLOW_RADIUS = 10.0
 const GLOW_CURVE = 1.5
@@ -43,23 +44,23 @@ func hit(freq: int, strength: float = 1.0) -> bool:
 		print(name, " was hit but felt almost nothing")
 		return false
 
-# By default strong hits stop the wave
+# Signal is very close and/or exact match
 func strong_hit() -> bool:
 	print(name, " was hit strongly!")
 	any_hit()
-	return true
+	return default_stop_waves
 
-# By default medium hits stop the wave
+# Average hit
 func medium_hit() -> bool:
 	print(name, " was hit mediumly")
 	any_hit()
-	return true
+	return default_stop_waves
 
-# By default weak hits stop the wave
+# When signal is a weak match or far away
 func weak_hit() -> bool:
 	print(name, " was hit weakly")
 	any_hit()
-	return true
+	return default_stop_waves
 
 # Called whenever hit by strong, medium or weak
 func any_hit() -> void:
