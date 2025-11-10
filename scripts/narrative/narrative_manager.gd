@@ -18,6 +18,7 @@ enum Stage {
 	RECEIVE_MESSAGE,
 	USE_RADIO,
 	BOOST_TOWER,
+	SEAGULLS,
 }
 @export var start_stage = Stage.OPENING_TITLE
 var current_stage: int
@@ -57,6 +58,8 @@ func _run_current_stage() -> void:
 			await _stage_use_radio()
 		Stage.BOOST_TOWER:
 			await _stage_boost_tower()
+		Stage.SEAGULLS:
+			await _stage_seaguls()
 
 # Ensures unlocked features are available when jumping to a later scene
 func feature_gate() -> void:
@@ -103,6 +106,9 @@ func zoom(target: Node2D, duration: float = 1.0) -> void:
 func _stage_opening_title():
 	# Disable the player input when we are at the title
 	player.input_enabled = false
+	
+	# Harry starts by sleeping
+	player.animated_sprite.play("sleep")
 	
 	# The camera starts focused on the title
 	camera_2d.position_smoothing_enabled = false
@@ -272,8 +278,20 @@ func _stage_boost_tower():
 	# Wait for the player to shoot the tower
 	await radio_tower.tower_hit
 	
+	# Yay they learned to shoot, complete the objective for them
 	objectives.complete_objective()
 	arrow.objective = null
+	
+	# Start the next stage
+	current_stage = Stage.SEAGULLS
+	start_story()
+	
+func _stage_seaguls():
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Harry is confused, why didn't it work?
 	await dialog([
 		Harry.say("Nailed it!"),
+		Harry.say("Wait... why didn't it work"),
 	])

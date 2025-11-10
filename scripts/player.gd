@@ -70,10 +70,8 @@ func _input(event):
 	if not input_enabled:
 		# If input was disabled and we were still in tune mode, we better fix that
 		if tune_mode:
-			tune_mode = false
+			exit_tune_mode()
 			fine_tuning = false
-			tuner.fade_out()
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return
 
 	# If the player presses interact, send an interact event to any selectables in the area
@@ -95,15 +93,12 @@ func _input_tuning(event):
 	
 	# If the player presses Q we start tuning mode
 	if event.is_action_pressed("tune_mode"):
-		tune_mode = true
-		fade_tuner_in()
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		enter_tune_mode()
 	
 	# If the player releases Q stop tuning
 	elif event.is_action_released("tune_mode"):
-		tune_mode = false
-		fade_tuner_out()
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		exit_tune_mode()
+
 	# While tuning mode is on, mouse movement changes the station
 	elif tune_mode and event is InputEventMouseMotion:
 		tuner.move_needle(event.relative.x)	
@@ -119,6 +114,7 @@ func _input_tuning(event):
 				tuner.move_band(1 if fine_tuning else 3)
 				fade_tuner_in()
 				fade_tuner_out()
+
 	# Holding shift enables fine tuning for mouse wheel
 	elif event.is_action_pressed("fine_tune"):
 		fine_tuning = true
@@ -165,6 +161,22 @@ func _input_tuning(event):
 		fade_tuner_in()
 		fade_tuner_out()
 
+func enter_tune_mode():
+	tune_mode = true
+	fade_tuner_in()
+
+func exit_tune_mode():
+	tune_mode = false
+	fade_tuner_out()
+
+func fade_tuner_in():
+	tuner.fade_in()
+
+func fade_tuner_out():
+	if tune_mode:
+		return
+	tuner.hide_later()
+
 func _input_firing(event):
 	# Player must unlock shooting feature via story progression first
 	if not feature_firing:
@@ -181,14 +193,6 @@ func fire_wave():
 	var wave_spawn_point = player_center + (dir * WAVE_SPAWN_DIST)
 	# spawn a wave projectile
 	game_manager.spawn_wave(wave_spawn_point, dir)
-
-func fade_tuner_in():
-	tuner.fade_in()
-
-func fade_tuner_out():
-	if tune_mode:
-		return
-	tuner.hide_later()
 
 func _on_selection_radius_body_entered(body):
 	if body.is_in_group("selectables"):
