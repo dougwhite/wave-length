@@ -282,6 +282,12 @@ func _stage_boost_tower():
 	objectives.complete_objective()
 	arrow.objective = null
 	
+	# Harry is confused, why didn't it work?
+	await dialog([
+		Harry.say("Nailed it!"),
+		Harry.say("Wait... why didn't that work?"),
+	])
+	
 	# Start the next stage
 	current_stage = Stage.SEAGULLS
 	start_story()
@@ -290,8 +296,8 @@ func _stage_seaguls():
 	# If we are in debug, start next to the radio tower
 	teleport(zone("RadioHutZone"))
 	
-	# Harry is confused, why didn't it work?
-	await dialog([
-		Harry.say("Nailed it!"),
-		Harry.say("Wait... why didn't it work"),
-	])
+
+	# Harry must find out what's blocking the signal
+	objectives.show_objective("\n\n".join([
+		"Figure out the source of the signal disturbance"
+	]))

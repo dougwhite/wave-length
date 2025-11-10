@@ -1,7 +1,13 @@
 class_name GameManager
 extends Node
 
+@onready var sfx = %SFX
+
 @export var wave_projectile: PackedScene
+@export var sfx_wave: AudioStream
+@export var pitch_min: float = 0.95
+@export var pitch_max: float = 1.05
+@export var volume: float = -6.0
 
 var current_frequency = 0
 
@@ -55,3 +61,7 @@ func spawn_wave(position: Vector2, direction: Vector2):
 	wave.band = current_frequency
 	wave.color = frequency_color(current_frequency)
 	get_tree().current_scene.add_child(wave)
+	sfx.stream = sfx_wave
+	sfx.volume_db = volume
+	sfx.pitch_scale = randf_range(pitch_min, pitch_max)
+	sfx.play()

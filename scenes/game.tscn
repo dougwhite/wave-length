@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=42 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/objects/radio.tscn" id="26_bhx41"]
 [ext_resource type="Script" uid="uid://lr7y35dk5eok" path="res://scripts/game_manager.gd" id="29_suyxu"]
 [ext_resource type="PackedScene" uid="uid://d3dafxmgfqlcs" path="res://scenes/projectiles/wave.tscn" id="30_sgl2t"]
+[ext_resource type="AudioStream" uid="uid://cpbp3kg3m3xg7" path="res://music/cursor_style_3.ogg" id="33_v2yb1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1339,7 +1340,7 @@ position = Vector2(808, -2246)
 position = Vector2(3823, -461)
 
 [node name="Wire1" parent="Map/Doodads" instance=ExtResource("20_qouja")]
-position = Vector2(3430, -718)
+position = Vector2(3424, -711)
 
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -2210,7 +2211,7 @@ position = Vector2(2310, -977)
 disabled = true
 
 [node name="SatteliteDish" parent="Objects" instance=ExtResource("22_wljb1")]
-position = Vector2(4455, -704)
+position = Vector2(4449, -697)
 
 [node name="Audio" type="Node" parent="."]
 
@@ -2223,6 +2224,11 @@ bus = &"Background Music"
 stream = ExtResource("15_ca42v")
 autoplay = true
 bus = &"Ambience"
+
+[node name="SFX" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+max_polyphony = 6
+bus = &"SFX"
 
 [node name="Title" parent="." instance=ExtResource("15_ir15t")]
 offset_left = -681.0
@@ -2241,7 +2247,7 @@ camera_start = Vector2(-88, -286)
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
-start_stage = 5
+start_stage = 6
 
 [node name="Locations" type="Node2D" parent="NarrativeManager"]
 metadata/_edit_group_ = true
@@ -2265,3 +2271,7 @@ position = Vector2(2413, -1198)
 unique_name_in_owner = true
 script = ExtResource("29_suyxu")
 wave_projectile = ExtResource("30_sgl2t")
+sfx_wave = ExtResource("33_v2yb1")
+pitch_min = 0.15
+pitch_max = 0.35
+volume = -5.0
