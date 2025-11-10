@@ -46,17 +46,24 @@ func hit(freq: int, strength: float = 1.0) -> bool:
 # By default strong hits stop the wave
 func strong_hit() -> bool:
 	print(name, " was hit strongly!")
+	any_hit()
 	return true
 
 # By default medium hits stop the wave
 func medium_hit() -> bool:
 	print(name, " was hit mediumly")
+	any_hit()
 	return true
 
 # By default weak hits stop the wave
 func weak_hit() -> bool:
 	print(name, " was hit weakly")
+	any_hit()
 	return true
+
+# Called whenever hit by strong, medium or weak
+func any_hit() -> void:
+	return
 
 # Figures out if we are responding to a frequency and how strongly
 func _calc_resonance(freq: int):

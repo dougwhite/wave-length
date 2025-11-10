@@ -1,6 +1,7 @@
 extends Tunable
 
 signal frequency_tuned
+signal tower_hit
 
 const TUNED_TIMER = 1.0
 
@@ -23,3 +24,7 @@ func _process(delta):
 	
 	# Now continue acting like a normal tunable
 	super._process(delta)
+
+# When we get hit, broadcast a signal
+func any_hit():
+	emit_signal("tower_hit")

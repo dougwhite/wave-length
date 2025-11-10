@@ -250,7 +250,6 @@ func _stage_boost_tower():
 	
 	# Look you did it Harry!
 	objectives.complete_objective()
-	arrow.objective = null
 	
 	# Hint to the player where they need to aim
 	await zoom(radio_tower)
@@ -269,3 +268,12 @@ func _stage_boost_tower():
 	
 	# Enable firing ma lazor
 	player.feature_firing = true
+
+	# Wait for the player to shoot the tower
+	await radio_tower.tower_hit
+	
+	objectives.complete_objective()
+	arrow.objective = null
+	await dialog([
+		Harry.say("Nailed it!"),
+	])
