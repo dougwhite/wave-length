@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv6wling00oqy"]
+
+[ext_resource type="Texture2D" uid="uid://bwvkw7pqrpuwr" path="res://art/sattelite-dish.png" id="1_faj1w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_faj1w"]
+radius = 21.023796
+
+[node name="SatteliteDish" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_faj1w")
+offset = Vector2(-10.45, -70.55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -21)
+shape = SubResource("CircleShape2D_faj1w")

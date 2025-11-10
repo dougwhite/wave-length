@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=41 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -16,19 +16,20 @@
 [ext_resource type="PackedScene" uid="uid://bl8fgawafljpl" path="res://scenes/trees/tree8.tscn" id="11_dinhu"]
 [ext_resource type="AudioStream" uid="uid://dssx28ig6jy5j" path="res://music/pizzadoggy.itch.io/Floating Dream.ogg" id="13_kvuet"]
 [ext_resource type="AudioStream" uid="uid://cs3iyof5qcfoy" path="res://music/ocean-min.mp3" id="15_ca42v"]
-[ext_resource type="PackedScene" uid="uid://5s53qigdv6r7" path="res://scenes/title.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://5s53qigdv6r7" path="res://scenes/ui/title.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://dh6bapyvtkcit" path="res://scenes/doodads/shell.tscn" id="16_1kice"]
-[ext_resource type="PackedScene" uid="uid://djpxudwymmlx4" path="res://scenes/doodads/fishing_pole.tscn" id="17_rysoc"]
+[ext_resource type="PackedScene" uid="uid://djpxudwymmlx4" path="res://scenes/objects/fishing_pole.tscn" id="17_rysoc"]
 [ext_resource type="PackedScene" uid="uid://xow1frt4gcs7" path="res://scenes/ui/dialog_box.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://du8cjcs10ux5q" path="res://scenes/doodads/starfish.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://dgx50tqflbxtp" path="res://scenes/doodads/wire_1.tscn" id="20_qouja"]
-[ext_resource type="PackedScene" uid="uid://wjmb2bbxsq6q" path="res://scenes/radiohut.tscn" id="21_5newe"]
+[ext_resource type="PackedScene" uid="uid://wjmb2bbxsq6q" path="res://scenes/objects/radiohut.tscn" id="21_5newe"]
 [ext_resource type="Script" uid="uid://cjsf4ynd541vd" path="res://scripts/narrative/narrative_manager.gd" id="22_37s47"]
 [ext_resource type="PackedScene" uid="uid://dl6ltjuc0nrh1" path="res://scenes/ui/objectives.tscn" id="22_bt5mj"]
-[ext_resource type="PackedScene" uid="uid://csdp4uljpxkua" path="res://scenes/arrow.tscn" id="23_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://dv6wling00oqy" path="res://scenes/objects/sattelite_dish.tscn" id="22_wljb1"]
+[ext_resource type="PackedScene" uid="uid://csdp4uljpxkua" path="res://scenes/ui/arrow.tscn" id="23_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://bdjp6yrn2nh0v" path="res://scenes/narrative/zone.tscn" id="25_pl11u"]
 [ext_resource type="PackedScene" uid="uid://bp1nxrnma1gb8" path="res://scenes/ui/tuner.tscn" id="25_qnb83"]
-[ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/radio.tscn" id="26_bhx41"]
+[ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/objects/radio.tscn" id="26_bhx41"]
 [ext_resource type="Script" uid="uid://lr7y35dk5eok" path="res://scripts/game_manager.gd" id="29_suyxu"]
 [ext_resource type="PackedScene" uid="uid://d3dafxmgfqlcs" path="res://scenes/projectiles/wave.tscn" id="30_sgl2t"]
 
@@ -2208,6 +2209,9 @@ z_index = 1
 position = Vector2(2310, -977)
 disabled = true
 
+[node name="SatteliteDish" parent="Objects" instance=ExtResource("22_wljb1")]
+position = Vector2(4455, -704)
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="Background Music" type="AudioStreamPlayer" parent="Audio"]
@@ -2237,7 +2241,7 @@ camera_start = Vector2(-88, -286)
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
-start_stage = 6
+start_stage = 5
 
 [node name="Locations" type="Node2D" parent="NarrativeManager"]
 metadata/_edit_group_ = true
