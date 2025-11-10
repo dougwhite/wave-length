@@ -2,7 +2,7 @@ extends Tunable
 
 signal frequency_tuned
 
-const TUNED_TIMER = 1.5
+const TUNED_TIMER = 1.0
 
 var tuned_tower = false
 var tuned_elapsed = 0

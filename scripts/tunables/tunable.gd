@@ -5,19 +5,16 @@ extends Node2D
 @onready var game_manager: GameManager = %GameManager
 
 @export var band: int = 0
-@export var base_color: Color = Color.WHITE
+
+const GLOW_RADIUS = 10.0
+const GLOW_CURVE = 2
 
 var last_freq = -1
-
-var resonance_level = 0
-
-var max_a = 0.0
-var min_a = 0.0
-var pulse_a_per_sec = 0
-var ascending = true
+var resonance = 0
 
 func _ready():
-	glow.modulate = game_manager.frequency_color(band)
+	#glow.modulate = game_manager.frequency_color(band)
+	glow.modulate.a = 0.0
 	add_to_group("tunables")
 
 func _process(delta):
@@ -25,39 +22,19 @@ func _process(delta):
 	if last_freq != game_manager.current_frequency:
 		last_freq = game_manager.current_frequency
 		resonate(last_freq)
-
-	# Figure out the speed of the alpha change
-	var pulse = pulse_a_per_sec * delta
-	if not ascending:
-		pulse *= -1
 	
-	# Pulse the alpha of the sprite
-	glow.modulate.a = glow.modulate.a + pulse
-
-	# Check if we need to change direction
-	if ascending and glow.modulate.a >= max_a:
-		ascending = false
-	elif not ascending and glow.modulate.a <= min_a:
-		ascending = true
+	# Apply the resonance glow
+	var a = lerp(glow.modulate.a, resonance, 10.0 * delta)
+	glow.modulate.a = a
 
 # Figures out if we are responding to a frequency and how strongly
 func resonate(freq: int):
-	var resonance = abs(freq - band)
+	# figure out how many bands away we are
+	var d = abs(freq - band)
 	
-	if resonance >= 0 and resonance < 1:
-		max_a = 1.0
-		min_a = 0.5
-		pulse_a_per_sec = 1.0
-		resonance_level = 2
-	elif resonance >= 1 and resonance <= 3:
-		max_a = 0.6
-		min_a = 0.3
-		pulse_a_per_sec = 0.4
-	elif resonance > 3 and resonance <= 6:
-		max_a = 0.3
-		min_a = 0.2
-		pulse_a_per_sec = 0.1
-	else:
-		max_a = 0.0
-		min_a = 0.0
-		pulse_a_per_sec = 1.0
+	# Normalize and invert (capped at GLOW_RADIUS)
+	var t = 1.0 - float(d) / GLOW_RADIUS
+	t = clamp(t, 0.0, 1.0)
+	
+	# Turn the linear into a resonance curve
+	resonance = pow(t, GLOW_CURVE)
