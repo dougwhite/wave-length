@@ -1,6 +1,8 @@
 class_name GameManager
 extends Node
 
+@export var wave_projectile: PackedScene
+
 var current_frequency = 0
 
 var COLORS := [
@@ -45,3 +47,11 @@ var COLORS := [
 
 func frequency_color(band: int) -> Color:
 	return COLORS[wrapi(band, 0, COLORS.size())]
+
+func spawn_wave(position: Vector2, direction: Vector2):
+	var wave = wave_projectile.instantiate()
+	wave.global_position = position
+	wave.velocity = direction
+	wave.band = current_frequency
+	wave.color = frequency_color(current_frequency)
+	get_tree().current_scene.add_child(wave)

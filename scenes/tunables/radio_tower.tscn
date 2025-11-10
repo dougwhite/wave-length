@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dpg2tetnd8da4" path="res://art/radio-tower.png" id="1_7cxyx"]
 [ext_resource type="Script" uid="uid://1xnx8hqw8bs7" path="res://scripts/tunables/radio_tower.gd" id="1_efylt"]
 
-[node name="RadioTower" type="Node2D"]
+[node name="RadioTower" type="Area2D"]
 script = ExtResource("1_efylt")
 band = 26
 
@@ -22,3 +22,7 @@ texture = ExtResource("1_7cxyx")
 offset = Vector2(0, -384)
 region_enabled = true
 region_rect = Rect2(0, 0, 384, 1024)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(7, 63)
+polygon = PackedVector2Array(-4, 5, 144, -21, 41, -714, 17, -751, 48, -786, 43, -823, 9, -842, 7, -896, -7, -896, -10, -842, -41, -813, -42, -779, -13, -752, -37, -713, -160, -32)

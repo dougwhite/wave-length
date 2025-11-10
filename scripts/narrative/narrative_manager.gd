@@ -58,10 +58,11 @@ func _run_current_stage() -> void:
 		Stage.BOOST_TOWER:
 			await _stage_boost_tower()
 
-# Ensures unlocked features are available when jumping to a scene
+# Ensures unlocked features are available when jumping to a later scene
 func feature_gate() -> void:
 	if current_stage > Stage.BOOST_TOWER:
 		player.feature_tuning = true
+		player.feature_firing = true
 
 
 func dialog(messages: Array[DialogueMessage]):
@@ -265,3 +266,6 @@ func _stage_boost_tower():
 		"Left Click to activate your frequency emitter",
 		"Remember to aim at the tower"
 	]))
+	
+	# Enable firing ma lazor
+	player.feature_firing = true

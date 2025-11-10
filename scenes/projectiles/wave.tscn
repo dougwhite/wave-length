@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3dafxmgfqlcs"]
+
+[ext_resource type="Script" uid="uid://iqhnb52b41wn" path="res://scripts/projectiles/wave.gd" id="1_gkivl"]
+[ext_resource type="Texture2D" uid="uid://derkpytercprk" path="res://art/wave.png" id="1_kp3cm"]
+
+[node name="Wave" type="Area2D"]
+script = ExtResource("1_gkivl")
+
+[node name="wave_sprite" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+texture = ExtResource("1_kp3cm")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 64)
+
+[node name="glow_sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.10980392)
+texture = ExtResource("1_kp3cm")
+region_enabled = true
+region_rect = Rect2(0, 64, 128, 64)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -11)
+polygon = PackedVector2Array(0, 0, 16, 0, 27, 3, 40, 9, 50, 22, 50, 28, 29, 25, 21, 17, 8, 14, -8, 14, -21, 17, -29, 25, -50, 28, -50, 22, -40, 9, -27, 3, -16, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

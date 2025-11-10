@@ -4,12 +4,16 @@ var input_enabled = true
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var selection_radius = $SelectionRadius
+@onready var game_manager: GameManager = %GameManager
 
 @export var tuner: RadioTuner
 
 var feature_tuning = false
+var feature_firing = false
 
 const SPEED = 300.0
+const WAVE_SPAWN_DIST = 50.0
+
 var last_dir = 1 	# 0 - right, 1 - left, 2 - down, 3 - up
 var tune_mode = false
 var fine_tuning = false
@@ -77,8 +81,12 @@ func _input(event):
 		for body in selection_radius.get_overlapping_bodies():
 			if body.is_in_group("selectables"):
 				body.interact()
+	
 	# Handle input for radio tuning
 	_input_tuning(event)
+	
+	# Handle input for firing radio emitter
+	_input_firing(event)
 
 func _input_tuning(event):
 	# Player must unlock tuning feature via story progression first
@@ -156,6 +164,23 @@ func _input_tuning(event):
 		tuner.set_band(36)
 		fade_tuner_in()
 		fade_tuner_out()
+
+func _input_firing(event):
+	# Player must unlock shooting feature via story progression first
+	if not feature_firing:
+		return
+	
+	if event.is_action_pressed("fire"):
+		fire_wave()
+
+func fire_wave():
+	# Figure out where the mouse is from the player
+	var mouse_pos: Vector2 = get_global_mouse_position()
+	var player_center = global_position + Vector2(0.0, -55.0)
+	var dir: Vector2 = (mouse_pos -  player_center).normalized()
+	var wave_spawn_point = player_center + (dir * WAVE_SPAWN_DIST)
+	# spawn a wave projectile
+	game_manager.spawn_wave(wave_spawn_point, dir)
 
 func fade_tuner_in():
 	tuner.fade_in()
