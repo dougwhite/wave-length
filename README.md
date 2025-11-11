@@ -59,7 +59,13 @@ Thanks to Pizza Doggy for their awesome [cozy tunes](https://pizzadoggy.itch.io/
 The ogg files in `music/pizzadoggy.itch.io/*` are covered by his `Game Asset License Agreement`, NOT the license applicable to the rest of the project. 
 
 Please see the `README.md` file in that folder for further information.
- 
+
+#### Zeeey ([itch.io](https://officialzeeey.itch.io))
+
+Thanks to Zeeey for the amazing track [“The Litch”](https://officialzeeey.itch.io/the-litch). This track was not listed with a license, but Zeeey granted me explicit permission to use it in this game and to include it in this repository.
+
+The file `music/officialzeeey.itch.io/TheEnigmaFinished.mp3` (track name “The Litch”) remains the sole intellectual property of Zeeey and is NOT covered by the main project license. It may not be reused, redistributed, or incorporated into other projects without obtaining permission directly from Zeeey.
+
 #### Kronbits ([itch.io](https://kronbits.itch.io))
 
 Thanks to Kronbits for their fantastic [200 Free SFX](https://kronbits.itch.io/freesfx) pack, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), the file `music/kronbits.itch.io/Retro Swooosh 16.wav` is covered under the same license as he originally provided it.
