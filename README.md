@@ -9,9 +9,38 @@ Players must help Harry uncover the true power of the wave in order to discover 
 
 Built using Godot 4.1 stable, for the [2025 GitHub Game Off](https://itch.io/jam/game-off-2025) #GitHubGameOff.
 
+[Playable + full download available @ itch.io](https://pooglies.itch.io/wave-length)    
+[Full source code available on github](https://github.com/dougwhite/wave-length/)
+
+## Controls
+
+Controls:
+
+```
+WSAD - Move
+E - Interact
+Q + move mouse - Tune radio emitter (once unlocked)
+```
+
+There are two alternative ways to tune the radio, depending on your hardware:
+
+```
+Mouse wheel - Hold shift to fine tune    
+1..7 - Jump to station (use -/= to fine tune)
+```
+
+## AI disclaimer:
+
+There are no pure AI assets in this project, however I've marked this project as including AI assets because I used both:
+
+a) snippets / questions I asked chatgpt on how to do things in godot / gdscript, and    
+b) concept art / graphics / sprite ideas that i traced over or copied the look of heavily for my own pixel art
+
+I also asked ChatGPT to generate me a krita vaporwave color pallete file to keep my colors nice. I know some people are funny about AI, but everything in this repo (code & art) is my own handmade work, except for the assets mentioned in the credits section below. I just wanted to be fully transparent that i leant on AI heavily for learning Godot and pixel art. 
+
 ## Licenses and Attributions
 
-Please see the `LICENSE` file for the exact license covering the bulk of this project. This license applies to all original work created by me for this game (Godot code, Krita artwork, supplementary files, etc.).
+Please see the `LICENSE` file in the source repo for the exact license covering the bulk of this project. This license applies to all original work created by me for this game (Godot code, Krita artwork, supplementary files, etc.).
 
 Third-party assets (music, fonts, sound effects, etc.) are **not** covered by the main project license and remain under their original licenses, as listed below in the Credits section.
 
@@ -28,12 +57,16 @@ Thanks to Pizza Doggy for their awesome [cozy tunes](https://pizzadoggy.itch.io/
 The ogg files in `music/pizzadoggy.itch.io/*` are covered by his `Game Asset License Agreement`, NOT the license applicable to the rest of the project. 
 
 Please see the `README.md` file in that folder for further information.
+ 
+#### Kronbits ([itch.io](https://kronbits.itch.io))
+
+Thanks to Kronbits for their fantastic [200 Free SFX](https://kronbits.itch.io/freesfx) pack, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), the file `music/kronbits.itch.io/Retro Swooosh 16.wav` is covered under the same license as he originally provided it.
 
 #### norwayjohn ([freesound.org](https://freesound.org/people/norwayjohn/))
 
 Thanks to norwayjohn for his peaceful [ocean sounds](https://freesound.org/people/norwayjohn/sounds/404686/).
 
-The file `music/ocean-min.mp3` is an `.mp3` conversion of his original `.wav` file, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), and so this `.mp3` version is also covered under the CC0 license in this repository.
+The file `music/freesound.org/people/norwayjohn/ocean-min.mp3` is an `.mp3` conversion of his original `.wav` file, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), and so this `.mp3` version is also covered under the CC0 license in this repository.
 
 #### NimbleBeasts Collective ([itch.io](https://nimblebeastscollective.itch.io/))
 

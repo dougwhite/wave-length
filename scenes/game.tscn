@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cpj3orbqvdpt0" path="res://scenes/trees/tree7.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://bl8fgawafljpl" path="res://scenes/trees/tree8.tscn" id="11_dinhu"]
 [ext_resource type="AudioStream" uid="uid://dssx28ig6jy5j" path="res://music/pizzadoggy.itch.io/Floating Dream.ogg" id="13_kvuet"]
-[ext_resource type="AudioStream" uid="uid://cs3iyof5qcfoy" path="res://music/ocean-min.mp3" id="15_ca42v"]
+[ext_resource type="AudioStream" uid="uid://cs3iyof5qcfoy" path="res://music/freesound.org/people/norwayjohn/ocean-min.mp3" id="15_ca42v"]
 [ext_resource type="PackedScene" uid="uid://5s53qigdv6r7" path="res://scenes/ui/title.tscn" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://dh6bapyvtkcit" path="res://scenes/doodads/shell.tscn" id="16_1kice"]
 [ext_resource type="PackedScene" uid="uid://djpxudwymmlx4" path="res://scenes/objects/fishing_pole.tscn" id="17_rysoc"]
