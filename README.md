@@ -36,7 +36,9 @@ There are no pure AI assets in this project, however I've marked this project as
 a) snippets / questions I asked chatgpt on how to do things in godot / gdscript, and    
 b) concept art / graphics / sprite ideas that i traced over or copied the look of heavily for my own pixel art
 
-I also asked ChatGPT to generate me a krita vaporwave color pallete file to keep my colors nice. I know some people are funny about AI, but everything in this repo (code & art) is my own handmade work, except for the assets mentioned in the credits section below. I just wanted to be fully transparent that i leant on AI heavily for learning Godot and pixel art. 
+I also asked ChatGPT to generate me a krita vaporwave color pallete file to keep my colors nice. 
+
+I know some people are funny about AI, but everything in this repo (code & art) is my own handmade work, except for the assets mentioned in the credits section below. I just wanted to be fully transparent that i leant on AI heavily for learning Godot and pixel art. 
 
 ## Licenses and Attributions
 
