@@ -1367,8 +1367,8 @@ position = Vector2(2435, -888)
 
 [node name="Trees" type="Node2D" parent="Objects"]
 y_sort_enabled = true
-metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Tree" parent="Objects/Trees" instance=ExtResource("4_lbhrr")]
 position = Vector2(670, 195)
@@ -1480,7 +1480,7 @@ position = Vector2(3067, -406)
 position = Vector2(3805, -965)
 
 [node name="Tree37" parent="Objects/Trees" instance=ExtResource("4_lbhrr")]
-position = Vector2(3866, -752)
+position = Vector2(3864, -778)
 
 [node name="Tree38" parent="Objects/Trees" instance=ExtResource("4_lbhrr")]
 position = Vector2(3731, -70)
@@ -2026,7 +2026,7 @@ position = Vector2(2078, 636)
 position = Vector2(3753, 505)
 
 [node name="Tree211" parent="Objects/Trees" instance=ExtResource("10_kvpfn")]
-position = Vector2(3733, -740)
+position = Vector2(3736, -762)
 
 [node name="Tree212" parent="Objects/Trees" instance=ExtResource("10_kvpfn")]
 position = Vector2(3668, -1071)
@@ -2251,7 +2251,6 @@ camera_start = Vector2(-88, -286)
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
-start_stage = 6
 
 [node name="Locations" type="Node2D" parent="NarrativeManager"]
 metadata/_edit_group_ = true
