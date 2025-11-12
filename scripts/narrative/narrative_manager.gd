@@ -9,6 +9,7 @@ extends Node
 @onready var locations = $Locations
 @onready var radio = $"../Objects/Radio"
 @onready var radio_tower = $"../Objects/RadioTower"
+@onready var seagull = $"../Objects/Seagull"
 
 # Enum stages of the game
 enum Stage {
@@ -296,8 +297,26 @@ func _stage_seaguls():
 	# If we are in debug, start next to the radio tower
 	teleport(zone("RadioHutZone"))
 	
-
 	# Harry must find out what's blocking the signal
 	objectives.show_objective("\n\n".join([
 		"Figure out the source of the signal disturbance"
 	]))
+	
+	# Now wait for the player to figure out how to blast the seagull
+	await seagull.seagull_flee
+	
+	# They did it!
+	objectives.complete_objective();
+	
+	# Now some flavor dialog
+	await dialog([
+		Harry.say("Shoo!"),
+	])
+	
+	# Now they've proven they can tune in to things, 
+	objectives.show_objective("\n\n".join([
+		"Finish boosting the signal by shooting a radio wave at the tower",
+		"[Completes tutorial!]"
+	]))
+	arrow.objective = radio_tower
+	

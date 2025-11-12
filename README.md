@@ -68,7 +68,7 @@ The file `music/officialzeeey.itch.io/TheEnigmaFinished.mp3` (track name “The 
 
 #### Kronbits ([itch.io](https://kronbits.itch.io))
 
-Thanks to Kronbits for their fantastic [200 Free SFX](https://kronbits.itch.io/freesfx) pack, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), the file `music/kronbits.itch.io/Retro Swooosh 16.wav` is covered under the same license as he originally provided it.
+Thanks to Kronbits for their fantastic [200 Free SFX](https://kronbits.itch.io/freesfx) pack, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), the audio files in the folder `music/kronbits.itch.io/` are covered under the same license as he intended them to be.
 
 #### norwayjohn ([freesound.org](https://freesound.org/people/norwayjohn/))
 

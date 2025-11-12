@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck53ghi561hyq"]
+[gd_scene load_steps=42 format=3 uid="uid://ck53ghi561hyq"]
 
 [ext_resource type="Texture2D" uid="uid://ds7igbc5pk23n" path="res://art/seagull/seagull_glow_frame0000.png" id="1_fb1xu"]
 [ext_resource type="Texture2D" uid="uid://dgdodvvar5tod" path="res://art/seagull/seagull_frame0000.png" id="1_pj7dd"]
@@ -9,6 +9,35 @@
 [ext_resource type="Texture2D" uid="uid://d2ipr411odlpx" path="res://art/seagull/seagull_frame0002.png" id="3_2d4e8"]
 [ext_resource type="Texture2D" uid="uid://1427gx8kexu4" path="res://art/seagull/seagull_frame0003.png" id="4_6r4b3"]
 [ext_resource type="Texture2D" uid="uid://cx02ejmy85vxe" path="res://art/seagull/seagull_glow_frame0003.png" id="4_nlurh"]
+[ext_resource type="Texture2D" uid="uid://blhormdsvxe3i" path="res://art/seagull/seagull_glow_frame0008.png" id="6_rxu48"]
+[ext_resource type="Texture2D" uid="uid://blsvsbiklm0fd" path="res://art/seagull/seagull_glow_frame0009.png" id="7_wc0l6"]
+[ext_resource type="Texture2D" uid="uid://bcw5jksvh1xg3" path="res://art/seagull/seagull_glow_frame0010.png" id="8_dcmr1"]
+[ext_resource type="Texture2D" uid="uid://cblykhreuqsre" path="res://art/seagull/seagull_glow_frame0011.png" id="9_xtla5"]
+[ext_resource type="Texture2D" uid="uid://de2uo4q344fdu" path="res://art/seagull/seagull_glow_frame0012.png" id="10_bg41j"]
+[ext_resource type="Texture2D" uid="uid://bb0hx4bq31bjk" path="res://art/seagull/seagull_glow_frame0013.png" id="11_epbil"]
+[ext_resource type="Texture2D" uid="uid://ds7bqvg5n4ol5" path="res://art/seagull/seagull_glow_frame0014.png" id="12_aedlg"]
+[ext_resource type="Texture2D" uid="uid://b0i4oq3uswvl6" path="res://art/seagull/seagull_glow_frame0015.png" id="13_i0jv0"]
+[ext_resource type="Texture2D" uid="uid://nnd11q05nbxc" path="res://art/seagull/seagull_glow_frame0016.png" id="14_iet53"]
+[ext_resource type="Texture2D" uid="uid://c8ljovm1xlibo" path="res://art/seagull/seagull_glow_frame0017.png" id="15_0s2ih"]
+[ext_resource type="Texture2D" uid="uid://dcwsoblt55ybt" path="res://art/seagull/seagull_glow_frame0004.png" id="16_e7784"]
+[ext_resource type="Texture2D" uid="uid://cktl1vuutbpnd" path="res://art/seagull/seagull_glow_frame0005.png" id="17_w5cib"]
+[ext_resource type="Texture2D" uid="uid://cyfsi4n6o6x51" path="res://art/seagull/seagull_glow_frame0006.png" id="18_cklp0"]
+[ext_resource type="Texture2D" uid="uid://cfjtg0sj8418k" path="res://art/seagull/seagull_glow_frame0007.png" id="19_51qln"]
+[ext_resource type="Texture2D" uid="uid://rg2akex5w7fk" path="res://art/seagull/seagull_frame0008.png" id="24_bw3na"]
+[ext_resource type="Texture2D" uid="uid://brvs833sw326p" path="res://art/seagull/seagull_frame0009.png" id="25_w8hwt"]
+[ext_resource type="Texture2D" uid="uid://cxw26esvib37s" path="res://art/seagull/seagull_frame0010.png" id="26_4jp05"]
+[ext_resource type="Texture2D" uid="uid://jagtqsn06i1j" path="res://art/seagull/seagull_frame0011.png" id="27_xd3po"]
+[ext_resource type="Texture2D" uid="uid://c2oygkkpv2vbc" path="res://art/seagull/seagull_frame0012.png" id="28_i18jb"]
+[ext_resource type="Texture2D" uid="uid://n2hfxjkvk0i0" path="res://art/seagull/seagull_frame0013.png" id="29_hbfkn"]
+[ext_resource type="Texture2D" uid="uid://daemb2egl0k7x" path="res://art/seagull/seagull_frame0014.png" id="30_duhkh"]
+[ext_resource type="Texture2D" uid="uid://j1vvoko5upgv" path="res://art/seagull/seagull_frame0015.png" id="31_xti5m"]
+[ext_resource type="Texture2D" uid="uid://dgqrnyupu4srj" path="res://art/seagull/seagull_frame0016.png" id="32_esvbc"]
+[ext_resource type="Texture2D" uid="uid://c1uurt6xpdjbb" path="res://art/seagull/seagull_frame0017.png" id="33_f25cw"]
+[ext_resource type="Texture2D" uid="uid://cmrx4ejosq53m" path="res://art/seagull/seagull_frame0004.png" id="34_44wfh"]
+[ext_resource type="Texture2D" uid="uid://iqha6p26wdmh" path="res://art/seagull/seagull_frame0005.png" id="35_i0i4d"]
+[ext_resource type="Texture2D" uid="uid://4npia4b4l8ce" path="res://art/seagull/seagull_frame0006.png" id="36_hj7br"]
+[ext_resource type="Texture2D" uid="uid://cr46cljwhhsdi" path="res://art/seagull/seagull_frame0007.png" id="37_wv612"]
+[ext_resource type="AudioStream" uid="uid://c4lbu2nbcqana" path="res://music/kronbits.itch.io/Retro Crow 01.wav" id="38_wc0l6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b7y46"]
 animations = [{
@@ -43,6 +72,58 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rxu48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wc0l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dcmr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xtla5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bg41j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_epbil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aedlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i0jv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_iet53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0s2ih")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_e7784")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w5cib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cklp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_51qln")
+}],
+"loop": false,
+"name": &"take_off",
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xx6kr"]
@@ -78,6 +159,58 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_bw3na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_w8hwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4jp05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xd3po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_i18jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hbfkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_duhkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xti5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_esvbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_f25cw")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_44wfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_i0i4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_hj7br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_wv612")
+}],
+"loop": false,
+"name": &"take_off",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0el8e"]
@@ -90,14 +223,20 @@ band = 12
 [node name="glow" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.997709, 0.6672887, 0.42924905, 1)
 sprite_frames = SubResource("SpriteFrames_b7y46")
+animation = &"take_off"
 autoplay = "default"
-offset = Vector2(-11.61, -43.59)
+offset = Vector2(-11.61, -108.215)
 
 [node name="seagull_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xx6kr")
+animation = &"take_off"
 autoplay = "default"
-offset = Vector2(-11.61, -43.59)
+offset = Vector2(-11.61, -108.215)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -41)
 shape = SubResource("CircleShape2D_0el8e")
+
+[node name="squak_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_wc0l6")
+bus = &"SFX"

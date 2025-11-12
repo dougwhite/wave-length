@@ -2214,6 +2214,9 @@ disabled = true
 [node name="SatteliteDish" parent="Objects" instance=ExtResource("22_wljb1")]
 position = Vector2(4449, -697)
 
+[node name="Seagull" parent="Objects" instance=ExtResource("34_js0lu")]
+position = Vector2(4402, -872)
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="Background Music" type="AudioStreamPlayer" parent="Audio"]
@@ -2276,6 +2279,3 @@ sfx_wave = ExtResource("33_v2yb1")
 pitch_min = 0.6
 pitch_max = 0.65
 volume = -5.0
-
-[node name="Seagull" parent="." instance=ExtResource("34_js0lu")]
-position = Vector2(4402, -872)

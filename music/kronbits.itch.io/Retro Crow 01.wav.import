@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4lbu2nbcqana"
+path="res://.godot/imported/Retro Crow 01.wav-0f388d8d6d844ba8d43a3319b14a54aa.sample"
+
+[deps]
+
+source_file="res://music/kronbits.itch.io/Retro Crow 01.wav"
+dest_files=["res://.godot/imported/Retro Crow 01.wav-0f388d8d6d844ba8d43a3319b14a54aa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
