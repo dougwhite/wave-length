@@ -1,15 +1,31 @@
 extends Node
 
+# Game functionality
 @onready var player = $"../Objects/Player"
 @onready var camera_2d = $"../Objects/Player/Camera2D"
-@onready var title = $"../Title"
+@onready var locations = $Locations
+
+# UI
 @onready var dialog_box = $"../CanvasLayer/DialogBox"
 @onready var objectives = $"../CanvasLayer/Objectives"
 @onready var arrow = $"../Objects/Player/Arrow"
-@onready var locations = $Locations
+@onready var title = $"../Title"
+
+# Objects / Interactables / Tunables
 @onready var radio = $"../Objects/Radio"
 @onready var radio_tower = $"../Objects/RadioTower"
 @onready var seagull = $"../Objects/Seagull"
+
+# Which stage the player starts on
+@export var start_stage = Stage.OPENING_TITLE
+
+# Music
+@onready var music = %"Background Music"
+@export var opening_music: AudioStream
+@export var battle_music: AudioStream
+
+# Sound fx
+@onready var explosion_sound = $SFX/ExplosionSound
 
 # Enum stages of the game
 enum Stage {
@@ -20,8 +36,10 @@ enum Stage {
 	USE_RADIO,
 	BOOST_TOWER,
 	SEAGULLS,
+	EXPLOSION_GET_READY
 }
-@export var start_stage = Stage.OPENING_TITLE
+
+# Current stage we are up to
 var current_stage: int
 
 # Narrative actors
@@ -61,6 +79,8 @@ func _run_current_stage() -> void:
 			await _stage_boost_tower()
 		Stage.SEAGULLS:
 			await _stage_seaguls()
+		Stage.EXPLOSION_GET_READY:
+			await _stage_explosion_get_ready()
 
 # Ensures unlocked features are available when jumping to a later scene
 func feature_gate() -> void:
@@ -68,6 +88,12 @@ func feature_gate() -> void:
 		player.feature_tuning = true
 		player.feature_firing = true
 
+# Plays a music track if it isn't already playing
+func set_music(track: AudioStream) -> void:
+	# Change the music
+	if music.stream != track:
+		music.stream = track
+		music.play()
 
 func dialog(messages: Array[DialogueMessage]):
 	# Whenever there is dialogue we need to freeze the player
@@ -320,3 +346,23 @@ func _stage_seaguls():
 	]))
 	arrow.objective = radio_tower
 	
+	# Wait for them to shoot the tower and start the game
+	await radio_tower.tower_hit
+	
+	# Clear the objectives
+	objectives.complete_objective()
+	arrow.objective = null
+	
+	# Start the real game! Wave 1 coming up!
+	current_stage = Stage.EXPLOSION_GET_READY
+	start_story()
+
+func _stage_explosion_get_ready():
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Play an explosion sound
+	explosion_sound.play()
+
+	# Change the music to something more dramatic
+	set_music(battle_music)

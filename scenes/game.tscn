@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=45 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -32,6 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/objects/radio.tscn" id="26_bhx41"]
 [ext_resource type="Script" uid="uid://lr7y35dk5eok" path="res://scripts/game_manager.gd" id="29_suyxu"]
 [ext_resource type="PackedScene" uid="uid://d3dafxmgfqlcs" path="res://scenes/projectiles/wave.tscn" id="30_sgl2t"]
+[ext_resource type="AudioStream" uid="uid://dvdsqsgnk1ogn" path="res://music/officialzeeey.itch.io/TheEnigmaFinished.mp3" id="31_twgab"]
+[ext_resource type="AudioStream" uid="uid://bye11noya4ud4" path="res://music/kronbits.itch.io/Retro Explosion Long 02.wav" id="32_gxtfn"]
 [ext_resource type="AudioStream" uid="uid://bmjmqojtni8cy" path="res://music/kronbits.itch.io/Retro Swooosh 16.wav" id="33_v2yb1"]
 [ext_resource type="PackedScene" uid="uid://ck53ghi561hyq" path="res://scenes/tunables/seagull.tscn" id="34_js0lu"]
 
@@ -2220,6 +2222,7 @@ position = Vector2(4402, -872)
 [node name="Audio" type="Node" parent="."]
 
 [node name="Background Music" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
 stream = ExtResource("13_kvuet")
 autoplay = true
 bus = &"Background Music"
@@ -2251,6 +2254,9 @@ camera_start = Vector2(-88, -286)
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
+start_stage = 7
+opening_music = ExtResource("13_kvuet")
+battle_music = ExtResource("31_twgab")
 
 [node name="Locations" type="Node2D" parent="NarrativeManager"]
 metadata/_edit_group_ = true
@@ -2269,6 +2275,12 @@ shape = SubResource("RectangleShape2D_e1j6l")
 
 [node name="RadioHutZoom" type="Node2D" parent="NarrativeManager/Locations"]
 position = Vector2(2413, -1198)
+
+[node name="SFX" type="Node" parent="NarrativeManager"]
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="NarrativeManager/SFX"]
+stream = ExtResource("32_gxtfn")
+bus = &"SFX"
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
