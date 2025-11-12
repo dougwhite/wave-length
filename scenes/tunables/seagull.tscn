@@ -1,24 +1,103 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck53ghi561hyq"]
+[gd_scene load_steps=13 format=3 uid="uid://ck53ghi561hyq"]
 
-[ext_resource type="Texture2D" uid="uid://cdi37x53j0ddg" path="res://art/seagull.png" id="1_ne6vy"]
+[ext_resource type="Texture2D" uid="uid://ds7igbc5pk23n" path="res://art/seagull/seagull_glow_frame0000.png" id="1_fb1xu"]
+[ext_resource type="Texture2D" uid="uid://dgdodvvar5tod" path="res://art/seagull/seagull_frame0000.png" id="1_pj7dd"]
+[ext_resource type="Script" uid="uid://cmf4nkw1uju4x" path="res://scripts/tunables/seagull.gd" id="1_rn8hl"]
+[ext_resource type="Texture2D" uid="uid://ck4pyy60ecy1q" path="res://art/seagull/seagull_glow_frame0001.png" id="2_rn8hl"]
+[ext_resource type="Texture2D" uid="uid://b7h4mplrpwuck" path="res://art/seagull/seagull_frame0001.png" id="2_y4bfd"]
+[ext_resource type="Texture2D" uid="uid://dgxcoco3ljb7i" path="res://art/seagull/seagull_glow_frame0002.png" id="3_0el8e"]
+[ext_resource type="Texture2D" uid="uid://d2ipr411odlpx" path="res://art/seagull/seagull_frame0002.png" id="3_2d4e8"]
+[ext_resource type="Texture2D" uid="uid://1427gx8kexu4" path="res://art/seagull/seagull_frame0003.png" id="4_6r4b3"]
+[ext_resource type="Texture2D" uid="uid://cx02ejmy85vxe" path="res://art/seagull/seagull_glow_frame0003.png" id="4_nlurh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8ww2"]
-atlas = ExtResource("1_ne6vy")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xx6kr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7y46"]
 animations = [{
 "frames": [{
+"duration": 20.0,
+"texture": ExtResource("1_fb1xu")
+}, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p8ww2")
+"texture": ExtResource("2_rn8hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0el8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nlurh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0el8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nlurh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0el8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nlurh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rn8hl")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Seagull" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xx6kr"]
+animations = [{
+"frames": [{
+"duration": 20.0,
+"texture": ExtResource("1_pj7dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y4bfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2d4e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6r4b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2d4e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6r4b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2d4e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6r4b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y4bfd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_xx6kr")
+[sub_resource type="CircleShape2D" id="CircleShape2D_0el8e"]
+radius = 54.0
+
+[node name="Seagull" type="StaticBody2D"]
+script = ExtResource("1_rn8hl")
+band = 12
+
+[node name="glow" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.997709, 0.6672887, 0.42924905, 1)
+sprite_frames = SubResource("SpriteFrames_b7y46")
+autoplay = "default"
 offset = Vector2(-11.61, -43.59)
+
+[node name="seagull_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xx6kr")
+autoplay = "default"
+offset = Vector2(-11.61, -43.59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -41)
+shape = SubResource("CircleShape2D_0el8e")
