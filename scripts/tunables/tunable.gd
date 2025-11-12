@@ -1,7 +1,7 @@
 class_name Tunable
 extends Node2D
 
-@onready var glow: Sprite2D = $glow
+@onready var glow = $glow
 @onready var game_manager: GameManager = %GameManager
 
 @export var band: int = 0
