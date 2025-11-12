@@ -54,21 +54,27 @@ With great love and respect I'd like to thank the following creators whose artwo
 
 #### Pizza Doggy ([itch.io](https://pizzadoggy.itch.io))
 
-Thanks to Pizza Doggy for their awesome [cozy tunes](https://pizzadoggy.itch.io/cozy-tunes) pack - and extra thanks for giving me special permission to upload his amazing work to an open source repository. 
+Thanks to Pizza Doggy for their awesome [Cozy Tunes](https://pizzadoggy.itch.io/cozy-tunes) pack - and extra thanks for giving me special permission to upload his amazing work to an open source repository. 
 
-The ogg files in `music/pizzadoggy.itch.io/*` are covered by his `Game Asset License Agreement`, NOT the license applicable to the rest of the project. 
+The `.ogg` files in `music/pizzadoggy.itch.io/*` are covered by his `Game Asset License Agreement`, NOT the license applicable to the rest of the project. 
 
 Please see the `README.md` file in that folder for further information.
 
 #### Zeeey ([itch.io](https://officialzeeey.itch.io))
 
-Thanks to Zeeey for the amazing track [“The Litch”](https://officialzeeey.itch.io/the-litch). This track was not listed with a license, but Zeeey granted me explicit permission to use it in this game and to include it in this repository.
+Thanks to Zeeey for the amazing track [“The Litch”](https://officialzeeey.itch.io/the-litch). This track was not listed with a license, but Zeeey granted me explicit permission to use their banging track in this game and to include it in this repository.
 
 The file `music/officialzeeey.itch.io/TheEnigmaFinished.mp3` (track name “The Litch”) remains the sole intellectual property of Zeeey and is NOT covered by the main project license. It may not be reused, redistributed, or incorporated into other projects without obtaining permission directly from Zeeey.
 
+#### alkakrab ([itch.io](https://alkakrab.itch.io))
+
+Thanks to alkakrab for their wonderful [Free Sci-Fi Game Music Pack](https://alkakrab.itch.io/free-sci-fi-game-music-pack) as well as giving me special permission to upload their awesome work to an open source repository.
+
+The `.ogg` files in `music/alkakrab.itch.io/*` remain the sole intellectual property of alkakrab and are NOT covered by the main project license. They may not be reused, redistributed, or incorporated into other projects without obtaining permission directly from alkakrab. 
+
 #### Kronbits ([itch.io](https://kronbits.itch.io))
 
-Thanks to Kronbits for their fantastic [200 Free SFX](https://kronbits.itch.io/freesfx) pack, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), the audio files in the folder `music/kronbits.itch.io/` are covered under the same license as he intended them to be.
+Thanks to Kronbits for their fantastic [200 Free SFX](https://kronbits.itch.io/freesfx) pack, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), the `.wav` files in the folder `music/kronbits.itch.io/*` are covered under the same license in this repository.
 
 #### norwayjohn ([freesound.org](https://freesound.org/people/norwayjohn/))
 

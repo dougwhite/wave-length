@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d084xproei0ap"
+path="res://.godot/imported/Sci-Fi 8 Loop.ogg-a2a45356d7cb35cd1e4596f98b14d393.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/alkakrab.itch.io/Sci-Fi 8 Loop.ogg"
+dest_files=["res://.godot/imported/Sci-Fi 8 Loop.ogg-a2a45356d7cb35cd1e4596f98b14d393.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

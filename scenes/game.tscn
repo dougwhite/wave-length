@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/objects/radio.tscn" id="26_bhx41"]
 [ext_resource type="Script" uid="uid://lr7y35dk5eok" path="res://scripts/game_manager.gd" id="29_suyxu"]
 [ext_resource type="PackedScene" uid="uid://d3dafxmgfqlcs" path="res://scenes/projectiles/wave.tscn" id="30_sgl2t"]
-[ext_resource type="AudioStream" uid="uid://dvdsqsgnk1ogn" path="res://music/officialzeeey.itch.io/TheEnigmaFinished.mp3" id="31_twgab"]
+[ext_resource type="AudioStream" uid="uid://d084xproei0ap" path="res://music/alkakrab.itch.io/Sci-Fi 8 Loop.ogg" id="31_twgab"]
 [ext_resource type="AudioStream" uid="uid://bye11noya4ud4" path="res://music/kronbits.itch.io/Retro Explosion Long 02.wav" id="32_gxtfn"]
 [ext_resource type="AudioStream" uid="uid://bmjmqojtni8cy" path="res://music/kronbits.itch.io/Retro Swooosh 16.wav" id="33_v2yb1"]
 [ext_resource type="PackedScene" uid="uid://ck53ghi561hyq" path="res://scenes/tunables/seagull.tscn" id="34_js0lu"]
