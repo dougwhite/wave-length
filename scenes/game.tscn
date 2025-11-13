@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=46 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bp1nxrnma1gb8" path="res://scenes/ui/tuner.tscn" id="25_qnb83"]
 [ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/objects/radio.tscn" id="26_bhx41"]
 [ext_resource type="Script" uid="uid://lr7y35dk5eok" path="res://scripts/game_manager.gd" id="29_suyxu"]
+[ext_resource type="PackedScene" uid="uid://c6ubfrdfgiibs" path="res://scenes/screen_fx.tscn" id="30_02fa5"]
 [ext_resource type="PackedScene" uid="uid://d3dafxmgfqlcs" path="res://scenes/projectiles/wave.tscn" id="30_sgl2t"]
 [ext_resource type="AudioStream" uid="uid://d084xproei0ap" path="res://music/alkakrab.itch.io/Sci-Fi 8 Loop.ogg" id="31_twgab"]
 [ext_resource type="AudioStream" uid="uid://bye11noya4ud4" path="res://music/kronbits.itch.io/Retro Explosion Long 02.wav" id="32_gxtfn"]
@@ -2252,9 +2253,13 @@ camera_start = Vector2(-88, -286)
 
 [node name="TunerUI" parent="CanvasLayer" instance=ExtResource("25_qnb83")]
 
+[node name="ScreenFX" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("30_02fa5")]
+unique_name_in_owner = true
+camera = NodePath("../Objects/Player/Camera2D")
+
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
-start_stage = 7
+start_stage = 6
 opening_music = ExtResource("13_kvuet")
 battle_music = ExtResource("31_twgab")
 

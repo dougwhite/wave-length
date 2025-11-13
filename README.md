@@ -10,14 +10,14 @@ Players must help Harry uncover the true power of the wave in order to discover 
 Built using Godot 4.1 stable, for the [2025 GitHub Game Off](https://itch.io/jam/game-off-2025) #GitHubGameOff.
 
 [Playable + full download available @ itch.io](https://pooglies.itch.io/wave-length)    
-[Full source code available on github](https://github.com/dougwhite/wave-length/)
+[Full source code available on GitHub](https://github.com/dougwhite/wave-length/)
 
 ## Controls
 
 Controls:
 
 ```
-WSAD - Move
+WASD - Move
 E - Interact
 Q + move mouse - Tune radio emitter (once unlocked)
 ```
@@ -36,9 +36,9 @@ There are no pure AI assets in this project, however I've marked this project as
 a) snippets / questions I asked chatgpt on how to do things in godot / gdscript, and    
 b) concept art / graphics / sprite ideas that i traced over or copied the look of heavily for my own pixel art
 
-I also asked ChatGPT to generate me a krita vaporwave color pallete file to keep my colors nice. 
+I also asked ChatGPT to generate me a krita vaporwave color palette file to keep my colors nice. 
 
-I know some people are funny about AI, but everything in this repo (code & art) is my own handmade work, except for the assets mentioned in the credits section below. I just wanted to be fully transparent that i leant on AI heavily for learning Godot and pixel art. 
+I know some people are funny about AI, but everything in this repo (code & art) is my own handmade work, except for the assets mentioned in the credits section below. I just wanted to be fully transparent that i leaned on AI heavily for learning Godot and pixel art. 
 
 ## Licenses and Attributions
 
@@ -54,9 +54,9 @@ With great love and respect I'd like to thank the following creators whose artwo
 
 #### Pizza Doggy ([itch.io](https://pizzadoggy.itch.io))
 
-Thanks to Pizza Doggy for their awesome [Cozy Tunes](https://pizzadoggy.itch.io/cozy-tunes) pack - and extra thanks for giving me special permission to upload his amazing work to an open source repository. 
+Thanks to Pizza Doggy for their awesome [Cozy Tunes](https://pizzadoggy.itch.io/cozy-tunes) pack - and extra thanks for giving me special permission to upload their amazing work to an open source repository. 
 
-The `.ogg` files in `music/pizzadoggy.itch.io/*` are covered by his `Game Asset License Agreement`, NOT the license applicable to the rest of the project. 
+The `.ogg` files in `music/pizzadoggy.itch.io/*` are covered by their `Game Asset License Agreement`, NOT the license applicable to the rest of the project. 
 
 Please see the `README.md` file in that folder for further information.
 
@@ -68,13 +68,15 @@ The file `music/officialzeeey.itch.io/TheEnigmaFinished.mp3` (track name “The 
 
 #### alkakrab ([itch.io](https://alkakrab.itch.io))
 
-Thanks to alkakrab for their wonderful [Free Sci-Fi Game Music Pack](https://alkakrab.itch.io/free-sci-fi-game-music-pack) as well as giving me special permission to upload their awesome work to an open source repository.
+Thanks to alkakrab for their wonderful [Free Sci-Fi Game Music Pack](https://alkakrab.itch.io/free-sci-fi-game-music-pack), as well as giving me special permission to upload their awesome work to an open source repository.
 
 The `.ogg` files in `music/alkakrab.itch.io/*` remain the sole intellectual property of alkakrab and are NOT covered by the main project license. They may not be reused, redistributed, or incorporated into other projects without obtaining permission directly from alkakrab. 
 
 #### Kronbits ([itch.io](https://kronbits.itch.io))
 
-Thanks to Kronbits for their fantastic [200 Free SFX](https://kronbits.itch.io/freesfx) pack, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), the `.wav` files in the folder `music/kronbits.itch.io/*` are covered under the same license in this repository.
+Thanks to Kronbits for their fantastic [200 Free SFX](https://kronbits.itch.io/freesfx) pack, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/). 
+
+The `.wav` files in the folder `music/kronbits.itch.io/*` are covered under the same license in this repository.
 
 #### norwayjohn ([freesound.org](https://freesound.org/people/norwayjohn/))
 
@@ -99,3 +101,9 @@ Thanks to Nonsensical 2D whose [video about nice looking autotiles](https://www.
 The layer masks used in the `art/tileset-sand-path.kra` and `art/tileset-water.kra` project files are essentially modelled directly from his excellent [Free Autotile textures](https://www.patreon.com/posts/free-autotile-115217340). 
 
 This `.psd` file was provided without an explicit license listed, and I couldn't find a way to get in touch with him, and so I didn't include any of his original work in the project repo. He has my thanks regardless.
+
+#### My Wife
+
+Thanks to my beautiful wife, who not only didn't divorce me for entering a month long game jam; but also contributed the wonderful backdrop artwork for the backdrop image: `art/backdrop.kra`. 
+
+This file IS covered under the broader project license, I just wanted to say thanks to her for helping with art I was too bad to make lol <3

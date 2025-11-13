@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=3 uid="uid://c6ubfrdfgiibs"]
+
+[ext_resource type="Texture2D" uid="uid://cnxwsb27tyupr" path="res://art/backdrop.png" id="1_578fe"]
+[ext_resource type="Script" uid="uid://dweerstkryh4m" path="res://scripts/screen_fx.gd" id="1_lr15s"]
+[ext_resource type="Texture2D" uid="uid://cde1ogstxb8jc" path="res://art/backdrop_tear/backdrop_tear_frame0000.png" id="2_lr15s"]
+[ext_resource type="Texture2D" uid="uid://dgnjiuwjkowig" path="res://art/backdrop_tear/backdrop_tear_frame0001.png" id="3_q5h1i"]
+[ext_resource type="Texture2D" uid="uid://yulxve34ykwi" path="res://art/backdrop_tear/backdrop_tear_frame0002.png" id="4_302w3"]
+[ext_resource type="Texture2D" uid="uid://xry8ob7d20xy" path="res://art/backdrop_tear/backdrop_tear_frame0003.png" id="5_rdves"]
+[ext_resource type="Texture2D" uid="uid://bpbm3ea5tp7gk" path="res://art/backdrop_tear/backdrop_tear_frame0004.png" id="6_aljsp"]
+[ext_resource type="Texture2D" uid="uid://cg6yphb7mnpgk" path="res://art/backdrop_tear/backdrop_tear_frame0005.png" id="7_u1nqc"]
+[ext_resource type="Texture2D" uid="uid://c8i1kg1yueo1q" path="res://art/backdrop_tear/backdrop_tear_frame0006.png" id="8_l0syh"]
+[ext_resource type="Texture2D" uid="uid://cihb51jssibwo" path="res://art/backdrop_tear/backdrop_tear_frame0007.png" id="10_rdves"]
+[ext_resource type="Texture2D" uid="uid://cadlysax05uvu" path="res://art/backdrop_tear/backdrop_tear_frame0008.png" id="11_aljsp"]
+[ext_resource type="Texture2D" uid="uid://cd6nj5mpl6kec" path="res://art/backdrop_tear/backdrop_tear_frame0009.png" id="12_u1nqc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n7ed0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lr15s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q5h1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_302w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rdves")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aljsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u1nqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l0syh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rdves")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aljsp")
+}, {
+"duration": 4.0,
+"texture": ExtResource("12_u1nqc")
+}],
+"loop": false,
+"name": &"tear_1",
+"speed": 2.0
+}]
+
+[node name="ScreenFX" type="CanvasLayer"]
+script = ExtResource("1_lr15s")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SkyEvent" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Backdrop" type="Sprite2D" parent="SkyEvent"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_578fe")
+centered = false
+
+[node name="Tear" type="AnimatedSprite2D" parent="SkyEvent"]
+position = Vector2(1032, 272)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_n7ed0")
+animation = &"tear_1"

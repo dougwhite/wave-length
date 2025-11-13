@@ -10,6 +10,7 @@ extends Node
 @onready var objectives = $"../CanvasLayer/Objectives"
 @onready var arrow = $"../Objects/Player/Arrow"
 @onready var title = $"../Title"
+@onready var screen_fx = %ScreenFX
 
 # Objects / Interactables / Tunables
 @onready var radio = $"../Objects/Radio"
@@ -36,7 +37,8 @@ enum Stage {
 	USE_RADIO,
 	BOOST_TOWER,
 	SEAGULLS,
-	EXPLOSION_GET_READY
+	EXPLOSION_GET_READY,
+	WAVE_1,
 }
 
 # Current stage we are up to
@@ -81,6 +83,8 @@ func _run_current_stage() -> void:
 			await _stage_seaguls()
 		Stage.EXPLOSION_GET_READY:
 			await _stage_explosion_get_ready()
+		Stage.WAVE_1:
+			await _stage_wave_1()
 
 # Ensures unlocked features are available when jumping to a later scene
 func feature_gate() -> void:
@@ -353,7 +357,7 @@ func _stage_seaguls():
 	objectives.complete_objective()
 	arrow.objective = null
 	
-	# Start the real game! Wave 1 coming up!
+	# Start the real game! Main game intro start!
 	current_stage = Stage.EXPLOSION_GET_READY
 	start_story()
 
@@ -366,3 +370,57 @@ func _stage_explosion_get_ready():
 
 	# Change the music to something more dramatic
 	set_music(battle_music)
+	
+	# Blow the sky up
+	await screen_fx.shake()
+	await screen_fx.show_sky_animation()
+	
+	# The radio has a new message for harry
+	radio.light_on = true
+	radio.glow.modulate.a = 0.0
+	
+	# Harry realises that he might have goofed
+	await dialog([
+		Harry.say("Uh oh..."),
+		Voice.say("Signal received! Initiating contact"),
+	])
+	
+	# Raise the tension
+	objectives.show_objective("Answer the radio")
+	arrow.objective = radio
+	
+	# Wait for player to answer the mysterious voice
+	await radio.interacted
+	
+	# complete the objective
+	objectives.complete_objective()
+	arrow.objective = null
+	
+	# disable the radio again
+	radio.disabled = true
+	
+	# The radio transmission
+	await dialog([
+		Voice.say("Hello Harry :)"),
+		Harry.say("Who is this...?"),
+		Voice.say("I detected your distress signal."),
+		Voice.say("They'll be here any moment, Harry."),
+		Harry.say("How do you know my name?"),
+		Voice.say("I'll do what I can to help."),
+		Harry.say("ANSWER ME! WHO'S COMING? HOW DO YOU KNOW MY NAME??"),
+		Voice.say("Don't let them get to the tower Harry..."),
+	])
+	
+	# Turn the radio light off
+	radio.light_on = false
+
+	# Start the REAL real game! Wave 1 coming right up
+	current_stage = Stage.WAVE_1
+	start_story()
+
+func _stage_wave_1():
+	objectives.show_objective("\n".join([
+		"Wave 1:",
+		"- Protect the tower",
+		"- Stay alive!"
+	]))
