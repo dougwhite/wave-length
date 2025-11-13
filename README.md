@@ -24,6 +24,7 @@ Controls:
 WASD - Move
 E - Interact
 Q + move mouse - Tune radio emitter (once unlocked)
+Left Mouse Button - Emit a radio burst
 ```
 
 There are two alternative ways to tune the radio, depending on your hardware:
