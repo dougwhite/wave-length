@@ -4,7 +4,7 @@ A game about the waves we make.
 
 ## This is a prototype
 
-Uploaded to get some feedback on how the game feels to play / move / tune your emitter. Once you hit Wave 1 you've seen everything here so far :) no shooting aliens yet I'm afraid. 
+Uploaded to get some feedback on how the game feels to play / move / tune your emitter. Once you've beaten Wave 1 you've seen everything here so far :) 
 
 ## About
 
