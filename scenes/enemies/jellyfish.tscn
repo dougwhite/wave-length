@@ -53,7 +53,7 @@ animations = [{
 radius = 28.0
 height = 96.0
 
-[node name="Jellyfish" type="StaticBody2D"]
+[node name="Jellyfish" type="Area2D"]
 script = ExtResource("1_undyx")
 
 [node name="glow" type="AnimatedSprite2D" parent="."]
@@ -71,3 +71,5 @@ shape = SubResource("CapsuleShape2D_undyx")
 [node name="alien_noise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_2knwg")
 bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

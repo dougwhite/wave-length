@@ -2251,6 +2251,10 @@ camera_start = Vector2(-88, -286)
 [node name="DialogBox" parent="CanvasLayer" instance=ExtResource("18_ssvqc")]
 
 [node name="Objectives" parent="CanvasLayer" instance=ExtResource("22_bt5mj")]
+offset_left = -40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 40.0
 
 [node name="TunerUI" parent="CanvasLayer" instance=ExtResource("25_qnb83")]
 

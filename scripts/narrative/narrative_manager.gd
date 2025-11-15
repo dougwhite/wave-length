@@ -439,6 +439,9 @@ func _stage_wave_1():
 		"- Stay alive!"
 	]))
 	
+	# Set the health target
+	objectives.show_health_bar(radio_tower.get_node("Health") as Health)
+	
 	# Start the first wave
 	enemy_wave_manager.start_wave(0)
 	

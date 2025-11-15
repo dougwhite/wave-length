@@ -65,3 +65,6 @@ func spawn_wave(position: Vector2, direction: Vector2):
 	sfx.volume_db = volume
 	sfx.pitch_scale = randf_range(pitch_min, pitch_max)
 	sfx.play()
+
+func game_over():
+	print('game over!')

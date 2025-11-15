@@ -28,3 +28,9 @@ func _process(delta):
 # When we get hit, broadcast a signal
 func any_hit():
 	emit_signal("tower_hit")
+
+func _on_health_health_changed(_current, _max):
+	print("Tower HP: %d / %d" % [_current, _max])
+
+func _on_health_died():
+	print("Tower destroyed!")
