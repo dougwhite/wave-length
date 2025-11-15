@@ -266,7 +266,7 @@ func _stage_use_radio():
 	await dialog([
 		Harry.say("..."),
 		Harry.say("Definitely a mistake."),
-		Harry.say("Still... Protocol says I should boost the signal if a Mayday is in range."),
+		Harry.say("Still... Protocol says I should boost the signal if a mayday is in range."),
 		Harry.say("What was that damn frequency again?")
 	])
 	
@@ -388,7 +388,7 @@ func _stage_explosion_get_ready():
 	
 	# Harry realises that he might have goofed
 	await dialog([
-		Harry.say("Uh oh..."),
+		Harry.say("That can't be good..."),
 		Voice.say("Signal received! Initiating contact"),
 	])
 	
