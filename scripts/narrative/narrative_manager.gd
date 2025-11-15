@@ -40,6 +40,7 @@ enum Stage {
 	SEAGULLS,
 	EXPLOSION_GET_READY,
 	WAVE_1,
+	JELLYFISH_AFTERMATH
 }
 
 # Current stage we are up to
@@ -89,6 +90,8 @@ func _run_current_stage() -> void:
 			await _stage_explosion_get_ready()
 		Stage.WAVE_1:
 			await _stage_wave_1()
+		Stage.JELLYFISH_AFTERMATH:
+			await _stage_jellyfish_aftermath()
 
 # Ensures unlocked features are available when jumping to a later scene
 func feature_gate() -> void:
@@ -444,3 +447,23 @@ func _stage_wave_1():
 	
 	# Complete the objective
 	objectives.complete_objective()
+	
+	# Phew! The player survived!
+	current_stage = Stage.JELLYFISH_AFTERMATH
+	start_story()
+
+func _stage_jellyfish_aftermath():
+		# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Change the music to something more dramatic
+	set_music(opening_music)
+	
+	# Ooops game is done so far!
+	await get_tree().create_timer(2.0).timeout
+	objectives.show_objective("\n\n".join([
+		"Well Done!",
+		"I'm afraid that's all for this prototype :(",
+		"Please leave your feedback in the comments below, or in the community discord server @POOGLIES :)",
+		"Thanks for playing!"
+	]))
