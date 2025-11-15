@@ -227,7 +227,7 @@ animation = &"take_off"
 autoplay = "default"
 offset = Vector2(-11.61, -108.215)
 
-[node name="seagull_sprite" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xx6kr")
 animation = &"take_off"
 autoplay = "default"

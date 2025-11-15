@@ -17,7 +17,7 @@ offset = Vector2(0, -384)
 region_enabled = true
 region_rect = Rect2(384, 0, 384, 1024)
 
-[node name="tower" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture = ExtResource("1_7cxyx")
 offset = Vector2(0, -384)

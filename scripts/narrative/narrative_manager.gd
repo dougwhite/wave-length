@@ -4,6 +4,7 @@ extends Node
 @onready var player = $"../Objects/Player"
 @onready var camera_2d = $"../Objects/Player/Camera2D"
 @onready var locations = $Locations
+@onready var enemy_wave_manager = $"../EnemyWaveManager"
 
 # UI
 @onready var dialog_box = $"../CanvasLayer/DialogBox"
@@ -58,7 +59,10 @@ func _ready() -> void:
 	
 	# Ensure the player starts at the start zone
 	player.global_position = zone("PlayerStart").global_position
-
+	
+	# Ensure everything is loaded
+	await get_tree().process_frame
+	
 	feature_gate()
 	start_story()
 
@@ -419,8 +423,24 @@ func _stage_explosion_get_ready():
 	start_story()
 
 func _stage_wave_1():
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Change the music to something more dramatic
+	set_music(battle_music)
+	
+	# Set the objective
 	objectives.show_objective("\n".join([
 		"Wave 1:",
 		"- Protect the tower",
 		"- Stay alive!"
 	]))
+	
+	# Start the first wave
+	enemy_wave_manager.start_wave(0)
+	
+	# Wait for the player to complete it!
+	await enemy_wave_manager.wave_complete
+	
+	# Complete the objective
+	objectives.complete_objective()

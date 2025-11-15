@@ -2,9 +2,12 @@ class_name Tunable
 extends Node2D
 
 @onready var glow = $glow
-@onready var game_manager: GameManager = %GameManager
+@onready var sprite = $sprite
+
+@export var game_manager: GameManager
 
 @export var band: int = 0
+@export var match_band: bool = false
 
 @export var strong_hit_level = 0.9
 @export var medium_hit_level = 0.6
@@ -18,7 +21,13 @@ var last_freq = -1
 var resonance = 0
 
 func _ready():
-	#glow.modulate = game_manager.frequency_color(band)
+	if game_manager == null:
+		game_manager = %GameManager
+
+	if match_band:
+		glow.modulate = game_manager.COLORS[band]
+		sprite.modulate = game_manager.COLORS[band]
+	
 	glow.modulate.a = 0.0
 	add_to_group("tunables")
 

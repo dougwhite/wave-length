@@ -3,7 +3,6 @@ extends Tunable
 signal seagull_flee
 
 @onready var squak_noise = $squak_noise
-@onready var seagull_sprite = $seagull_sprite
 
 @export var escape_vector = Vector2.RIGHT
 @export var seagull_speed = 500
@@ -18,10 +17,10 @@ func any_hit() -> void:
 	
 	# Play the take off animation
 	glow.play("take_off")
-	seagull_sprite.play("take_off")
+	sprite.play("take_off")
 
 	# Wait for the take off animation to finish
-	await seagull_sprite.animation_finished
+	await sprite.animation_finished
 	
 	# Let the narrative engine know they successfully cleared the seagull
 	emit_signal("seagull_flee")
@@ -29,7 +28,7 @@ func any_hit() -> void:
 	# Start flying away
 	flying = true
 	glow.play("fly")
-	seagull_sprite.play("fly")
+	sprite.play("fly")
 
 func _process(delta):
 	# process glow effects
