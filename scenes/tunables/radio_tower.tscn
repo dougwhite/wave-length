@@ -30,3 +30,5 @@ position = Vector2(7, 63)
 polygon = PackedVector2Array(-4, 5, 144, -21, 41, -714, 17, -751, 48, -786, 43, -823, 9, -842, 7, -896, -7, -896, -10, -842, -41, -813, -42, -779, -13, -752, -37, -713, -160, -32)
 
 [node name="Health" parent="." instance=ExtResource("3_rbbnj")]
+
+[connection signal="died" from="Health" to="." method="_on_health_died"]

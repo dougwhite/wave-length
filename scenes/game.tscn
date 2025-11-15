@@ -1,6 +1,5 @@
-[gd_scene load_steps=47 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=48 format=4 uid="uid://bitk03lsj4gwk"]
 
-[ext_resource type="Script" uid="uid://b2xb7jvmxlfok" path="res://scripts/game.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://qn65kok013c8" path="res://art/tileset-sand.png" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://c3lfi6o0ptylq" path="res://art/tileset-sand-path.png" id="2_dinhu"]
@@ -32,12 +31,26 @@
 [ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/objects/radio.tscn" id="26_bhx41"]
 [ext_resource type="Script" uid="uid://lr7y35dk5eok" path="res://scripts/game_manager.gd" id="29_suyxu"]
 [ext_resource type="PackedScene" uid="uid://c6ubfrdfgiibs" path="res://scenes/screen_fx.tscn" id="30_02fa5"]
+[ext_resource type="PackedScene" uid="uid://c35cq0mx52pmq" path="res://scenes/ui/game_over_ui.tscn" id="30_7025r"]
 [ext_resource type="PackedScene" uid="uid://d3dafxmgfqlcs" path="res://scenes/projectiles/wave.tscn" id="30_sgl2t"]
 [ext_resource type="AudioStream" uid="uid://d084xproei0ap" path="res://music/alkakrab.itch.io/Sci-Fi 8 Loop.ogg" id="31_twgab"]
 [ext_resource type="AudioStream" uid="uid://bye11noya4ud4" path="res://music/kronbits.itch.io/Retro Explosion Long 02.wav" id="32_gxtfn"]
 [ext_resource type="AudioStream" uid="uid://bmjmqojtni8cy" path="res://music/kronbits.itch.io/Retro Swooosh 16.wav" id="33_v2yb1"]
 [ext_resource type="PackedScene" uid="uid://ck53ghi561hyq" path="res://scenes/tunables/seagull.tscn" id="34_js0lu"]
 [ext_resource type="Script" uid="uid://vciu3n7j1y8o" path="res://scripts/enemies/enemy_wave_manager.gd" id="39_7025r"]
+
+[sub_resource type="GDScript" id="GDScript_nepv3"]
+script/source = "extends Node2D
+
+@onready var player = $Objects/Player
+@onready var camera_2d = $Objects/Player/Camera2D
+@onready var title = $Title
+@onready var dialog_box = $CanvasLayer/DialogBox
+
+
+func _on_game_over_ui_new_game():
+	pass # Replace with function body.
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1271,7 +1284,7 @@ sources/4 = SubResource("TileSetAtlasSource_iywne")
 size = Vector2(910, 700)
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_ca42v")
+script = SubResource("GDScript_nepv3")
 
 [node name="Map" type="Node2D" parent="."]
 z_index = -1
@@ -2225,11 +2238,13 @@ position = Vector2(4402, -872)
 
 [node name="Background Music" type="AudioStreamPlayer" parent="Audio"]
 unique_name_in_owner = true
+process_mode = 3
 stream = ExtResource("13_kvuet")
 autoplay = true
 bus = &"Background Music"
 
 [node name="OceanWaves" type="AudioStreamPlayer" parent="Audio"]
+process_mode = 3
 stream = ExtResource("15_ca42v")
 autoplay = true
 bus = &"Ambience"
@@ -2247,6 +2262,7 @@ offset_bottom = -390.0
 camera_start = Vector2(-88, -286)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="DialogBox" parent="CanvasLayer" instance=ExtResource("18_ssvqc")]
 
@@ -2257,6 +2273,9 @@ offset_right = -40.0
 offset_bottom = 40.0
 
 [node name="TunerUI" parent="CanvasLayer" instance=ExtResource("25_qnb83")]
+
+[node name="GameOverUI" parent="CanvasLayer" instance=ExtResource("30_7025r")]
+visible = false
 
 [node name="ScreenFX" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("30_02fa5")]
 unique_name_in_owner = true
@@ -2329,3 +2348,5 @@ position = Vector2(-800, -650)
 position = Vector2(800, -650)
 
 [node name="Enemies" type="Node" parent="EnemyWaveManager"]
+
+[connection signal="new_game" from="CanvasLayer/GameOverUI" to="GameManager" method="_on_game_over_ui_new_game"]

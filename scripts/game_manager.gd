@@ -2,6 +2,7 @@ class_name GameManager
 extends Node
 
 @onready var sfx = %SFX
+@onready var game_over_ui = $"../CanvasLayer/GameOverUI"
 
 @export var wave_projectile: PackedScene
 @export var sfx_wave: AudioStream
@@ -67,4 +68,9 @@ func spawn_wave(position: Vector2, direction: Vector2):
 	sfx.play()
 
 func game_over():
-	print('game over!')
+	get_tree().paused = true
+	game_over_ui.visible = true
+
+func _on_game_over_ui_new_game():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
