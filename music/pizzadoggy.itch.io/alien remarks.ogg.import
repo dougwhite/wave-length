@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dj114kvsb8r3r"
+path="res://.godot/imported/alien remarks.ogg-d47e3341d27ea8dbdda20ab9010a764c.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/pizzadoggy.itch.io/alien remarks.ogg"
+dest_files=["res://.godot/imported/alien remarks.ogg-d47e3341d27ea8dbdda20ab9010a764c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
