@@ -3,7 +3,7 @@ extends Tunable
 @onready var alien_noise = $alien_noise
 
 @export var goal: Node2D
-@export var speed: float = 250
+@export var speed: float = 50
 @export var health: float = 5
 
 func _ready():
