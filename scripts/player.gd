@@ -223,7 +223,7 @@ func _on_selection_radius_body_exited(body):
 		body.selected = false
 
 # Called whenever a mob touches Harry
-func _on_health_ouch(amount, other):
+func _on_health_ouch(_amount, other):
 	# Figure out where the thing that hit us was and fly back from it
 	var dir = ((other as Node2D).global_position - global_position).normalized() * -1
 	apply_knockback(dir)

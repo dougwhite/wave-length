@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://biu2smrv5nj2o"]
+
+[ext_resource type="Script" uid="uid://cdyngl4pixi8e" path="res://scripts/ui/player_health_ui.gd" id="1_81qn1"]
+[ext_resource type="PackedScene" uid="uid://dvk33j6ykx40y" path="res://scenes/ui/heart_icon.tscn" id="1_tu6i5"]
+
+[node name="PlayerHealthUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_81qn1")
+
+[node name="Hearts" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 48.0
+theme_override_constants/separation = 0
+
+[node name="heart0" parent="Hearts" instance=ExtResource("1_tu6i5")]
+layout_mode = 2
+
+[node name="heart1" parent="Hearts" instance=ExtResource("1_tu6i5")]
+layout_mode = 2
+
+[node name="heart2" parent="Hearts" instance=ExtResource("1_tu6i5")]
+layout_mode = 2
+
+[node name="heart3" parent="Hearts" instance=ExtResource("1_tu6i5")]
+layout_mode = 2
+
+[node name="heart4" parent="Hearts" instance=ExtResource("1_tu6i5")]
+layout_mode = 2
