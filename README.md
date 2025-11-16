@@ -89,6 +89,12 @@ Thanks to norwayjohn for his peaceful [ocean sounds](https://freesound.org/peopl
 
 The file `music/freesound.org/people/norwayjohn/ocean-min.mp3` is an `.mp3` conversion of his original `.wav` file, which was provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), and so this `.mp3` version is also covered under the CC0 license in this repository.
 
+#### ArcadeParty ([opengameart.org](https://opengameart.org/users/arcadeparty))
+
+Thanks to ArcadeParty for his terrific [Zombie / Skeleton / Monster Voice Effects](https://opengameart.org/content/zombie-skeleton-monster-voice-effects).
+
+The `.wav` files in `music/opengameart.org/users/arcadeparty/*` were provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), and as such are covered under the same license in this repository.
+
 #### NimbleBeasts Collective ([itch.io](https://nimblebeastscollective.itch.io/))
 
 Thanks to the NimbleBeasts Collective for their [CC0 font pack](https://nimblebeastscollective.itch.io/nb-pixel-font-bundle)

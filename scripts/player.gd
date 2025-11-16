@@ -5,6 +5,9 @@ var input_enabled = true
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var selection_radius = $SelectionRadius
 @onready var game_manager: GameManager = %GameManager
+@onready var health = $Health
+@onready var ouch_noise = $OuchNoise
+@onready var death_noise = $DeathNoise
 
 @export var tuner: RadioTuner
 
@@ -13,12 +16,17 @@ var feature_firing = false
 
 const SPEED = 300.0
 const WAVE_SPAWN_DIST = 50.0
+const KNOCKBACK_STRENGTH = 500.0
+const KNOCKBACK_DURATION = 0.15
 
 var last_dir = 1 	# 0 - right, 1 - left, 2 - down, 3 - up
 var tune_mode = false
 var fine_tuning = false
 
-func _physics_process(_delta):
+var knockback_velocity: Vector2 = Vector2.ZERO
+var knockback_remaining: float = 0.0
+
+func _physics_process(delta):
 	
 	if not input_enabled:
 		if not animated_sprite.animation == "sleep":
@@ -53,7 +61,14 @@ func _physics_process(_delta):
 		
 	else:
 		idle_sprite()
-			
+	
+	# Apply Knockback
+	if knockback_remaining > 0.0:
+		knockback_remaining -= delta
+		velocity *= 0.25
+		velocity += knockback_velocity
+		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, 2000.0 * delta)
+
 	move_and_slide()
 
 func idle_sprite():
@@ -194,6 +209,11 @@ func fire_wave():
 	# spawn a wave projectile
 	game_manager.spawn_wave(wave_spawn_point, dir)
 
+# Applies a knockback effect to Harry
+func apply_knockback(direction: Vector2):
+	knockback_velocity = direction * KNOCKBACK_STRENGTH
+	knockback_remaining = KNOCKBACK_DURATION
+
 func _on_selection_radius_body_entered(body):
 	if body.is_in_group("selectables"):
 		body.selected = true
@@ -201,3 +221,36 @@ func _on_selection_radius_body_entered(body):
 func _on_selection_radius_body_exited(body):
 	if body.is_in_group("selectables"):
 		body.selected = false
+
+# Called whenever a mob touches Harry
+func _on_health_ouch(amount, other):
+	# Figure out where the thing that hit us was and fly back from it
+	var dir = ((other as Node2D).global_position - global_position).normalized() * -1
+	apply_knockback(dir)
+	
+	# Play an ouch noise
+	if health.current_health > 0:
+		ouch_noise.play()
+	
+	# Apply a red flashing effect
+	var tween = create_tween()
+	for i in 4:
+		tween.tween_property(animated_sprite, "modulate", Color(1, 0.2, 0.2), 0.1) \
+			 .set_trans(Tween.TRANS_SINE) \
+			 .set_ease(Tween.EASE_OUT)
+		tween.tween_property(animated_sprite, "modulate", Color(1, 1, 1), 0.1) \
+			 .set_trans(Tween.TRANS_SINE) \
+			 .set_ease(Tween.EASE_OUT)
+
+# Called when health dips below 0
+func _on_health_died():
+	# First stop any input
+	input_enabled = false
+	# Play the sleep loop as a death animation
+	animated_sprite.play("sleep")
+	# Dramatically die
+	death_noise.play()
+	# Wait a moment
+	await get_tree().create_timer(0.5).timeout
+	# Play the game over screen
+	game_manager.game_over()

@@ -2283,6 +2283,7 @@ camera = NodePath("../Objects/Player/Camera2D")
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
+start_stage = 8
 opening_music = ExtResource("13_kvuet")
 battle_music = ExtResource("31_twgab")
 

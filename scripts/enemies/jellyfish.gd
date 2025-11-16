@@ -48,5 +48,5 @@ func take_damage(dmg: float):
 func _on_body_entered(body):
 	var body_health = body.get_node_or_null("Health")
 	if body_health:
-		body_health.take_damage(10) 
+		body_health.take_damage(10, self) 
 		queue_free()
