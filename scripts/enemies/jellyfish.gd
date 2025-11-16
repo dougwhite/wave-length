@@ -1,17 +1,20 @@
 extends Tunable
 
 @onready var alien_noise = $alien_noise
+@onready var animation_player = $AnimationPlayer
 
 @export var goal: Node2D
 @export var speed: float = 50
 @export var health: float = 5
+
+var dead = false
 
 func _ready():
 	$alien_noise.play()
 	super()
 
 func _process(delta):
-	if !goal:
+	if !goal or dead:
 		return
 
 	# figure out where our goal is from our current location
@@ -21,8 +24,9 @@ func _process(delta):
 	if dir.length() <= 1.0:
 		var goal_health = goal.get_node_or_null("Health")
 		if goal_health:
+			dead = true
 			goal_health.take_damage(10, self) 
-			queue_free()
+			animation_player.play("explode")
 	
 	# Move towards our goal
 	position += dir.normalized() * speed * delta
@@ -40,7 +44,8 @@ func weak_hit() -> bool:
 func take_damage(dmg: float):
 	health -= dmg
 	if health <= 0:
-		queue_free()
+		dead = true
+		animation_player.play("die")
 	
 	return true
 
@@ -49,4 +54,5 @@ func _on_body_entered(body):
 	var body_health = body.get_node_or_null("Health")
 	if body_health:
 		body_health.take_damage(10, self) 
+		dead = true
 		queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbl3u7a55e0p"]
+[gd_scene load_steps=18 format=3 uid="uid://cbl3u7a55e0p"]
 
 [ext_resource type="Texture2D" uid="uid://crjur4fc78foo" path="res://art/jellyfish/jellyfish_frame0000.png" id="1_uhsk6"]
 [ext_resource type="Script" uid="uid://blagiciw1q8js" path="res://scripts/enemies/jellyfish.gd" id="1_undyx"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://du4jdjppvh4ia" path="res://art/jellyfish/jellyfish_frame0002.png" id="3_1egoa"]
 [ext_resource type="Texture2D" uid="uid://bhx0jjywm3t7f" path="res://art/jellyfish/jellyfish_glow_frame0002.png" id="3_2knwg"]
 [ext_resource type="AudioStream" uid="uid://dj114kvsb8r3r" path="res://music/pizzadoggy.itch.io/alien remarks.ogg" id="8_2knwg"]
+[ext_resource type="AudioStream" uid="uid://bh85n0rk2pt0q" path="res://music/opengameart.org/users/subspaceaudio/sfx_exp_short_soft6.wav" id="9_4cv0g"]
+[ext_resource type="AudioStream" uid="uid://dnet0qfrpaquo" path="res://music/opengameart.org/users/subspaceaudio/sfx_exp_short_hard6.wav" id="10_45h6e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4cv0g"]
 animations = [{
@@ -53,6 +55,206 @@ animations = [{
 radius = 28.0
 height = 96.0
 
+[sub_resource type="Animation" id="Animation_4cv0g"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("death_noise:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_45h6e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("death_noise:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("explode_noise:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_i47tk"]
+resource_name = "explode"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("explode_noise:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i47tk"]
+_data = {
+&"RESET": SubResource("Animation_45h6e"),
+&"die": SubResource("Animation_4cv0g"),
+&"explode": SubResource("Animation_i47tk")
+}
+
 [node name="Jellyfish" type="Area2D"]
 script = ExtResource("1_undyx")
 
@@ -70,6 +272,22 @@ shape = SubResource("CapsuleShape2D_undyx")
 
 [node name="alien_noise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_2knwg")
+max_polyphony = 10
 bus = &"SFX"
+
+[node name="death_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_4cv0g")
+volume_db = -15.112
+pitch_scale = 1.17
+bus = &"SFX"
+
+[node name="explode_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_45h6e")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i47tk")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

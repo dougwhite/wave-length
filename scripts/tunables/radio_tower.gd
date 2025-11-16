@@ -3,6 +3,8 @@ extends Tunable
 signal frequency_tuned
 signal tower_hit
 
+@onready var explosion_sound = $explosion_sound
+
 const TUNED_TIMER = 1.0
 
 var tuned_tower = false
@@ -30,4 +32,9 @@ func any_hit():
 	emit_signal("tower_hit")
 
 func _on_health_died():
+	# Climactically explode
+	explosion_sound.play()
+	# Wait a moment
+	await get_tree().create_timer(0.75).timeout
+	# Terminate the game
 	game_manager.game_over()

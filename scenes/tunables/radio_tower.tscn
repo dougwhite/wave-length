@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkn22v61wdeqk"]
+[gd_scene load_steps=5 format=3 uid="uid://bkn22v61wdeqk"]
 
 [ext_resource type="Texture2D" uid="uid://dpg2tetnd8da4" path="res://art/radio-tower.png" id="1_7cxyx"]
 [ext_resource type="Script" uid="uid://1xnx8hqw8bs7" path="res://scripts/tunables/radio_tower.gd" id="1_efylt"]
 [ext_resource type="PackedScene" uid="uid://d1fkhvrh3t7je" path="res://scenes/health_component.tscn" id="3_rbbnj"]
+[ext_resource type="AudioStream" uid="uid://dkaa7h1kcqgc" path="res://music/opengameart.org/users/subspaceaudio/sfx_exp_cluster1.wav" id="4_r6dsp"]
 
 [node name="RadioTower" type="Area2D"]
 script = ExtResource("1_efylt")
@@ -30,5 +31,10 @@ position = Vector2(7, 63)
 polygon = PackedVector2Array(-4, 5, 144, -21, 41, -714, 17, -751, 48, -786, 43, -823, 9, -842, 7, -896, -7, -896, -10, -842, -41, -813, -42, -779, -13, -752, -37, -713, -160, -32)
 
 [node name="Health" parent="." instance=ExtResource("3_rbbnj")]
+
+[node name="explosion_sound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_r6dsp")
+bus = &"SFX"
 
 [connection signal="died" from="Health" to="." method="_on_health_died"]
