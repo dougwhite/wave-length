@@ -67,9 +67,9 @@ Please see the `README.md` file in that folder for further information.
 
 #### Zeeey ([itch.io](https://officialzeeey.itch.io))
 
-Thanks to Zeeey for the amazing track [“The Litch”](https://officialzeeey.itch.io/the-litch). This track was not listed with a license, but Zeeey granted me explicit permission to use their banging track in this game and to include it in this repository.
+Thanks to Zeeey for the amazing track ["The Litch"](https://officialzeeey.itch.io/the-litch). This track was not listed with a license, but Zeeey granted me explicit permission to use their banging track in this game and to include it in this repository.
 
-The file `music/officialzeeey.itch.io/TheEnigmaFinished.mp3` (track name “The Litch”) remains the sole intellectual property of Zeeey and is NOT covered by the main project license. It may not be reused, redistributed, or incorporated into other projects without obtaining permission directly from Zeeey.
+The file `music/officialzeeey.itch.io/TheEnigmaFinished.mp3` (track name "The Litch") remains the sole intellectual property of Zeeey and is NOT covered by the main project license. It may not be reused, redistributed, or incorporated into other projects without obtaining permission directly from Zeeey.
 
 #### alkakrab ([itch.io](https://alkakrab.itch.io))
 
