@@ -1,6 +1,7 @@
 class_name GameManager
 extends Node
 
+@onready var narrative_manager = $"../NarrativeManager"
 @onready var sfx = %SFX
 @onready var game_over_ui = $"../CanvasLayer/GameOverUI"
 
@@ -72,5 +73,10 @@ func game_over():
 	game_over_ui.visible = true
 
 func _on_game_over_ui_new_game():
+	narrative_manager.reset_world_state()
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+func _on_game_over_ui_retry():
 	get_tree().paused = false
 	get_tree().reload_current_scene()

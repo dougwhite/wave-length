@@ -1,4 +1,7 @@
+class_name NarrativeManager
 extends Node
+
+@onready var game_manager = %GameManager
 
 # Game functionality
 @onready var player = $"../Objects/Player"
@@ -7,11 +10,12 @@ extends Node
 @onready var enemy_wave_manager = $"../EnemyWaveManager"
 
 # UI
+@onready var title = $"../Title"
 @onready var dialog_box = $"../CanvasLayer/DialogBox"
 @onready var objectives = $"../CanvasLayer/Objectives"
 @onready var arrow = $"../Objects/Player/Arrow"
-@onready var title = $"../Title"
 @onready var screen_fx = %ScreenFX
+@onready var player_health_ui = $"../CanvasLayer/PlayerHealthUI"
 
 # Objects / Interactables / Tunables
 @onready var radio = $"../Objects/Radio"
@@ -28,6 +32,10 @@ extends Node
 
 # Sound fx
 @onready var explosion_sound = $SFX/ExplosionSound
+
+# Health object references
+var player_health: Health
+var tower_health: Health
 
 # Enum stages of the game
 enum Stage {
@@ -53,13 +61,13 @@ var Radio = DialogueSpeaker.new("Radio", Color("#FFA36C"))
 
 # Set up and start the story
 func _ready() -> void:
-	if OS.is_debug_build():
-		current_stage = start_stage
-	else:
-		current_stage = Stage.OPENING_TITLE
+	# Get our dependent objects / set up state that's expected for things to work
+	player_health = player.get_node("Health") as Health
+	tower_health = radio_tower.get_node("Health") as Health
+	player_health_ui.modulate.a = 0.0
 	
-	# Ensure the player starts at the start zone
-	player.global_position = zone("PlayerStart").global_position
+	# Load the world from GameState
+	load_world_state()
 	
 	# Ensure everything is loaded
 	await get_tree().process_frame
@@ -98,6 +106,12 @@ func feature_gate() -> void:
 	if current_stage > Stage.BOOST_TOWER:
 		player.feature_tuning = true
 		player.feature_firing = true
+	
+	if current_stage > Stage.WAVE_1:
+		var tween = create_tween()
+		tween.tween_property(player_health_ui, "modulate:a", 1.0, 0.5) \
+		 	 .set_trans(Tween.TRANS_SINE) \
+		 	 .set_ease(Tween.EASE_IN)
 
 # Plays a music track if it isn't already playing
 func set_music(track: AudioStream) -> void:
@@ -139,6 +153,43 @@ func zoom(target: Node2D, duration: float = 1.0) -> void:
 	
 	# Re-enable player input when we are done
 	player.input_enabled = true
+
+func load_world_state():
+	if GameState.first_load:
+		reset_world_state()
+		GameState.first_load = false
+	current_stage = GameState.current_stage
+	player_health.current_health = GameState.player_hp
+	player_health.max_health = GameState.player_max_hp
+	player_health_ui._on_health_changed(player_health.current_health, player_health.max_health)
+	player.position = GameState.player_position
+	tower_health.current_health = GameState.tower_hp 
+	tower_health.max_health = GameState.tower_max_hp
+	# TODO: Add currency?
+	# energy = GameState.energy
+
+func reset_world_state():
+	# If we are in debug, let's start somewhere different
+	if OS.is_debug_build() and GameState.first_load:
+		GameState.current_stage = start_stage
+	else:
+		GameState.current_stage = NarrativeManager.Stage.OPENING_TITLE
+	GameState.player_hp = 50
+	GameState.player_max_hp = 50
+	GameState.player_position = zone("PlayerStart").global_position
+	GameState.tower_hp = 100
+	GameState.tower_max_hp = 100
+	GameState.energy = 0
+
+func checkpoint():
+	GameState.current_stage = current_stage
+	GameState.player_hp = player_health.current_health
+	GameState.player_max_hp = player_health.max_health
+	GameState.player_position = player.position
+	GameState.tower_hp = tower_health.current_health
+	GameState.tower_max_hp = tower_health.max_health
+	# TODO: Add currency?
+	# GameState.energy = 0 	
 
 # Fade in the title menu, wait for them to press space
 func _stage_opening_title():
@@ -426,6 +477,9 @@ func _stage_explosion_get_ready():
 	start_story()
 
 func _stage_wave_1():
+	# First Checkpoint!
+	checkpoint()
+
 	# If we are in debug, start next to the radio tower
 	teleport(zone("RadioHutZone"))
 	
@@ -439,8 +493,14 @@ func _stage_wave_1():
 		"- Stay alive!"
 	]))
 	
-	# Set the health target
+	# Set the tower objective health target
 	objectives.show_health_bar(radio_tower.get_node("Health") as Health)
+	
+	# Show the player's health bar
+	var tween = create_tween()
+	tween.tween_property(player_health_ui, "modulate:a", 1.0, 0.5) \
+		 .set_trans(Tween.TRANS_SINE) \
+		 .set_ease(Tween.EASE_IN)
 	
 	# Start the first wave
 	enemy_wave_manager.start_wave(0)

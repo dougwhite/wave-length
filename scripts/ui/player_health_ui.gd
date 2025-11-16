@@ -29,6 +29,9 @@ func _on_health_changed(_current, _max):
 	if max_hearts != hearts.get_child_count():
 		rebuild_hearts(max_hearts)
 	
+	# Wait for heart nodes to sort themselves out
+	await get_tree().process_frame
+	
 	var i = 0
 	for h in hearts.get_children():
 		if i < full_hearts:

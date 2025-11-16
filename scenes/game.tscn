@@ -2279,7 +2279,7 @@ camera = NodePath("../Objects/Player/Camera2D")
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
-start_stage = 8
+start_stage = 7
 opening_music = ExtResource("13_kvuet")
 battle_music = ExtResource("31_twgab")
 
@@ -2346,3 +2346,4 @@ position = Vector2(800, -650)
 [node name="Enemies" type="Node" parent="EnemyWaveManager"]
 
 [connection signal="new_game" from="CanvasLayer/GameOverUI" to="GameManager" method="_on_game_over_ui_new_game"]
+[connection signal="retry" from="CanvasLayer/GameOverUI" to="GameManager" method="_on_game_over_ui_retry"]

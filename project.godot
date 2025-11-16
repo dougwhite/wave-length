@@ -15,6 +15,10 @@ run/main_scene="uid://bitk03lsj4gwk"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*res://scripts/narrative/game_state.gd"
+
 [display]
 
 window/size/viewport_width=1920

@@ -21,7 +21,7 @@ func _process(delta):
 	if dir.length() <= 1.0:
 		var goal_health = goal.get_node_or_null("Health")
 		if goal_health:
-			goal_health.take_damage(10) 
+			goal_health.take_damage(10, self) 
 			queue_free()
 	
 	# Move towards our goal

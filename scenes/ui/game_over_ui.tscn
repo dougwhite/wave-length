@@ -81,7 +81,7 @@ theme_override_fonts/font = ExtResource("3_sxdiq")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_u4odh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_sxdiq")
-disabled = true
 text = "RETRY"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer/NewGameBtn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer/RetryBtn" to="." method="_on_retry_btn_pressed"]
