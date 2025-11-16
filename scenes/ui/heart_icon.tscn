@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvk33j6ykx40y"]
+[gd_scene load_steps=3 format=3 uid="uid://dvk33j6ykx40y"]
 
 [ext_resource type="Texture2D" uid="uid://cqj7dugs0q2l5" path="res://art/heart.png" id="1_vjdkd"]
+[ext_resource type="Script" uid="uid://22q1xhjdu4vm" path="res://scripts/ui/heart_icon.gd" id="1_yyooy"]
 
 [node name="HeartIcon" type="Control"]
 custom_minimum_size = Vector2(48, 48)
@@ -11,8 +12,18 @@ offset_right = -1872.0
 offset_bottom = -1032.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yyooy")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(24, 24)
+[node name="EmptySprite" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_vjdkd")
+offset = Vector2(32, 32)
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="FullSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_vjdkd")
+offset = Vector2(32, 32)
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
