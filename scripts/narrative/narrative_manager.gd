@@ -48,7 +48,8 @@ enum Stage {
 	SEAGULLS,
 	EXPLOSION_GET_READY,
 	WAVE_1,
-	JELLYFISH_AFTERMATH
+	JELLYFISH_AFTERMATH,
+	PROTOTYPE_OVER,
 }
 
 # Current stage we are up to
@@ -100,6 +101,8 @@ func _run_current_stage() -> void:
 			await _stage_wave_1()
 		Stage.JELLYFISH_AFTERMATH:
 			await _stage_jellyfish_aftermath()
+		Stage.PROTOTYPE_OVER:
+			await _stage_prototype_over()
 
 # Ensures unlocked features are available when jumping to a later scene
 func feature_gate() -> void:
@@ -190,6 +193,20 @@ func checkpoint():
 	GameState.tower_max_hp = tower_health.max_health
 	# TODO: Add currency?
 	# GameState.energy = 0 	
+
+# Stage for when the prototype finishes
+func _stage_prototype_over():
+	# Change the music to something more dramatic
+	set_music(opening_music)
+	
+	# Ooops game is done so far!
+	await get_tree().create_timer(2.0).timeout
+	objectives.show_objective("\n\n".join([
+		"Well Done!",
+		"I'm afraid that's all for this prototype :(",
+		"Please leave your feedback in the comments below, or in the community discord server @POOGLIES :)",
+		"Thanks for playing!"
+	]))
 
 # Fade in the title menu, wait for them to press space
 func _stage_opening_title():
@@ -509,24 +526,58 @@ func _stage_wave_1():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	
 	# Phew! The player survived!
 	current_stage = Stage.JELLYFISH_AFTERMATH
 	start_story()
 
 func _stage_jellyfish_aftermath():
-		# If we are in debug, start next to the radio tower
+	# If we are in debug, start next to the radio tower
 	teleport(zone("RadioHutZone"))
 	
-	# Change the music to something more dramatic
+	# Change the music to something more peaceful
 	set_music(opening_music)
 	
-	# Ooops game is done so far!
-	await get_tree().create_timer(2.0).timeout
-	objectives.show_objective("\n\n".join([
-		"Well Done!",
-		"I'm afraid that's all for this prototype :(",
-		"Please leave your feedback in the comments below, or in the community discord server @POOGLIES :)",
-		"Thanks for playing!"
-	]))
+	# The radio has a new message for harry
+	radio.light_on = true
+	radio.glow.modulate.a = 0.0
+	
+	# Raise the tension
+	objectives.show_objective("Confront the mysterious voice")
+	arrow.objective = radio
+	
+	# Wait for Harry to hit the radio again
+	await radio.interacted
+	
+	# Complete the objectives
+	objectives.complete_objective()
+	arrow.objective = null
+	
+		# The radio transmission
+	await dialog([
+		Voice.say("You did it Harry :)"),
+		Harry.say("Alright! Tell me who the hell you are!"),
+		Harry.say("Where in the hell did those wierd jellyfish come from?"),
+		Harry.say("and what the hell is this glowing blue stuff!?!"),
+		Harry.say("ANSWER ME!"),
+		Voice.say("Don't you remember Harry?"),
+		Harry.say("No... Should I?"),
+		Voice.say("We've met before."),
+		Harry.say("What the hell are you talking about? I've never met you"),
+		Voice.say("Of course you have, we've met in the future"),
+		Harry.say("..."),
+		Voice.say("Ahhhh. I forgot that people in your dimension can't remember the future"),
+		Harry.say("MY DIMENSION!?"),
+		Voice.say("I'll explain later Harry. More of them are coming"),
+		Harry.say("More? Jellyfish?"),
+		Voice.say("You need to protect the energy collectors Harry"),
+		Harry.say("The energy collec... wait... do you mean the solar panels?"),
+		Voice.say("Hurry, Harry!"),
+	])
+	
+	# Disable the radio again
+	radio.disabled = true
+	
+	current_stage = Stage.PROTOTYPE_OVER
+	start_story()
