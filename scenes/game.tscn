@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=50 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://qn65kok013c8" path="res://art/tileset-sand.png" id="1_yqjtg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bhld7233440xa" path="res://scenes/trees/tree2.tscn" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://br73t6t1qwemr" path="res://scenes/trees/tree3.tscn" id="6_gee14"]
 [ext_resource type="PackedScene" uid="uid://bd3tk45rckh25" path="res://scenes/trees/tree4.tscn" id="7_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://c0q2ixxxipmq3" path="res://scenes/doodads/wire_2.tscn" id="7_8ool0"]
 [ext_resource type="PackedScene" uid="uid://bns3tbjq6lgrm" path="res://scenes/trees/tree5.tscn" id="8_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://bkn22v61wdeqk" path="res://scenes/tunables/radio_tower.tscn" id="8_sww3w"]
 [ext_resource type="PackedScene" uid="uid://6p7tluls4xk2" path="res://scenes/trees/tree6.tscn" id="9_vtaks"]
@@ -1348,6 +1349,9 @@ position = Vector2(3823, -461)
 [node name="Wire1" parent="Map/Doodads" instance=ExtResource("20_qouja")]
 position = Vector2(3424, -711)
 
+[node name="Wire2" parent="Map/Doodads" instance=ExtResource("7_8ool0")]
+position = Vector2(1454, -1489)
+
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -2279,7 +2283,7 @@ camera = NodePath("../Objects/Player/Camera2D")
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
-start_stage = 8
+start_stage = 10
 opening_music = ExtResource("13_kvuet")
 battle_music = ExtResource("31_twgab")
 

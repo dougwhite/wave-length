@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0q2ixxxipmq3"]
+
+[ext_resource type="Texture2D" uid="uid://ckfyvrj6yr1kf" path="res://art/wire2.png" id="1_758fy"]
+
+[node name="Wire2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_758fy")
+region_rect = Rect2(0, 0, 1792, 384)
