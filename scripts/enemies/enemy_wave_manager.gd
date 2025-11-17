@@ -10,7 +10,7 @@ signal wave_complete
 var jellyfish = preload("res://scenes/enemies/jellyfish.tscn")
 
 var waves = [
-	# Wave 1
+	# Wave 1 @ the tower
 	[
 		# 7 slow yellows
 		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
@@ -28,6 +28,46 @@ var waves = [
 		{ "elapsed": 13, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
 		{ "elapsed": 14, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
 		{ "elapsed": 15, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 16, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		
+		# 14 mixed pressure
+		{ "elapsed": 18, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 19, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 20, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 21, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 22, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 23, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 24, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 25, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 26, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 27, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 28, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 29, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 31, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+	],
+	# Wave 2 @ The solar panels
+	[
+		
+	],
+	# Wave 3 @ the tower
+	[
+		# 7 slow yellows
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 3, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 4, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 5, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 6, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 7, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		
+		# 7 slow reds
+		{ "elapsed": 10, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 11, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 12, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 13, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 14, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 15, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
 		{ "elapsed": 16, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
 		
 		# 4 Pairs of colors
