@@ -15,7 +15,7 @@ extends Node2D
 @export var default_stop_waves = true
 
 const GLOW_RADIUS = 10.0
-const GLOW_CURVE = 1.5
+const GLOW_CURVE = 2.0
 
 var last_freq = -1
 var resonance = 0
