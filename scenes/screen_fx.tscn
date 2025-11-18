@@ -68,12 +68,12 @@ color = Color(0, 0, 0, 1)
 modulate = Color(1, 1, 1, 0)
 
 [node name="Backdrop" type="Sprite2D" parent="SkyEvent"]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 texture = ExtResource("1_578fe")
 centered = false
 
 [node name="Tear" type="AnimatedSprite2D" parent="SkyEvent"]
-position = Vector2(1032, 272)
-scale = Vector2(4, 4)
+position = Vector2(1041, 399)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_n7ed0")
 animation = &"tear_1"
