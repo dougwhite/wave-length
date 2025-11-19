@@ -29,6 +29,7 @@ extends Node
 @onready var music = %"Background Music"
 @export var opening_music: AudioStream
 @export var battle_music: AudioStream
+@export var boss_music: AudioStream
 
 # Sound fx
 @onready var explosion_sound = $SFX/ExplosionSound
@@ -1032,7 +1033,7 @@ func _stage_wave_7():
 	teleport(zone("RadioHutZone"))
 	
 	# Change the music to something more dramatic
-	set_music(battle_music)
+	set_music(boss_music)
 	
 	# Set the objectives
 	objectives.show_objective("\n".join([
