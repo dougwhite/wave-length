@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jda5y0lkpt7u"]
+
+[ext_resource type="Texture2D" uid="uid://bx4w6l5yme47d" path="res://art/solar_panel_wires.png" id="1_vdgll"]
+
+[node name="SolarWires" type="Node2D"]
+
+[node name="SolarPanels" type="Sprite2D" parent="."]
+texture = ExtResource("1_vdgll")

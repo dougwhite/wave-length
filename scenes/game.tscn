@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=57 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://qn65kok013c8" path="res://art/tileset-sand.png" id="1_yqjtg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://br73t6t1qwemr" path="res://scenes/trees/tree3.tscn" id="6_gee14"]
 [ext_resource type="PackedScene" uid="uid://bd3tk45rckh25" path="res://scenes/trees/tree4.tscn" id="7_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://c0q2ixxxipmq3" path="res://scenes/doodads/wire_2.tscn" id="7_8ool0"]
+[ext_resource type="PackedScene" uid="uid://jda5y0lkpt7u" path="res://scenes/doodads/solar_wires.tscn" id="8_0sl42"]
 [ext_resource type="PackedScene" uid="uid://bns3tbjq6lgrm" path="res://scenes/trees/tree5.tscn" id="8_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://bkn22v61wdeqk" path="res://scenes/tunables/radio_tower.tscn" id="8_sww3w"]
 [ext_resource type="PackedScene" uid="uid://6p7tluls4xk2" path="res://scenes/trees/tree6.tscn" id="9_vtaks"]
@@ -42,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://ck53ghi561hyq" path="res://scenes/tunables/seagull.tscn" id="34_js0lu"]
 [ext_resource type="AudioStream" uid="uid://dvdsqsgnk1ogn" path="res://music/officialzeeey.itch.io/TheEnigmaFinished.mp3" id="36_pr1ej"]
 [ext_resource type="Script" uid="uid://vciu3n7j1y8o" path="res://scripts/enemies/enemy_wave_manager.gd" id="39_7025r"]
+[ext_resource type="PackedScene" uid="uid://q3hnvrndhcg" path="res://scenes/objects/solar_panel.tscn" id="44_oaba0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -1365,6 +1367,9 @@ position = Vector2(3424, -711)
 [node name="Wire2" parent="Map/Doodads" instance=ExtResource("7_8ool0")]
 position = Vector2(1454, -1489)
 
+[node name="SolarWires" parent="Map/Doodads" instance=ExtResource("8_0sl42")]
+position = Vector2(386, -1808)
+
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -2236,6 +2241,30 @@ disabled = true
 [node name="SatteliteDish" parent="Objects" instance=ExtResource("22_wljb1")]
 position = Vector2(4449, -697)
 
+[node name="SolarPanels" type="Node2D" parent="Objects"]
+y_sort_enabled = true
+position = Vector2(622, -1990)
+
+[node name="SolarPanel" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
+
+[node name="SolarPanel2" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
+position = Vector2(-256, -16)
+
+[node name="SolarPanel3" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
+position = Vector2(-131, 185)
+
+[node name="SolarPanel4" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
+position = Vector2(-374, 184)
+
+[node name="SolarPanel5" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
+position = Vector2(-629, 194)
+
+[node name="SolarPanel6" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
+position = Vector2(-531, 429)
+
+[node name="SolarPanel7" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
+position = Vector2(-280, 413)
+
 [node name="Seagull" parent="Objects" instance=ExtResource("34_js0lu")]
 position = Vector2(4402, -872)
 
@@ -2308,6 +2337,7 @@ metadata/_edit_lock_ = true
 position = Vector2(225, 271)
 
 [node name="RadioHutZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+visible = false
 position = Vector2(2252, -604)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/RadioHutZone"]
@@ -2315,6 +2345,7 @@ position = Vector2(114.5, -268)
 shape = SubResource("RectangleShape2D_e1j6l")
 
 [node name="SolarPanelZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+visible = false
 position = Vector2(626, -1971)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SolarPanelZone"]
@@ -2322,6 +2353,7 @@ position = Vector2(-318, 52)
 shape = SubResource("RectangleShape2D_8ool0")
 
 [node name="SatteliteDishZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+visible = false
 position = Vector2(4227, -730)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SatteliteDishZone"]
@@ -2329,6 +2361,7 @@ position = Vector2(223, -41)
 shape = SubResource("RectangleShape2D_pr1ej")
 
 [node name="SeagullZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+visible = false
 position = Vector2(4227, -730)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SeagullZone"]
@@ -2336,6 +2369,7 @@ position = Vector2(-4, -22)
 shape = SubResource("RectangleShape2D_0sl42")
 
 [node name="SouthBeachZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+visible = false
 position = Vector2(3333, 798)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SouthBeachZone"]
