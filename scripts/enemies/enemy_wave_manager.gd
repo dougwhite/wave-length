@@ -48,9 +48,13 @@ var waves = [
 	],
 	# Wave 2 @ The solar panels
 	[
-		
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
 	],
-	# Wave 3 @ the tower
+	# Wave 3 @ Sattelite Dish (Seaguls)
+	[
+		{ "elapsed": 1, "spawn": ^"Wave3/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+	],
+	# Wave 4 @ the tower
 	[
 		# 7 slow yellows
 		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
@@ -122,7 +126,26 @@ var waves = [
 		{ "elapsed": 72, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 3 },
 		{ "elapsed": 74, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 9 },
 		{ "elapsed": 76, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-	]
+	],
+	# Wave 5 @ South Beach - 1 obelisk
+	[
+		{ "elapsed": 1, "spawn": ^"Wave5/obelisk_1", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+	],
+	# Wave 6 @ Many Obelisks!
+	[
+		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_1", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_2", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_3", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_4", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_5", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_6", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_7", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_8", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+	],
+	# Wave 7 @ Radio Tower - FULL ASSAULT
+	[
+		{ "elapsed": 1, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+	],
 ]
 
 var wave_in_progress: bool = false

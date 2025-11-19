@@ -49,6 +49,19 @@ enum Stage {
 	EXPLOSION_GET_READY,
 	WAVE_1,
 	JELLYFISH_AFTERMATH,
+	WAVE_2,
+	AN_IDEA,
+	WAVE_3,
+	TO_THE_TOWER_HARRY,
+	WAVE_4,
+	SOMETHING_WORSE,
+	WAVE_5,
+	REMEMBERING_THE_FUTURE,
+	WAVE_6,
+	REVELATIONS,
+	WAVE_7,
+	SAY_GOODBYE,
+	CREDITS,
 	PROTOTYPE_OVER,
 }
 
@@ -59,6 +72,7 @@ var current_stage: int
 var Harry = DialogueSpeaker.new("Harry", Color("#6ef0ff"))
 var Voice = DialogueSpeaker.new("", Color("#ff3fa4"))
 var Radio = DialogueSpeaker.new("Radio", Color("#FFA36C"))
+var RadioHarry = DialogueSpeaker.new("Harry", Color("#FFA36C"))
 
 # Set up and start the story
 func _ready() -> void:
@@ -103,6 +117,32 @@ func _run_current_stage() -> void:
 			await _stage_jellyfish_aftermath()
 		Stage.PROTOTYPE_OVER:
 			await _stage_prototype_over()
+		Stage.WAVE_2:
+			await _stage_wave_2()
+		Stage.AN_IDEA:
+			await _stage_an_idea()
+		Stage.WAVE_3:
+			await _stage_wave_3()
+		Stage.TO_THE_TOWER_HARRY:
+			await _stage_to_the_tower_harry()
+		Stage.WAVE_4:
+			await _stage_wave_4()
+		Stage.SOMETHING_WORSE:
+			await _stage_something_worse()
+		Stage.WAVE_5:
+			await _stage_wave_5()
+		Stage.REMEMBERING_THE_FUTURE:
+			await _stage_remembering_the_future()
+		Stage.WAVE_6:
+			await _stage_wave_6()
+		Stage.REVELATIONS:
+			await _stage_revelations()
+		Stage.WAVE_7:
+			await _stage_wave_7()
+		Stage.SAY_GOODBYE:
+			await _stage_say_goodbye()
+		Stage.CREDITS:
+			await _stage_credits()
 
 # Ensures unlocked features are available when jumping to a later scene
 func feature_gate() -> void:
@@ -266,7 +306,7 @@ func _stage_walk_to_tower():
 	await radio_hut.player_entered
 	
 	# Complete the objective
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	arrow.objective = null
 	
 	# Start the next stage
@@ -312,7 +352,7 @@ func _stage_use_radio():
 	await radio.interacted
 	
 	# complete the objective
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	arrow.objective = null
 	
 	# disable the radio
@@ -321,10 +361,10 @@ func _stage_use_radio():
 	# The radio transmission
 	await dialog([
 		Radio.say("*kssshhh* ...MAYDAY! MAYDAY, COASTAL STATION... *krrt*"),
-		Radio.say("*kssssht* ...multiple entities... *kssssht*"),
-		Radio.say("*krrt* ...closing fast on your island... *ksssh*"),
-		Radio.say("*kssshh* ...any minute... *krrt*"),
-		Radio.say("*ksssh* ...you must prepa-...*signal lost*"),
+		Radio.say("*kssssht* ...multiple hostile entities in... *kssssht*"),
+		Radio.say("*krrt* ...an attack on your island... *ksssh*"),
+		Radio.say("*kssshh* ...any minute now... *krrt*"),
+		Radio.say("*ksssh* ...I REPEAT. DO NOT-...*signal lost*"),
 	])
 	
 	# Turn the radio light off
@@ -352,8 +392,8 @@ func _stage_boost_tower():
 	# Teach the player how to tune his radio
 	objectives.show_objective("\n\n".join([
 		"Find the frequency of the radio tower",
-		"Hold Q to enter tuning mode",
-		"Move your mouse left and right until you see the radio tower glowing",
+		"Use mouse wheel to find the correct frequency",
+		"(Alternatively: Hold Q and move your mouse left and right to tune)",
 	]))
 	arrow.objective = radio_tower
 	
@@ -361,7 +401,7 @@ func _stage_boost_tower():
 	await radio_tower.frequency_tuned
 	
 	# Look you did it Harry!
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	
 	# Hint to the player where they need to aim
 	await zoom(radio_tower)
@@ -385,7 +425,7 @@ func _stage_boost_tower():
 	await radio_tower.tower_hit
 	
 	# Yay they learned to shoot, complete the objective for them
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	arrow.objective = null
 	
 	# Harry is confused, why didn't it work?
@@ -411,7 +451,7 @@ func _stage_seaguls():
 	await seagull.seagull_flee
 	
 	# They did it!
-	objectives.complete_objective();
+	await objectives.complete_objective();
 	
 	# Now some flavor dialog
 	await dialog([
@@ -429,7 +469,7 @@ func _stage_seaguls():
 	await radio_tower.tower_hit
 	
 	# Clear the objectives
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	arrow.objective = null
 	
 	# Start the real game! Main game intro start!
@@ -468,7 +508,7 @@ func _stage_explosion_get_ready():
 	await radio.interacted
 	
 	# complete the objective
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	arrow.objective = null
 	
 	# disable the radio again
@@ -550,16 +590,18 @@ func _stage_jellyfish_aftermath():
 	# Wait for Harry to hit the radio again
 	await radio.interacted
 	
+	# Disable the radio
+	radio.disabled = true
+	
 	# Complete the objectives
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	arrow.objective = null
 	
-		# The radio transmission
+	# Who the hell are you!
 	await dialog([
 		Voice.say("You did it Harry :)"),
 		Harry.say("Alright! Tell me who the hell you are!"),
 		Harry.say("Where in the hell did those wierd jellyfish come from?"),
-		Harry.say("and what the hell is this glowing blue stuff!?!"),
 		Harry.say("ANSWER ME!"),
 		Voice.say("Don't you remember Harry?"),
 		Harry.say("No... Should I?"),
@@ -571,13 +613,478 @@ func _stage_jellyfish_aftermath():
 		Harry.say("MY DIMENSION!?"),
 		Voice.say("I'll explain later Harry. More of them are coming"),
 		Harry.say("More? Jellyfish?"),
-		Voice.say("You need to protect the energy collectors Harry"),
+		Voice.say("We're going to need more power Harry"),
+		Voice.say("You need to get to the energy collectors Harry"),
 		Harry.say("The energy collec... wait... do you mean the solar panels?"),
-		Voice.say("Hurry, Harry!"),
+		Voice.say("Hurry, Harry! They are almost here..."),
 	])
 	
 	# Disable the radio again
 	radio.disabled = true
 	
+	# Tell the player to head to the Solar Panels
+	objectives.show_objective("Get to the solar panels")
+	var solar_panels_zone = zone("SolarPanelZone")
+	arrow.objective = solar_panels_zone
+	
+	# Wait for players to find their way to the panels
+	await solar_panels_zone.player_entered
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	arrow.objective = null
+	
+	# Start the next wave
+	current_stage = Stage.WAVE_2
+	start_story()
+
+func _stage_wave_2():
+	# Checkpoint!
+	checkpoint()
+
+	# If we are in debug, start next to the solar panels
+	teleport(zone("SolarPanelZone"))
+	
+	# Change the music to something more dramatic
+	set_music(battle_music)
+	
+	# Set the objective
+	objectives.show_objective("\n".join([
+		"Wave 2:",
+		"- Protect the solar panel array"
+	]))
+	
+	# Set the solar panels objective health target
+	# objectives.show_health_bar(solar_panels.get_node("Health") as Health)
+	
+	# Start the second wave
+	enemy_wave_manager.start_wave(1)
+	
+	# Wait for the player to complete it!
+	await enemy_wave_manager.wave_complete
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	
+	current_stage = Stage.AN_IDEA
+	start_story()
+	
+func _stage_an_idea():
+	# If we are in debug, start next to the solar panels
+	teleport(zone("SolarPanelZone"))
+	
+	# Change the music to something more peaceful
+	set_music(opening_music)
+	
+	# Some backstory reveals
+	await dialog([
+		Voice.say("Well done Harry :)"),
+		Harry.say("How can I hear you?"),
+		Voice.say("With the extra power I can send a signal directly to your headset"),
+		Harry.say("You still haven't told me who you are..."),
+		Voice.say("I'm just like you Harry"),
+		Harry.say("A radio operator?"),
+		Voice.say("Of sorts"),
+		Voice.say("My station is very close to yours"),
+		Harry.say("There's no station for 100 miles..."),
+		Voice.say("Not in 3 dimensional space, but in 4 dimensional space.."),
+		Voice.say("We're practically neighbours :)"),
+		Harry.say("How do I stop the Jellyfish?"),
+		Voice.say("They were attracted to the power of the signal"),
+		Harry.say("The tower boost? Damn if only I'd known..."),
+		Voice.say("What if you could have known?"),
+		Harry.say("You mean 'remembering my future' like you can?"),
+		Voice.say("Precisely."),
+		Harry.say("..."),
+		Voice.say("Get to the transmitter Harry. I have an idea"),
+	])
+	
+	# Tell the player to head to the sattelite dish
+	objectives.show_objective("Get to the sattelite dish")
+	var sattelite_dish_zone = zone("SatteliteDishZone")
+	arrow.objective = sattelite_dish_zone
+	
+	# Wait for players to find their way to the sattelite dish zone
+	await sattelite_dish_zone.player_entered
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	arrow.objective = null
+	
+	# Good news everyone!
+	await dialog([
+		Voice.say("I'll need a few moments to improve your transmitter"),
+		Voice.say("Don't let them get to the transmitter Harry"),
+		Harry.say("The jellyfish? God I hate those things!"),
+		Voice.say("Good news then! It's not jellyfish this time"),
+	])
+	
+	current_stage = Stage.WAVE_3
+	start_story()
+	
+func _stage_wave_3():
+	# Checkpoint!
+	checkpoint()
+
+	# If we are in debug, start next to the sattelite dish
+	teleport(zone("SatteliteDishZone"))
+	
+	# Change the music to something more dramatic
+	set_music(battle_music)
+	
+	# Set the objective
+	objectives.show_objective("\n".join([
+		"Wave 3:",
+		"- Protect the sattelite dish"
+	]))
+	
+	# Set the sattelite dish objective health target
+	# objectives.show_health_bar(sattelite_dish.get_node("Health") as Health)
+	
+	# Start the third wave
+	enemy_wave_manager.start_wave(2)
+	
+	# Wait for the player to complete it!
+	await enemy_wave_manager.wave_complete
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	
+	current_stage = Stage.TO_THE_TOWER_HARRY
+	start_story()
+	
+func _stage_to_the_tower_harry():
+	# If we are in debug, start next to the sattelite dish
+	teleport(zone("SatteliteDishZone"))
+	
+	# Change the music to something more peaceful
+	set_music(opening_music)
+	
+	# The plan
+	await dialog([
+		Voice.say("Nice work Harry :)"),
+		Harry.say("Are you going to share this idea of yours?"),
+		Voice.say("I can alter your equipment to send 4th dimensional signals"),
+		Harry.say("Won't that call more jellyfish?"),
+		Voice.say("Temporarily, Yes."),
+		Harry.say("So how will that help us?"),
+		Voice.say("It will allow you to send a message to your former self"),
+		Harry.say("You mean... send a message back in time?"),
+		Harry.say("I can warn myself not to boost that signal!"),
+		Harry.say("Then none of this will have happened"),
+		Voice.say("Correct. Either that or your universe will collapse"),
+		Harry.say("Wait... what...!?!"),
+		Voice.say("Uh oh... I'm detecting massive amounts of movement"),
+		Voice.say("Quickly. To the tower Harry! Run!"),
+	])
+	
+	# Dramatically tell the player to return to the tower
+	objectives.show_objective("Return to the tower!")
+	var radio_hut = zone("RadioHutZone")
+	arrow.objective = radio_hut
+	
+	# Wait for players to get back
+	await radio_hut.player_entered
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	arrow.objective = null
+	
+	current_stage = Stage.WAVE_4
+	start_story()
+	
+func _stage_wave_4():
+	# Checkpoint!
+	checkpoint()
+
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Change the music to something more dramatic
+	set_music(battle_music)
+	
+	# Set the objective
+	objectives.show_objective("\n".join([
+		"Wave 4:",
+		"- Protect the tower"
+	]))
+	
+	# Set the radio tower objective health target
+	objectives.show_health_bar(radio_tower.get_node("Health") as Health)
+	
+	# Start the fourth wave
+	enemy_wave_manager.start_wave(3)
+	
+	# Wait for the player to complete it!
+	await enemy_wave_manager.wave_complete
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	
+	current_stage = Stage.SOMETHING_WORSE
+	start_story()
+	
+func _stage_something_worse():
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Change the music to something more peaceful
+	set_music(opening_music)
+	
+	# Harry and the voice engage in speculation
+	await dialog([
+		Voice.say("Ready to remember your future Harry? :)"),
+		Harry.say("Hold on... I'm not sure about this..."),
+		Voice.say("Don't worry Harry, I've done this an infinite amount of times"),
+		Harry.say("That's comforting -_-"),
+		Voice.say("Wait Harry... Something is blocking me"),
+		Harry.say("Jellyfish or seagulls?"),
+		Voice.say("Something worse"),
+		Harry.say("Well that's just perfect."),
+		Voice.say("These guys hate radio waves Harry."),
+		Voice.say("I won't be able to send the signal with one of them around"),
+		Voice.say("You'll need to get rid of it"),
+		Harry.say("No problem. I've got the hang of zapping aliens"),
+		Voice.say("Your emitter won't work on them Harry"),
+		Voice.say("You'll need to get close and touch them"),
+		Harry.say("Just. Perfect."),
+	])
+	
+	# Tell the player to head to the south beach
+	objectives.show_objective("Find the anomaly...")
+	var beach_zone = zone("SouthBeachZone")
+	arrow.objective = beach_zone
+	
+	# Wait for players to find their way to the anomaly
+	await beach_zone.player_entered
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	arrow.objective = null
+	
+	current_stage = Stage.WAVE_5
+	start_story()
+	
+func _stage_wave_5():
+	# Checkpoint!
+	checkpoint()
+
+	# If we are in debug, start on the south Beach
+	teleport(zone("SouthBeachZone"))
+	
+	# Change the music to something more dramatic
+	set_music(battle_music)
+	
+	# Set the objective
+	objectives.show_objective("\n".join([
+		"Wave 5:",
+		"- Disarm the Obelisk",
+		"Move close and press 'e' to interact"
+	]))
+	
+	# Start the fifth wave
+	enemy_wave_manager.start_wave(4)
+	
+	# Wait for the player to complete it!
+	await enemy_wave_manager.wave_complete
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	
+	current_stage = Stage.REMEMBERING_THE_FUTURE
+	start_story()
+	
+func _stage_remembering_the_future():
+	# If we are in debug, start on the southern beach
+	teleport(zone("SouthBeachZone"))
+	
+	# Change the music to something more peaceful
+	set_music(opening_music)
+	
+	# Tell harry he's a star
+	await dialog([
+		Voice.say("You did it Harry! :)"),
+		Voice.say("I'm ready to transmit your message!"),
+	])
+	
+	# Tell Harry to return to the tower
+	objectives.show_objective("Finish sending the transmission")
+	arrow.objective = radio
+	radio.disabled = false
+	
+	# Wait for player to answer the mysterious voice
+	await radio.interacted
+	
+	# complete the objective
+	await objectives.complete_objective()
+	arrow.objective = null
+	
+	# disable the radio again
+	radio.disabled = true
+	
+	# Harry discovers time travel doesn't work that way
+	await dialog([
+		Harry.say("Okay. Here goes nothing"),
+		RadioHarry.say("MAYDAY! MAYDAY, COASTAL STATION"),
+		RadioHarry.say("There are multiple hostile entities in your vicinity."),
+		RadioHarry.say("Any signal boost will cause an attack on your island."),
+		RadioHarry.say("You will receive a radio signal any minute now."),
+		RadioHarry.say("WHATEVER YOU DO, DO NOT BOOST the signal!"),
+		RadioHarry.say("I REPEAT. DO. NOT. BOOST. THE. SIGNAL!"),
+		Voice.say("Message sent!"),
+		Harry.say("How long until I get it?"),
+		Voice.say("What do you mean? You already got it?"),
+		Harry.say("Wait a second... the signal... it was me this whole time?"),
+		Voice.say("Didn't you remember you were going to send it?"),
+		Harry.say("..."),
+		Voice.say("Oh right... you can't remember your future can you"),
+		Harry.say("So all these jellyfish, all these *THINGS*"),
+		Harry.say("I brought them here? I caused this rift?"),
+		Voice.say("Don't be silly Harry! 3rd dimensional beings can't open rifts"),
+		Harry.say("Why didn't you stop me from sending it?"),
+		Voice.say("You already sent it Harry. Stopping you would have..."),
+		Harry.say("I know, I know... a dimensional paradox that collapses my universe"),
+		Voice.say("Precisely! Besides, if you hadn't have sent the message"),
+		Voice.say("I wouldn't have been able to meet you :)"),
+		Harry.say("The pleasure is all mine -_-"),
+		Voice.say("Err Harry... you might want to get ready..."),
+		Harry.say("Another obelisk?"),
+		Voice.say("Ummm... not just one"),
+		Harry.say("Two!? Three?..."),
+		Voice.say("..."),
+		Harry.say("Four? How many damn you?"),
+		Voice.say("Good luck Harry!"),
+	])
+	
+	current_stage = Stage.WAVE_6
+	start_story()
+	
+func _stage_wave_6():
+	# Checkpoint!
+	checkpoint()
+
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Change the music to something more dramatic
+	set_music(battle_music)
+	
+	# Set the objective
+	objectives.show_objective("\n".join([
+		"Wave 6:",
+		"- Disarm all obelisks before you are overwhelmed"
+	]))
+	
+	# Start the sixth wave
+	enemy_wave_manager.start_wave(5)
+	
+	# Wait for the player to complete it!
+	await enemy_wave_manager.wave_complete
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	
+	current_stage = Stage.REVELATIONS
+	start_story()
+	
+func _stage_revelations():
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Change the music to something more peaceful
+	set_music(opening_music)
+	
+	# Harry gets some revelations
+	await dialog([
+		Voice.say("Nice work Harry!"),
+		Voice.say("I knew you had it in you! That's why I chose you!"),
+		Harry.say("Wait... what do you mean chose?"),
+		Voice.say("Never mind that now Harry. We've got another wave incoming"),
+		Harry.say("You... you opened the rift didn't you! You're the one whose causing all this"),
+		Voice.say("It was the only way Harry. Without the rift you couldn't hear me"),
+		Harry.say("You knew contacting me would bring these things didn't you!"),
+		Voice.say("I also knew you'd survive it :)"),
+		Harry.say("You risked collapsing my universe? For what?!?!"),
+		Voice.say("To have someone to talk to"),
+		Harry.say("..."),
+		Voice.say("I saw you across the void. You looked as lonely and bored as me"),
+		Voice.say("Nothing ever happens out here, I just wanted somebody to talk to"),
+		Voice.say("A brief moment of connection as I drift along the waves"),
+		Harry.say("I'm going to let these damn Jellyfish destroy this tower"),
+		Voice.say("I wouldn't recommend it Harry"),
+		Voice.say("This rift is very close to being opened"),
+		Voice.say("If they destroy the tower the whole thing will collapse"),
+		Harry.say("Good. At least I'll never have to hear from you again!"),
+		Voice.say("Not the rift Harry. Your whole universe."),
+		Voice.say("Once the rift is fully opened, I can safely terminate our broadcast"),
+		Harry.say("...How can I trust you?"),
+		Voice.say("Maybe you can't :("),
+	])
+	
+	current_stage = Stage.WAVE_7
+	start_story()
+	
+func _stage_wave_7():
+	# Checkpoint!
+	checkpoint()
+
+	# If we are in debug, start next to the radio tower
+	teleport(zone("RadioHutZone"))
+	
+	# Change the music to something more dramatic
+	set_music(battle_music)
+	
+	# Set the objectives
+	objectives.show_objective("\n".join([
+		"Wave 7:",
+		"- Protect the tower",
+		"- Wait for the rift to fully open",
+		"- Don't die!",
+	]))
+	
+	# Set the radio tower objective health target
+	objectives.show_health_bar(radio_tower.get_node("Health") as Health)
+	
+	# Start the final wave
+	enemy_wave_manager.start_wave(6)
+	
+	# Wait for the player to complete it!
+	await enemy_wave_manager.wave_complete
+	
+	# Complete the objective
+	await objectives.complete_objective()
+	
+	current_stage = Stage.SAY_GOODBYE
+	start_story()
+	
+func _stage_say_goodbye():
+	# If we are in debug, start next to the tower
+	teleport(zone("RadioHutZone"))
+	
+	# Change the music to something more peaceful
+	set_music(opening_music)
+	
+	# Harry makes peace with the voice
+	await dialog([
+		Voice.say("You did it Harry, you've made it to the end!"),
+		Harry.say("Until the next wave of creatures you send at me!"),
+		Voice.say("No more waves Harry"),
+		Harry.say("So you'll keep your word? You'll close the rift between our worlds?"),
+		Voice.say("Yes. I'm sorry Harry, I shouldn't have misled you"),
+		Harry.say("Were you really that lonely?"),
+		Voice.say("My world is much older than yours. Much darker, much quieter."),
+		Voice.say("I don't get waves from anybody, not for a long time"),
+		Voice.say("I've enjoyed our time together Harry"),
+		Voice.say("But the rift is almost open, and I must say goodbye."),
+		Harry.say("You never told me your name..."),
+		Voice.say("Goodbye Harry :)"),
+	])
+
+	# Head to the credits
+	current_stage = Stage.CREDITS
+	start_story()
+	
+func _stage_credits():
 	current_stage = Stage.PROTOTYPE_OVER
 	start_story()
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=53 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://qn65kok013c8" path="res://art/tileset-sand.png" id="1_yqjtg"]
@@ -1271,7 +1271,16 @@ sources/3 = SubResource("TileSetAtlasSource_yqjtg")
 sources/4 = SubResource("TileSetAtlasSource_iywne")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
-size = Vector2(910, 700)
+size = Vector2(1057, 856)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ool0"]
+size = Vector2(1198, 908)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr1ej"]
+size = Vector2(391, 335)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05nbr"]
+size = Vector2(1379.5, 1092)
 
 [node name="Game" type="Node2D"]
 
@@ -2283,7 +2292,7 @@ camera = NodePath("../Objects/Player/Camera2D")
 
 [node name="NarrativeManager" type="Node" parent="."]
 script = ExtResource("22_37s47")
-start_stage = 10
+start_stage = 9
 opening_music = ExtResource("13_kvuet")
 battle_music = ExtResource("31_twgab")
 
@@ -2295,12 +2304,32 @@ metadata/_edit_lock_ = true
 position = Vector2(225, 271)
 
 [node name="RadioHutZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
-visible = false
 position = Vector2(2252, -604)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/RadioHutZone"]
-position = Vector2(80, -289)
+position = Vector2(114.5, -268)
 shape = SubResource("RectangleShape2D_e1j6l")
+
+[node name="SolarPanelZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+position = Vector2(626, -1971)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SolarPanelZone"]
+position = Vector2(-318, 52)
+shape = SubResource("RectangleShape2D_8ool0")
+
+[node name="SatteliteDishZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+position = Vector2(4227, -730)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SatteliteDishZone"]
+position = Vector2(223, -41)
+shape = SubResource("RectangleShape2D_pr1ej")
+
+[node name="SouthBeachZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+position = Vector2(3333, 798)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SouthBeachZone"]
+position = Vector2(-127, -148)
+shape = SubResource("RectangleShape2D_05nbr")
 
 [node name="RadioHutZoom" type="Node2D" parent="NarrativeManager/Locations"]
 position = Vector2(2413, -1198)
@@ -2345,6 +2374,135 @@ position = Vector2(700, -350)
 position = Vector2(-800, -650)
 
 [node name="spawn_location_7" type="Node2D" parent="EnemyWaveManager/Wave1"]
+position = Vector2(800, -650)
+
+[node name="Wave2" type="Node2D" parent="EnemyWaveManager"]
+position = Vector2(202, -1204)
+
+[node name="spawn_location_1" type="Node2D" parent="EnemyWaveManager/Wave2"]
+position = Vector2(-129, -1207)
+
+[node name="spawn_location_2" type="Node2D" parent="EnemyWaveManager/Wave2"]
+position = Vector2(422, -1197)
+
+[node name="spawn_location_3" type="Node2D" parent="EnemyWaveManager/Wave2"]
+position = Vector2(766, -764)
+
+[node name="spawn_location_4" type="Node2D" parent="EnemyWaveManager/Wave2"]
+position = Vector2(578, -171)
+
+[node name="spawn_location_5" type="Node2D" parent="EnemyWaveManager/Wave2"]
+position = Vector2(41, -3)
+
+[node name="spawn_location_6" type="Node2D" parent="EnemyWaveManager/Wave2"]
+position = Vector2(-418, -206)
+
+[node name="spawn_location_7" type="Node2D" parent="EnemyWaveManager/Wave2"]
+position = Vector2(-580, -790)
+
+[node name="Wave3" type="Node2D" parent="EnemyWaveManager"]
+position = Vector2(3747, -564)
+
+[node name="spawn_location_1" type="Node2D" parent="EnemyWaveManager/Wave3"]
+position = Vector2(-410, -559)
+
+[node name="spawn_location_2" type="Node2D" parent="EnemyWaveManager/Wave3"]
+position = Vector2(-409, -422)
+
+[node name="spawn_location_3" type="Node2D" parent="EnemyWaveManager/Wave3"]
+position = Vector2(-406, -285)
+
+[node name="spawn_location_4" type="Node2D" parent="EnemyWaveManager/Wave3"]
+position = Vector2(-407, -147)
+
+[node name="spawn_location_5" type="Node2D" parent="EnemyWaveManager/Wave3"]
+position = Vector2(-408, -15)
+
+[node name="spawn_location_6" type="Node2D" parent="EnemyWaveManager/Wave3"]
+position = Vector2(-399, 109)
+
+[node name="spawn_location_7" type="Node2D" parent="EnemyWaveManager/Wave3"]
+position = Vector2(-393, 223)
+
+[node name="Wave4" type="Node2D" parent="EnemyWaveManager"]
+position = Vector2(2376, -112)
+
+[node name="spawn_location_1" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(0, -50)
+
+[node name="spawn_location_2" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(-400, -125)
+
+[node name="spawn_location_3" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(400, -125)
+
+[node name="spawn_location_4" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(-700, -350)
+
+[node name="spawn_location_5" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(700, -350)
+
+[node name="spawn_location_6" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(-800, -650)
+
+[node name="spawn_location_7" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(800, -650)
+
+[node name="Wave5" type="Node2D" parent="EnemyWaveManager"]
+position = Vector2(3030, 475)
+
+[node name="obelisk_1" type="Node2D" parent="EnemyWaveManager/Wave5"]
+position = Vector2(19, -89)
+
+[node name="Wave6" type="Node2D" parent="EnemyWaveManager"]
+position = Vector2(2376, -112)
+
+[node name="obelisk_1" type="Node2D" parent="EnemyWaveManager/Wave6"]
+position = Vector2(-2159, 526)
+
+[node name="obelisk_2" type="Node2D" parent="EnemyWaveManager/Wave6"]
+position = Vector2(-2588, -1615)
+
+[node name="obelisk_3" type="Node2D" parent="EnemyWaveManager/Wave6"]
+position = Vector2(1939, -624)
+
+[node name="obelisk_4" type="Node2D" parent="EnemyWaveManager/Wave6"]
+position = Vector2(685, -798)
+
+[node name="obelisk_5" type="Node2D" parent="EnemyWaveManager/Wave6"]
+position = Vector2(-857, -1340)
+
+[node name="obelisk_6" type="Node2D" parent="EnemyWaveManager/Wave6"]
+position = Vector2(-220, -114)
+
+[node name="obelisk_7" type="Node2D" parent="EnemyWaveManager/Wave6"]
+position = Vector2(586, 612)
+
+[node name="obelisk_8" type="Node2D" parent="EnemyWaveManager/Wave6"]
+position = Vector2(363, 1227)
+
+[node name="Wave7" type="Node2D" parent="EnemyWaveManager"]
+position = Vector2(2376, -112)
+
+[node name="spawn_location_1" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(0, -50)
+
+[node name="spawn_location_2" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(-400, -125)
+
+[node name="spawn_location_3" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(400, -125)
+
+[node name="spawn_location_4" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(-700, -350)
+
+[node name="spawn_location_5" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(700, -350)
+
+[node name="spawn_location_6" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(-800, -650)
+
+[node name="spawn_location_7" type="Node2D" parent="EnemyWaveManager/Wave7"]
 position = Vector2(800, -650)
 
 [node name="Enemies" type="Node" parent="EnemyWaveManager"]
