@@ -95,6 +95,12 @@ Thanks to ArcadeParty for his terrific [Zombie / Skeleton / Monster Voice Effect
 
 The `.wav` files in `music/opengameart.org/users/arcadeparty/*` were provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), and as such are covered under the same license in this repository.
 
+#### SubspaceAudio ([opengameart.org](https://opengameart.org/users/subspaceaudio))
+
+Thanks to SubspaceAudio for his incredibly useful [512 Sound Effects (8-bit style)](https://opengameart.org/content/512-sound-effects-8-bit-style) sfx pack.
+
+The `.wav` files in `music/opengameart.org/users/subspaceaudio/*` were provided as [Creative Commons 0](https://creativecommons.org/publicdomain/zero/1.0/), and as such are covered under the same license in this repository.
+
 #### NimbleBeasts Collective ([itch.io](https://nimblebeastscollective.itch.io/))
 
 Thanks to the NimbleBeasts Collective for their [CC0 font pack](https://nimblebeastscollective.itch.io/nb-pixel-font-bundle)
