@@ -6,7 +6,7 @@ extends Control
 
 const FADE_IN_TIME = .75
 const FADE_COL_TIME = .5
-const FADE_OUT_TIME = 1.5
+const FADE_OUT_TIME = 1
 const PROG_COLOR = Color("#6ef0ff")
 const DONE_COLOR = Color("#ff3fa4")
 

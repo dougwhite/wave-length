@@ -1277,7 +1277,7 @@ sources/4 = SubResource("TileSetAtlasSource_iywne")
 size = Vector2(1057, 856)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ool0"]
-size = Vector2(1198, 908)
+size = Vector2(1343, 1002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr1ej"]
 size = Vector2(391, 335)
@@ -2346,10 +2346,10 @@ shape = SubResource("RectangleShape2D_e1j6l")
 
 [node name="SolarPanelZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
 visible = false
-position = Vector2(626, -1971)
+position = Vector2(629, -1914)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SolarPanelZone"]
-position = Vector2(-318, 52)
+position = Vector2(-309.5, 43)
 shape = SubResource("RectangleShape2D_8ool0")
 
 [node name="SatteliteDishZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
