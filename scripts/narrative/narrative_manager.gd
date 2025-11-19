@@ -307,7 +307,7 @@ func _stage_walk_to_tower():
 	await radio_hut.player_entered
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	# Start the next stage
@@ -533,7 +533,7 @@ func _stage_explosion_get_ready():
 	await radio.interacted
 	
 	# complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	# disable the radio again
@@ -591,7 +591,7 @@ func _stage_wave_1():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	
 	# Phew! The player survived!
 	current_stage = Stage.JELLYFISH_AFTERMATH
@@ -619,7 +619,7 @@ func _stage_jellyfish_aftermath():
 	radio.disabled = true
 	
 	# Complete the objectives
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	# Who the hell are you!
@@ -689,7 +689,7 @@ func _stage_wave_2():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	
 	current_stage = Stage.AN_IDEA
 	start_story()
@@ -1007,7 +1007,7 @@ func _stage_wave_6():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	
 	current_stage = Stage.REVELATIONS
 	start_story()
