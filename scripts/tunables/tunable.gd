@@ -9,12 +9,12 @@ extends Node2D
 @export var band: int = 0
 @export var match_band: bool = false
 
-@export var strong_hit_level = 0.9
-@export var medium_hit_level = 0.6
-@export var weak_hit_level = 0.3
+@export var strong_hit_level = 0.7
+@export var medium_hit_level = 0.4
+@export var weak_hit_level = 0.2
 @export var default_stop_waves = true
 
-const GLOW_RADIUS = 10.0
+const GLOW_RADIUS = 12.0
 const GLOW_CURVE = 2.0
 
 var last_freq = -1
@@ -44,10 +44,13 @@ func _process(delta):
 func hit(freq: int, strength: float = 1.0) -> bool:
 	var res = _calc_resonance(freq) * strength
 	if res > strong_hit_level: 		# strong hit
+		any_hit()
 		return strong_hit()
 	elif res > medium_hit_level:  	# medium hit
+		any_hit()
 		return medium_hit()
 	elif res > weak_hit_level:  	# weak hit
+		any_hit()
 		return weak_hit()
 	else:
 		print(name, " was hit but felt almost nothing")
@@ -56,19 +59,16 @@ func hit(freq: int, strength: float = 1.0) -> bool:
 # Signal is very close and/or exact match
 func strong_hit() -> bool:
 	print(name, " was hit strongly!")
-	any_hit()
 	return default_stop_waves
 
 # Average hit
 func medium_hit() -> bool:
 	print(name, " was hit mediumly")
-	any_hit()
 	return default_stop_waves
 
 # When signal is a weak match or far away
 func weak_hit() -> bool:
 	print(name, " was hit weakly")
-	any_hit()
 	return default_stop_waves
 
 # Called whenever hit by strong, medium or weak

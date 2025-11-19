@@ -1,11 +1,12 @@
 extends Tunable
 
 @onready var alien_noise = $alien_noise
+@onready var death_noise = $death_noise
 @onready var animation_player = $AnimationPlayer
 
 @export var goal: Node2D
 @export var speed: float = 50
-@export var health: float = 5
+@export var health: float = 3
 
 var dead = false
 
@@ -40,6 +41,9 @@ func medium_hit() -> bool:
 
 func weak_hit() -> bool:
 	return take_damage(1)
+
+func any_hit() -> void:
+	death_noise.play() 
 
 func take_damage(dmg: float):
 	health -= dmg
