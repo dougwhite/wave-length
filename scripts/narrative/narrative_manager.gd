@@ -108,7 +108,7 @@ func _run_current_stage() -> void:
 		Stage.BOOST_TOWER:
 			await _stage_boost_tower()
 		Stage.SEAGULLS:
-			await _stage_seaguls()
+			await _stage_seagulls()
 		Stage.EXPLOSION_GET_READY:
 			await _stage_explosion_get_ready()
 		Stage.WAVE_1:
@@ -150,7 +150,7 @@ func feature_gate() -> void:
 		player.feature_tuning = true
 		player.feature_firing = true
 	
-	if current_stage > Stage.WAVE_1:
+	if current_stage >= Stage.WAVE_1:
 		var tween = create_tween()
 		tween.tween_property(player_health_ui, "modulate:a", 1.0, 0.5) \
 		 	 .set_trans(Tween.TRANS_SINE) \
@@ -205,7 +205,7 @@ func load_world_state():
 	player_health.current_health = GameState.player_hp
 	player_health.max_health = GameState.player_max_hp
 	player_health_ui._on_health_changed(player_health.current_health, player_health.max_health)
-	player.position = GameState.player_position
+	player.global_position = GameState.player_position
 	tower_health.current_health = GameState.tower_hp 
 	tower_health.max_health = GameState.tower_max_hp
 	# TODO: Add currency?
@@ -228,7 +228,7 @@ func checkpoint():
 	GameState.current_stage = current_stage
 	GameState.player_hp = player_health.current_health
 	GameState.player_max_hp = player_health.max_health
-	GameState.player_position = player.position
+	GameState.player_position = player.global_position
 	GameState.tower_hp = tower_health.current_health
 	GameState.tower_max_hp = tower_health.max_health
 	# TODO: Add currency?
@@ -352,7 +352,7 @@ func _stage_use_radio():
 	await radio.interacted
 	
 	# complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	# disable the radio
@@ -401,7 +401,7 @@ func _stage_boost_tower():
 	await radio_tower.frequency_tuned
 	
 	# Look you did it Harry!
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	
 	# Hint to the player where they need to aim
 	await zoom(radio_tower)
@@ -425,7 +425,7 @@ func _stage_boost_tower():
 	await radio_tower.tower_hit
 	
 	# Yay they learned to shoot, complete the objective for them
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	# Harry is confused, why didn't it work?
@@ -438,7 +438,7 @@ func _stage_boost_tower():
 	current_stage = Stage.SEAGULLS
 	start_story()
 	
-func _stage_seaguls():
+func _stage_seagulls():
 	# If we are in debug, start next to the radio tower
 	teleport(zone("RadioHutZone"))
 	
@@ -451,7 +451,7 @@ func _stage_seaguls():
 	await seagull.seagull_flee
 	
 	# They did it!
-	await objectives.complete_objective();
+	objectives.complete_objective();
 	
 	# Now some flavor dialog
 	await dialog([
@@ -469,7 +469,7 @@ func _stage_seaguls():
 	await radio_tower.tower_hit
 	
 	# Clear the objectives
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	# Start the real game! Main game intro start!
@@ -708,7 +708,7 @@ func _stage_an_idea():
 	await sattelite_dish_zone.player_entered
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	# Good news everyone!
@@ -748,7 +748,7 @@ func _stage_wave_3():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	
 	current_stage = Stage.TO_THE_TOWER_HARRY
 	start_story()
@@ -819,7 +819,7 @@ func _stage_wave_4():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	
 	current_stage = Stage.SOMETHING_WORSE
 	start_story()
@@ -859,7 +859,7 @@ func _stage_something_worse():
 	await beach_zone.player_entered
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	current_stage = Stage.WAVE_5
@@ -889,7 +889,7 @@ func _stage_wave_5():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	
 	current_stage = Stage.REMEMBERING_THE_FUTURE
 	start_story()
@@ -916,7 +916,7 @@ func _stage_remembering_the_future():
 	await radio.interacted
 	
 	# complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	arrow.objective = null
 	
 	# disable the radio again
@@ -1052,7 +1052,7 @@ func _stage_wave_7():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	await objectives.complete_objective()
+	objectives.complete_objective()
 	
 	current_stage = Stage.SAY_GOODBYE
 	start_story()
