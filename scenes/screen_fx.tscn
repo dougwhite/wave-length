@@ -68,7 +68,7 @@ color = Color(0, 0, 0, 1)
 modulate = Color(1, 1, 1, 0)
 
 [node name="Backdrop" type="Sprite2D" parent="SkyEvent"]
-scale = Vector2(2, 2)
+scale = Vector2(8, 8)
 texture = ExtResource("1_578fe")
 centered = false
 
