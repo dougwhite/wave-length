@@ -448,11 +448,35 @@ func _stage_seagulls():
 		"Figure out the source of the signal disturbance"
 	]))
 	
+	# Wait for players to find the seagull
+	var seagull_zone = zone("SeagullZone")	
+	await seagull_zone.player_entered
+	
+	objectives.complete_objective()
+	
+	# Focus camera on the bird
+	await zoom(seagull)
+	
+	# Harry hates seagulls
+	await dialog([
+		Harry.say("Seagulls. Why does it always have to be seagulls?"),
+	])
+
+	# Focus camera back on harry
+	await zoom(player)
+
+	# Harry must "solve" the seagull puzzle
+	objectives.show_objective("\n\n".join([
+		"Find a way to clear the disruption"
+	]))
+	arrow.objective = seagull
+
 	# Now wait for the player to figure out how to blast the seagull
 	await seagull.seagull_flee
 	
 	# They did it!
 	objectives.complete_objective();
+	arrow.objective = null
 	
 	# Now some flavor dialog
 	await dialog([
@@ -763,7 +787,7 @@ func _stage_to_the_tower_harry():
 	
 	# The plan
 	await dialog([
-		Voice.say("Nice work Harry :)"),
+		Voice.say("Your a wizard Harry :)"),
 		Harry.say("Are you going to share this idea of yours?"),
 		Voice.say("I can alter your equipment to send 4th dimensional signals"),
 		Harry.say("Won't that call more jellyfish?"),

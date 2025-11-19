@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=55 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://qn65kok013c8" path="res://art/tileset-sand.png" id="1_yqjtg"]
@@ -1280,6 +1280,9 @@ size = Vector2(1198, 908)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr1ej"]
 size = Vector2(391, 335)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sl42"]
+size = Vector2(852, 654)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05nbr"]
 size = Vector2(1379.5, 1092)
 
@@ -2324,6 +2327,13 @@ position = Vector2(4227, -730)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SatteliteDishZone"]
 position = Vector2(223, -41)
 shape = SubResource("RectangleShape2D_pr1ej")
+
+[node name="SeagullZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
+position = Vector2(4227, -730)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NarrativeManager/Locations/SeagullZone"]
+position = Vector2(-4, -22)
+shape = SubResource("RectangleShape2D_0sl42")
 
 [node name="SouthBeachZone" parent="NarrativeManager/Locations" instance=ExtResource("25_pl11u")]
 position = Vector2(3333, 798)
