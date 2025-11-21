@@ -2,6 +2,7 @@ class_name Health
 extends Node
 
 @export var max_health: int = 100
+var invulnerable: bool = false
 var current_health: int
 
 signal health_changed(_current: int, _max: int)
@@ -15,6 +16,9 @@ func _ready():
 func take_damage(amount: int, other: Node):
 	# If the amount was less than 0 for some reason, nothing happens
 	if amount <= 0:
+		return
+	
+	if invulnerable:
 		return
 	
 	# Let subscibers know that we were damaged

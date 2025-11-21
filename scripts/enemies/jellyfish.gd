@@ -57,6 +57,9 @@ func take_damage(dmg: float):
 func _on_body_entered(body):
 	var body_health = body.get_node_or_null("Health")
 	if body_health:
+		# Don't do anything if player is dodge rolling
+		if body_health.invulnerable:
+			return
 		body_health.take_damage(10, self) 
 		dead = true
 		queue_free()

@@ -139,11 +139,13 @@ func _try_start_roll():
 	is_rolling = true
 	roll_time_remaining = ROLL_DURATION
 	roll_cooldown_remaining = ROLL_COOLDOWN
+	health.invulnerable = true
 
 	_play_roll_animation()
 
 func _end_roll():
 	is_rolling = false
+	health.invulnerable = false
 	idle_sprite()
 
 func _play_roll_animation():
