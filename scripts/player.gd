@@ -18,6 +18,9 @@ const SPEED = 300.0
 const WAVE_SPAWN_DIST = 50.0
 const KNOCKBACK_STRENGTH = 500.0
 const KNOCKBACK_DURATION = 0.15
+const ROLL_SPEED = 600.0
+const ROLL_DURATION = 0.5
+const ROLL_COOLDOWN = .75
 
 var last_dir = 1 	# 0 - right, 1 - left, 2 - down, 3 - up
 var tune_mode = false
@@ -26,12 +29,28 @@ var fine_tuning = false
 var knockback_velocity: Vector2 = Vector2.ZERO
 var knockback_remaining: float = 0.0
 
+var is_rolling = false
+var roll_time_remaining = 0.0
+var roll_cooldown_remaining = 0.0
+var roll_direction: Vector2 = Vector2.ZERO
+
 func _physics_process(delta):
 	
 	if not input_enabled:
 		if not animated_sprite.animation == "sleep":
 			idle_sprite()
 		return;
+
+	if roll_cooldown_remaining > 0.0:
+		roll_cooldown_remaining = max(roll_cooldown_remaining - delta, 0.0)
+	
+	if is_rolling:
+		roll_time_remaining -= delta
+		velocity = roll_direction * ROLL_SPEED
+		if roll_time_remaining <= 0.0:
+			_end_roll()
+		move_and_slide()
+		return
 
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
@@ -89,6 +108,10 @@ func _input(event):
 			fine_tuning = false
 		return
 
+	# If the player pressed dodge, try to roll
+	if event.is_action_pressed("dodge_roll"):
+		_try_start_roll()
+
 	# If the player presses interact, send an interact event to any selectables in the area
 	if event.is_action_pressed("interact"):
 		for body in selection_radius.get_overlapping_bodies():
@@ -100,6 +123,35 @@ func _input(event):
 	
 	# Handle input for firing radio emitter
 	_input_firing(event)
+
+func _try_start_roll():
+	if is_rolling or roll_cooldown_remaining > 0.0 or knockback_remaining > 0.0:
+		return
+	
+	roll_direction = velocity.normalized()
+	if roll_direction == Vector2.ZERO:
+		match last_dir:
+			0: roll_direction = Vector2.RIGHT
+			1: roll_direction = Vector2.LEFT
+			2: roll_direction = Vector2.DOWN
+			3: roll_direction = Vector2.UP
+	
+	is_rolling = true
+	roll_time_remaining = ROLL_DURATION
+	roll_cooldown_remaining = ROLL_COOLDOWN
+
+	_play_roll_animation()
+
+func _end_roll():
+	is_rolling = false
+	idle_sprite()
+
+func _play_roll_animation():
+	match last_dir:
+		0: animated_sprite.play("dodge_right")
+		1: animated_sprite.play("dodge_left")
+		2: animated_sprite.play("dodge_down")
+		3: animated_sprite.play("dodge_up")
 
 func _input_tuning(event):
 	# Player must unlock tuning feature via story progression first
