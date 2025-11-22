@@ -299,7 +299,7 @@ func _stage_wake_on_beach():
 func _stage_walk_to_tower():
 	
 	# Give the player their first objective
-	objectives.show_objective("Head back to the radio tower\nUse WSAD to move")
+	objectives.show_objective("Head back to the radio tower\n\n- Use WSAD to move\n- SPACE to dodge roll")
 	var radio_hut = zone("RadioHutZone")
 	arrow.objective = radio_hut
 	
@@ -739,9 +739,10 @@ func _stage_an_idea():
 	# Good news everyone!
 	await dialog([
 		Voice.say("I'll need a few moments to improve your transmitter"),
-		Voice.say("Don't let them get to the transmitter Harry"),
-		Harry.say("The jellyfish? God I hate those things!"),
-		Voice.say("Good news then! It's not jellyfish this time"),
+		Voice.say("Don't let them kill you until I'm finished"),
+		Harry.say("More jellyfish? God I hate those things!"),
+		Voice.say("Good news then! It's not jellyfish this time."),
+		Voice.say("Try not to let them touch you Harry"),
 	])
 	
 	current_stage = Stage.WAVE_3
@@ -760,7 +761,8 @@ func _stage_wave_3():
 	# Set the objective
 	objectives.show_objective("\n".join([
 		"Wave 3:",
-		"- Protect the sattelite dish"
+		"- Survive!\n",
+		"REMINDER:\nPress SPACE to dodge"
 	]))
 	
 	# Set the sattelite dish objective health target
@@ -787,19 +789,22 @@ func _stage_to_the_tower_harry():
 	
 	# The plan
 	await dialog([
-		Voice.say("Your a wizard Harry :)"),
-		Harry.say("Are you going to share this idea of yours?"),
-		Voice.say("I can alter your equipment to send 4th dimensional signals"),
-		Harry.say("Won't that call more jellyfish?"),
+		Voice.say("Your a dodge wizard Harry :)"),
+		Harry.say("Seagulls... seagulls..."),
+		Voice.say("Are you okay Harry? You seem to be abnormally agitated..."),
+		Voice.say("Did those birds happen to damage your cranial region?"),
+		Harry.say("It's nothing, I'm fine... Now what was this idea of yours?"),
+		Voice.say("Well, I've altered your equipment to send 4th dimensional signals"),
+		Harry.say("Errr.. Won't that call more jellyfish? Or... seagulls"),
 		Voice.say("Temporarily, Yes."),
-		Harry.say("So how will that help us?"),
-		Voice.say("It will allow you to send a message to your former self"),
+		Harry.say("So how will that help us?!"),
+		Voice.say("It will allow you to send a message to your former self."),
 		Harry.say("You mean... send a message back in time?"),
 		Harry.say("I can warn myself not to boost that signal!"),
-		Harry.say("Then none of this will have happened"),
-		Voice.say("Correct. Either that or your universe will collapse"),
+		Harry.say("Then none of this will have happened."),
+		Voice.say("Correct. Either that or a dimensional paradox collapses your universe."),
 		Harry.say("Wait... what...!?!"),
-		Voice.say("Uh oh... I'm detecting massive amounts of movement"),
+		Voice.say("Uh oh... I'm detecting massive amounts of movement."),
 		Voice.say("Quickly. To the tower Harry! Run!"),
 	])
 	

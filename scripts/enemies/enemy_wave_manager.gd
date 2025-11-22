@@ -8,6 +8,7 @@ signal wave_complete
 
 # Enemies
 var jellyfish = preload("res://scenes/enemies/jellyfish.tscn")
+var ghostgull = preload("res://scenes/enemies/grossgull.tscn")
 
 var waves = [
 	# Wave 1 @ the tower
@@ -52,7 +53,18 @@ var waves = [
 	],
 	# Wave 3 @ Sattelite Dish (Seaguls)
 	[
-		{ "elapsed": 1, "spawn": ^"Wave3/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave3/spawn_location_1", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 12 },
+		{ "elapsed": 5, "spawn": ^"Wave3/spawn_location_2", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 24 },
+		{ "elapsed": 10, "spawn": ^"Wave3/spawn_location_3", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 36 },
+		#{ "elapsed": 15, "spawn": ^"Wave3/spawn_location_4", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 12 },
+		#{ "elapsed": 20, "spawn": ^"Wave3/spawn_location_5", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 15 },
+		#{ "elapsed": 25, "spawn": ^"Wave3/spawn_location_6", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 18 },
+		#{ "elapsed": 30, "spawn": ^"Wave3/spawn_location_7", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 21 },
+		#{ "elapsed": 35, "spawn": ^"Wave3/spawn_location_1", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 24 },
+		#{ "elapsed": 40, "spawn": ^"Wave3/spawn_location_2", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 27 },
+		#{ "elapsed": 45, "spawn": ^"Wave3/spawn_location_3", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 30 },
+		#{ "elapsed": 50, "spawn": ^"Wave3/spawn_location_4", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 33 },
+		#{ "elapsed": 55, "spawn": ^"Wave3/spawn_location_5", "mob": ghostgull, "goal": ^"../Objects/Player", "band": 36 },
 	],
 	# Wave 4 @ the tower
 	[
