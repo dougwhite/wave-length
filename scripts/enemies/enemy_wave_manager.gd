@@ -45,103 +45,103 @@ var waves = [
 	[
 		# 7 slow yellows
 		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 3, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 4, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 5, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 6, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 7, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15, "hold": true },
 		
 		# 7 slow reds
-		{ "elapsed": 10, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 11, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 12, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 13, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 14, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 15, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 16, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6, "hold": true },
 		
 		# 14 mixed pressure
-		{ "elapsed": 18, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 19, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 20, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 21, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 22, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 23, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 24, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 25, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 26, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 27, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 28, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 29, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 31, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
 	],
 	# Wave 2 @ The solar panels
 	[
 		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 15 },
 		{ "elapsed": 3, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 6, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 9, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 12, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 15, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 18, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 3, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 3, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 3, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 3, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 3, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 15, "hold": true },
 		
-		{ "elapsed": 24, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 26, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 28, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 30, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 32, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 34, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 36, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 2, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 2, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 2, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 2, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 2, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 2, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 6 },
 		
-		{ "elapsed": 40, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 40, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 44, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 44, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 48, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 48, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 50, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 5, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 6, "hold": true },
 		
-		{ "elapsed": 51, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 52, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 53, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 54, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 55, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 56, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 57, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 15, "hold": true },
 		
-		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 24 },
 		
-		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 10, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 12, "hold": true },
 		
-		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 12 },
-		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
-		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 12 },
 		
-		{ "elapsed": 85, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 86, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 87, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 88, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 89, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 24 },
-		{ "elapsed": 90, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
-		{ "elapsed": 91, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 5, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 24 },
 	],
 	# Wave 3 @ Sattelite Dish (Seaguls)
 	[
@@ -162,74 +162,74 @@ var waves = [
 	[
 		# 7 slow yellows
 		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 3, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 4, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 5, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 6, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 7, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15, "hold": true },
 		
 		# 7 slow reds
-		{ "elapsed": 10, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 11, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 12, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 13, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 14, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 15, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 16, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6, "hold": true },
 		
 		# 4 Pairs of colors
-		{ "elapsed": 20, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 20, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 22, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
-		{ "elapsed": 22, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
-		{ "elapsed": 24, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
-		{ "elapsed": 24, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
-		{ "elapsed": 26, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 0 },
-		{ "elapsed": 26, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 0 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 0 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 0, "hold": true },
 		
 		# 7 of 2 different colors, one side each color
-		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 30, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
 		
 		# 7 of 2 different colors, reversed
-		{ "elapsed": 40, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 40, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 40, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 40, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 40, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 40, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 40, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 10, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
 		
 		# 7 of alternating colors
-		{ "elapsed": 45, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
-		{ "elapsed": 45, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
-		{ "elapsed": 45, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
-		{ "elapsed": 45, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
-		{ "elapsed": 45, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
-		{ "elapsed": 45, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
-		{ "elapsed": 45, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
+		{ "elapsed": 5, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24, "hold": true },
 		
 		# 21 of random colors
-		{ "elapsed": 50, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
-		{ "elapsed": 52, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 0 },
-		{ "elapsed": 54, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
-		{ "elapsed": 56, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 27 },
-		{ "elapsed": 58, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
-		{ "elapsed": 60, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
-		{ "elapsed": 62, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 18 },
-		{ "elapsed": 64, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 0 },
-		{ "elapsed": 66, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
-		{ "elapsed": 68, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 18 },
-		{ "elapsed": 70, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 21 },
-		{ "elapsed": 72, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 3 },
-		{ "elapsed": 74, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 9 },
-		{ "elapsed": 76, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 12 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 0 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 36 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 27 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 6 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 18 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_4", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 0 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_7", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 24 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_2", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 18 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_5", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 21 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 3 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_6", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 9 },
+		{ "elapsed": 2, "spawn": ^"Wave1/spawn_location_3", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
 	],
 	# Wave 5 @ South Beach - 1 obelisk
 	[
@@ -248,21 +248,27 @@ var waves = [
 	],
 	# Wave 7 @ Radio Tower - FULL ASSAULT
 	[
+		{ "elapsed": 0, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15, "hold": true},
+		{ "elapsed": 0, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15, "hold": true },
+		{ "elapsed": 5, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15, "hold": true},
+		{ "elapsed": 1, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
 		{ "elapsed": 1, "spawn": ^"Wave7/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/RadioTower", "band": 15 },
 	],
 ]
 
-
-
 var wave_in_progress: bool = false
 var current_wave: int = -1
-var elapsed: float = 0.0
+var spawn_timer: float = 0.0
 var current_spawn: int = -1
+var holding: bool = false
 
 func start_wave(wave: int):
 	wave_in_progress = true
 	current_wave = wave
-	elapsed = 0.0
+	spawn_timer = 0.0
 	current_spawn = 0
 
 func _process(delta):
@@ -270,12 +276,22 @@ func _process(delta):
 	if !wave_in_progress:
 		return
 	
+	if holding:
+		if enemies.get_child_count() == 0:
+			holding = false
+		else:
+			return
+	
 	# Keep track of time elapsed
-	elapsed += delta
+	spawn_timer += delta
 	
 	var s = _pop_spawn()
 	while s:
 		_spawn_mob(s.mob, s.spawn, s.goal, s.band)
+		holding = s.get("hold", false)
+		if holding:
+			s = null
+			continue
 		s = _pop_spawn()
 	
 	if enemies.get_child_count() == 0 and current_spawn >= waves[current_wave].size():
@@ -287,11 +303,15 @@ func _pop_spawn():
 	if current_spawn >= waves[current_wave].size():
 		return null
 	
-	if waves[current_wave][current_spawn].elapsed > elapsed:
+	var mob = waves[current_wave][current_spawn]
+	var delay: float = float(mob.elapsed) 
+	
+	if spawn_timer < delay:
 		return null
 	
+	spawn_timer -= delay
 	current_spawn += 1
-	return waves[current_wave][current_spawn - 1]
+	return mob
 
 func _spawn_mob(asset: PackedScene, spawn_path: NodePath, goal_path: NodePath, band: int = -1):
 	# if the asset isn't there we can't spawn it

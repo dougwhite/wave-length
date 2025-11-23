@@ -677,7 +677,7 @@ func _stage_wave_2():
 	# Set the objective
 	objectives.show_objective("\n".join([
 		"Wave 2:",
-		"- Protect the solar panel array"
+		"- Protect as many solar panels as you can!"
 	]))
 	
 	# Set the solar panels objective health target

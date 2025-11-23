@@ -6,6 +6,7 @@ enum State { CRUISE, SWOOP, OVERSHOOT, RECOVER }
 @onready var death_noise = $death_noise
 @onready var null_noise = $null_noise
 @onready var animation_player = $AnimationPlayer
+@export var wave_manager: Node
 
 @export var goal: Node2D # Should always be player
 @export var health: float = 10
