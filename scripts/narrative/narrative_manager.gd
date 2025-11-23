@@ -591,7 +591,7 @@ func _stage_wave_1():
 	await enemy_wave_manager.wave_complete
 	
 	# Complete the objective
-	objectives.complete_objective()
+	await objectives.complete_objective()
 	
 	# Phew! The player survived!
 	current_stage = Stage.JELLYFISH_AFTERMATH
