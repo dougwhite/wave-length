@@ -15,7 +15,7 @@ func _on_health_died():
 	# Climactically explode
 	#explosion_sound.play()
 	# Wait a moment
-	await get_tree().create_timer(0.75).timeout
+	await get_tree().create_timer(1.5).timeout
 	# Terminate the game
 	game_manager.game_over()
 
