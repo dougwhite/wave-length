@@ -1292,6 +1292,7 @@ size = Vector2(1379.5, 1092)
 
 [node name="Map" type="Node2D" parent="."]
 z_index = -1
+metadata/_edit_lock_ = true
 
 [node name="Background Tiles" type="TileMapLayer" parent="Map"]
 z_index = -1
@@ -1312,6 +1313,7 @@ tile_set = SubResource("TileSet_lnu2h")
 metadata/_edit_lock_ = true
 
 [node name="Doodads" type="Node2D" parent="Map"]
+metadata/_edit_lock_ = true
 
 [node name="Starfish" parent="Map/Doodads" instance=ExtResource("19_264po")]
 position = Vector2(403, -1936)
@@ -1359,7 +1361,7 @@ position = Vector2(454, -1698)
 position = Vector2(808, -2246)
 
 [node name="Shell8" parent="Map/Doodads" instance=ExtResource("16_1kice")]
-position = Vector2(3823, -461)
+position = Vector2(4105, -476)
 
 [node name="Wire1" parent="Map/Doodads" instance=ExtResource("20_qouja")]
 position = Vector2(3424, -711)
@@ -1394,6 +1396,8 @@ position = Vector2(2435, -888)
 
 [node name="Trees" type="Node2D" parent="Objects"]
 y_sort_enabled = true
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Tree" parent="Objects/Trees" instance=ExtResource("4_lbhrr")]
 position = Vector2(670, 195)
