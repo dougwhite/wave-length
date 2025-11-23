@@ -4,6 +4,8 @@ extends Tunable
 @onready var death_noise = $death_noise
 @onready var animation_player = $AnimationPlayer
 
+@export var wave_manager: Node
+
 @export var goal: Node2D
 @export var speed: float = 50
 @export var health: float = 3
@@ -15,6 +17,9 @@ func _ready():
 	super()
 
 func _process(delta):
+	if !goal:
+		goal = wave_manager.new_goal()
+	
 	if !goal or dead:
 		return
 

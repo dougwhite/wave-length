@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://q3hnvrndhcg"]
+[gd_scene load_steps=6 format=3 uid="uid://q3hnvrndhcg"]
 
+[ext_resource type="Script" uid="uid://dpp5d73sm2ia7" path="res://scripts/solar_panel.gd" id="1_o66ed"]
 [ext_resource type="Texture2D" uid="uid://brk0lifr6bden" path="res://art/solar_panel.png" id="1_sluxg"]
+[ext_resource type="PackedScene" uid="uid://d1fkhvrh3t7je" path="res://scenes/health_component.tscn" id="2_pp3y5"]
+[ext_resource type="AudioStream" uid="uid://dnet0qfrpaquo" path="res://music/opengameart.org/users/subspaceaudio/sfx_exp_short_hard6.wav" id="4_gfuqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pp3y5"]
 size = Vector2(155, 15.5)
 
 [node name="SolarPanel" type="StaticBody2D"]
 y_sort_enabled = true
+script = ExtResource("1_o66ed")
 
 [node name="sprite" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -17,3 +21,13 @@ offset = Vector2(0, -62.11)
 visible = false
 position = Vector2(8.5, -20.75)
 shape = SubResource("RectangleShape2D_pp3y5")
+
+[node name="Health" parent="." instance=ExtResource("2_pp3y5")]
+max_health = 20
+
+[node name="explode_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gfuqm")
+bus = &"SFX"
+
+[connection signal="died" from="Health" to="." method="_on_health_died"]
+[connection signal="ouch" from="Health" to="." method="_on_health_ouch"]

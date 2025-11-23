@@ -10,6 +10,36 @@ signal wave_complete
 var jellyfish = preload("res://scenes/enemies/jellyfish.tscn")
 var ghostgull = preload("res://scenes/enemies/grossgull.tscn")
 
+var wave_targets = [
+	[
+		^"../Objects/RadioTower"
+	],
+	[
+		^"../Objects/SolarPanels/SolarPanel1",
+		^"../Objects/SolarPanels/SolarPanel2",
+		^"../Objects/SolarPanels/SolarPanel3",
+		^"../Objects/SolarPanels/SolarPanel4",
+		^"../Objects/SolarPanels/SolarPanel5",
+		^"../Objects/SolarPanels/SolarPanel6",
+		^"../Objects/SolarPanels/SolarPanel7",
+	],
+	[
+		^"../Objects/Player"
+	],
+	[
+		^"../Objects/RadioTower"
+	],
+	[
+		^"../Objects/RadioTower"
+	],
+	[
+		^"../Objects/RadioTower"
+	],
+	[
+		^"../Objects/RadioTower"
+	]
+]
+
 var waves = [
 	# Wave 1 @ the tower
 	[
@@ -49,7 +79,69 @@ var waves = [
 	],
 	# Wave 2 @ The solar panels
 	[
-		{ "elapsed": 1, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 3, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 6, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 9, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 12, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 15, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 18, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		
+		{ "elapsed": 24, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 26, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 28, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 30, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 32, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 34, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 36, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		
+		{ "elapsed": 40, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 40, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 44, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 44, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 48, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 48, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 50, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		
+		{ "elapsed": 51, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 52, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 53, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 54, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 55, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 56, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 57, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		
+		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 65, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		
+		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 70, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		
+		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 6 },
+		{ "elapsed": 80, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 12 },
+		
+		{ "elapsed": 85, "spawn": ^"Wave2/spawn_location_1", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 86, "spawn": ^"Wave2/spawn_location_2", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 87, "spawn": ^"Wave2/spawn_location_3", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 88, "spawn": ^"Wave2/spawn_location_4", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 89, "spawn": ^"Wave2/spawn_location_5", "mob": jellyfish, "goal": ^"random", "band": 24 },
+		{ "elapsed": 90, "spawn": ^"Wave2/spawn_location_6", "mob": jellyfish, "goal": ^"random", "band": 15 },
+		{ "elapsed": 91, "spawn": ^"Wave2/spawn_location_7", "mob": jellyfish, "goal": ^"random", "band": 24 },
 	],
 	# Wave 3 @ Sattelite Dish (Seaguls)
 	[
@@ -160,6 +252,8 @@ var waves = [
 	],
 ]
 
+
+
 var wave_in_progress: bool = false
 var current_wave: int = -1
 var elapsed: float = 0.0
@@ -209,16 +303,15 @@ func _spawn_mob(asset: PackedScene, spawn_path: NodePath, goal_path: NodePath, b
 	if location == null:
 		return
 	
-	# Without a goal we can't spawn in
+	# Try and get the specified goal from it's node path
 	var goal = get_node_or_null(goal_path)
-	if goal == null:
-		return
 
 	# Instantiate the enemy model		
 	var mob = asset.instantiate()
 	mob.global_position = location.global_position
 	mob.game_manager = game_manager	
 	mob.goal = goal
+	mob.wave_manager = self
 	
 	# Set a band if one was provided
 	if band != -1:
@@ -233,3 +326,15 @@ func _spawn_mob(asset: PackedScene, spawn_path: NodePath, goal_path: NodePath, b
 func _get_spawns(wave: String) -> Array[Node]:
 	var lvl = self.get_node(wave)
 	return lvl.find_children("*", "Node2D")
+
+func new_goal():
+	var targets = wave_targets[current_wave]
+	if targets.size() == 0:
+		return null
+	var i = randi() % targets.size()
+	var check_target = get_node_or_null(targets[i])
+	if check_target == null:
+		targets.remove_at(i)
+		check_target = new_goal()
+	return check_target
+	

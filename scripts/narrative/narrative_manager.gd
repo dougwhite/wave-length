@@ -21,6 +21,7 @@ extends Node
 @onready var radio = $"../Objects/Radio"
 @onready var radio_tower = $"../Objects/RadioTower"
 @onready var seagull = $"../Objects/Seagull"
+@onready var solar_panels = $"../Objects/SolarPanels"
 
 # Which stage the player starts on
 @export var start_stage = Stage.OPENING_TITLE
@@ -576,7 +577,7 @@ func _stage_wave_1():
 	]))
 	
 	# Set the tower objective health target
-	objectives.show_health_bar(radio_tower.get_node("Health") as Health)
+	objectives.show_health_bar(radio_tower.get_node("Health") as Health, "Tower Integrity")
 	
 	# Show the player's health bar
 	var tween = create_tween()
@@ -680,7 +681,7 @@ func _stage_wave_2():
 	]))
 	
 	# Set the solar panels objective health target
-	# objectives.show_health_bar(solar_panels.get_node("Health") as Health)
+	objectives.show_health_bar(solar_panels.get_node("Health") as Health, "Solar Panels Remaining")
 	
 	# Start the second wave
 	enemy_wave_manager.start_wave(1)
@@ -765,9 +766,6 @@ func _stage_wave_3():
 		"REMINDER:\nPress SPACE to dodge"
 	]))
 	
-	# Set the sattelite dish objective health target
-	# objectives.show_health_bar(sattelite_dish.get_node("Health") as Health)
-	
 	# Start the third wave
 	enemy_wave_manager.start_wave(2)
 	
@@ -840,7 +838,7 @@ func _stage_wave_4():
 	]))
 	
 	# Set the radio tower objective health target
-	objectives.show_health_bar(radio_tower.get_node("Health") as Health)
+	objectives.show_health_bar(radio_tower.get_node("Health") as Health, "Tower Integrity")
 	
 	# Start the fourth wave
 	enemy_wave_manager.start_wave(3)
@@ -1073,7 +1071,7 @@ func _stage_wave_7():
 	]))
 	
 	# Set the radio tower objective health target
-	objectives.show_health_bar(radio_tower.get_node("Health") as Health)
+	objectives.show_health_bar(radio_tower.get_node("Health") as Health, "Tower Integrity")
 	
 	# Start the final wave
 	enemy_wave_manager.start_wave(6)

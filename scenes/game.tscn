@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dl6ltjuc0nrh1" path="res://scenes/ui/objectives.tscn" id="22_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://dv6wling00oqy" path="res://scenes/objects/sattelite_dish.tscn" id="22_wljb1"]
 [ext_resource type="PackedScene" uid="uid://csdp4uljpxkua" path="res://scenes/ui/arrow.tscn" id="23_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://cneeycwl3emlp" path="res://scenes/objects/solar_panels.tscn" id="24_0sl42"]
 [ext_resource type="PackedScene" uid="uid://bdjp6yrn2nh0v" path="res://scenes/narrative/zone.tscn" id="25_pl11u"]
 [ext_resource type="PackedScene" uid="uid://bp1nxrnma1gb8" path="res://scenes/ui/tuner.tscn" id="25_qnb83"]
 [ext_resource type="PackedScene" uid="uid://dn024kiw0kc6v" path="res://scenes/objects/radio.tscn" id="26_bhx41"]
@@ -43,7 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://ck53ghi561hyq" path="res://scenes/tunables/seagull.tscn" id="34_js0lu"]
 [ext_resource type="AudioStream" uid="uid://dvdsqsgnk1ogn" path="res://music/officialzeeey.itch.io/TheEnigmaFinished.mp3" id="36_pr1ej"]
 [ext_resource type="Script" uid="uid://vciu3n7j1y8o" path="res://scripts/enemies/enemy_wave_manager.gd" id="39_7025r"]
-[ext_resource type="PackedScene" uid="uid://q3hnvrndhcg" path="res://scenes/objects/solar_panel.tscn" id="44_oaba0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -2207,29 +2207,8 @@ disabled = true
 [node name="SatteliteDish" parent="Objects" instance=ExtResource("22_wljb1")]
 position = Vector2(4449, -697)
 
-[node name="SolarPanels" type="Node2D" parent="Objects"]
-y_sort_enabled = true
+[node name="SolarPanels" parent="Objects" instance=ExtResource("24_0sl42")]
 position = Vector2(622, -1990)
-
-[node name="SolarPanel" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
-
-[node name="SolarPanel2" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
-position = Vector2(-256, -16)
-
-[node name="SolarPanel3" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
-position = Vector2(-131, 185)
-
-[node name="SolarPanel4" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
-position = Vector2(-374, 184)
-
-[node name="SolarPanel5" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
-position = Vector2(-629, 194)
-
-[node name="SolarPanel6" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
-position = Vector2(-531, 429)
-
-[node name="SolarPanel7" parent="Objects/SolarPanels" instance=ExtResource("44_oaba0")]
-position = Vector2(-280, 413)
 
 [node name="Seagull" parent="Objects" instance=ExtResource("34_js0lu")]
 position = Vector2(4402, -872)
@@ -2391,25 +2370,25 @@ position = Vector2(800, -650)
 position = Vector2(202, -1204)
 
 [node name="spawn_location_1" type="Node2D" parent="EnemyWaveManager/Wave2"]
-position = Vector2(-129, -1207)
+position = Vector2(916, -1357)
 
 [node name="spawn_location_2" type="Node2D" parent="EnemyWaveManager/Wave2"]
-position = Vector2(422, -1197)
+position = Vector2(-108, -1414)
 
 [node name="spawn_location_3" type="Node2D" parent="EnemyWaveManager/Wave2"]
-position = Vector2(766, -764)
+position = Vector2(1115, -403)
 
 [node name="spawn_location_4" type="Node2D" parent="EnemyWaveManager/Wave2"]
-position = Vector2(578, -171)
+position = Vector2(-684, -1253)
 
 [node name="spawn_location_5" type="Node2D" parent="EnemyWaveManager/Wave2"]
-position = Vector2(41, -3)
+position = Vector2(-1115, -492)
 
 [node name="spawn_location_6" type="Node2D" parent="EnemyWaveManager/Wave2"]
-position = Vector2(-418, -206)
+position = Vector2(572, 187)
 
 [node name="spawn_location_7" type="Node2D" parent="EnemyWaveManager/Wave2"]
-position = Vector2(-580, -790)
+position = Vector2(-628, 229)
 
 [node name="Wave3" type="Node2D" parent="EnemyWaveManager"]
 position = Vector2(3747, -564)

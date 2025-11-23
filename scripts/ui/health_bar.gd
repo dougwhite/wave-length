@@ -21,9 +21,10 @@ func _ready():
 	stylebox = panel.get_theme_stylebox("panel")
 	panel.modulate.a = 0.0	
 
-func set_health_target(_health: Health):
+func set_health_target(_health: Health, label_text: String):
 	# Set the current health target
 	health = _health
+	label.text = label_text
 	
 	# Set the current health
 	_set_bar_health(health.current_health, health.max_health)
