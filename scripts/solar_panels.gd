@@ -21,3 +21,12 @@ func _on_health_died():
 
 func _on_solar_panel_panel_died():
 	health.take_damage(20, null)
+
+func set_invulnerable(invulnerable: bool = true):
+	(solar_panel_1.get_node("Health") as Health).invulnerable = invulnerable
+	(solar_panel_2.get_node("Health") as Health).invulnerable = invulnerable
+	(solar_panel_3.get_node("Health") as Health).invulnerable = invulnerable
+	(solar_panel_4.get_node("Health") as Health).invulnerable = invulnerable
+	(solar_panel_5.get_node("Health") as Health).invulnerable = invulnerable
+	(solar_panel_6.get_node("Health") as Health).invulnerable = invulnerable
+	(solar_panel_7.get_node("Health") as Health).invulnerable = invulnerable

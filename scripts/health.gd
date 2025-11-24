@@ -2,7 +2,7 @@ class_name Health
 extends Node
 
 @export var max_health: int = 100
-var invulnerable: bool = false
+@export var invulnerable: bool = false
 var current_health: int
 
 signal health_changed(_current: int, _max: int)

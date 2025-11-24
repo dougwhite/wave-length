@@ -684,6 +684,9 @@ func _stage_wave_2():
 	
 	# Set the solar panels objective health target
 	objectives.show_health_bar(solar_panels.get_node("Health") as Health, "Solar Panels Remaining")
+
+	# Make the solar panels vulnerable
+	solar_panels.set_invulnerable(false)
 	
 	# Start the second wave
 	enemy_wave_manager.start_wave(1)
@@ -694,6 +697,9 @@ func _stage_wave_2():
 	# Complete the objective
 	objectives.complete_objective()
 	
+	# Make the solar panels invulnerable again
+	solar_panels.set_invulnerable(true)
+		
 	current_stage = Stage.AN_IDEA
 	start_story()
 	

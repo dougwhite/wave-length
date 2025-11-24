@@ -261,13 +261,15 @@ script = ExtResource("1_undyx")
 [node name="glow" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4cv0g")
 autoplay = "default"
+offset = Vector2(0, -43.69)
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ywsy2")
 autoplay = "default"
+offset = Vector2(0, -43.69)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(0, -48)
 shape = SubResource("CapsuleShape2D_undyx")
 
 [node name="alien_noise" type="AudioStreamPlayer" parent="."]
