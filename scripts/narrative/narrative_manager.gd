@@ -287,7 +287,7 @@ func _stage_opening_title():
 func _stage_wake_on_beach():
 	
 	# The voice speaks
-	await dialog([Voice.say("...Wake up Harry")])
+	await dialog([Voice.say("...Wake up Harry.")])
 	
 	# Harry stands up
 	player.animated_sprite.play("idle_down")
@@ -295,7 +295,7 @@ func _stage_wake_on_beach():
 	# Harry is abashed
 	await dialog([
 		Harry.say("Oh man... What time is it?"),
-		Harry.say("I'd better head back to the tower")
+		Harry.say("I'd better head back to the tower.")
 	])
 
 	# Start the next stage
@@ -305,7 +305,7 @@ func _stage_wake_on_beach():
 func _stage_walk_to_tower():
 	
 	# Give the player their first objective
-	objectives.show_objective("Head back to the radio tower\n\n- Use WSAD to move\n- SPACE to dodge roll")
+	objectives.show_objective("Head back to the radio tower\n\n- Use WASD to move\n- SPACE to dodge roll")
 	var radio_hut = zone("RadioHutZone")
 	arrow.objective = radio_hut
 	
@@ -528,7 +528,7 @@ func _stage_explosion_get_ready():
 	# Harry realises that he might have goofed
 	await dialog([
 		Harry.say("That can't be good..."),
-		Voice.say("Signal received! Initiating contact"),
+		Voice.say("Signal received! Initiating contact."),
 	])
 	
 	# Raise the tension
@@ -637,17 +637,17 @@ func _stage_jellyfish_aftermath():
 		Voice.say("Don't you remember Harry?"),
 		Harry.say("No... Should I?"),
 		Voice.say("We've met before."),
-		Harry.say("What the hell are you talking about? I've never met you"),
-		Voice.say("Of course you have, we've met in the future"),
+		Harry.say("What the hell are you talking about? I've never met you."),
+		Voice.say("Of course you have, we've met in the future."),
 		Harry.say("..."),
-		Voice.say("Ahhhh. I forgot that people in your dimension can't remember the future"),
+		Voice.say("Ahhhh. I forgot that people in your dimension can't remember the future."),
 		Harry.say("MY DIMENSION!?"),
-		Voice.say("I'll explain later Harry. More of them are coming"),
+		Voice.say("I'll explain later Harry. More of them are coming."),
 		Harry.say("More? Jellyfish?"),
-		Voice.say("We're going to need more power Harry"),
-		Voice.say("You need to get to the energy collectors Harry"),
+		Voice.say("We're going to need more power Harry."),
+		Voice.say("You need to get to the energy collectors Harry."),
 		Harry.say("The energy collec... wait... do you mean the solar panels?"),
-		Voice.say("Hurry, Harry! They are almost here..."),
+		Voice.say("Hurry Harry! They are almost here..."),
 	])
 	
 	# Disable the radio again
@@ -717,23 +717,23 @@ func _stage_an_idea():
 	await dialog([
 		Voice.say("Well done Harry :)"),
 		Harry.say("How can I hear you?"),
-		Voice.say("With the extra power I can send a signal directly to your headset"),
+		Voice.say("With the extra power I can send a signal directly to your headset."),
 		Harry.say("You still haven't told me who you are..."),
-		Voice.say("I'm just like you Harry"),
+		Voice.say("I'm just like you Harry."),
 		Harry.say("A radio operator?"),
-		Voice.say("Of sorts"),
-		Voice.say("My station is very close to yours"),
+		Voice.say("Of sorts."),
+		Voice.say("My station is very close to yours."),
 		Harry.say("There's no station for 100 miles..."),
-		Voice.say("Not in 3 dimensional space, but in 4 dimensional space.."),
+		Voice.say("Not in 3 dimensional space, but in 4 dimensional space..."),
 		Voice.say("We're practically neighbours :)"),
 		Harry.say("How do I stop the Jellyfish?"),
-		Voice.say("They were attracted to the power of the signal"),
+		Voice.say("They were attracted to the power of the signal."),
 		Harry.say("The tower boost? Damn if only I'd known..."),
 		Voice.say("What if you could have known?"),
 		Harry.say("You mean 'remembering my future' like you can?"),
 		Voice.say("Precisely."),
 		Harry.say("..."),
-		Voice.say("Get to the transmitter Harry. I have an idea"),
+		Voice.say("Get to the transmitter Harry. I have an idea."),
 	])
 	
 	# Tell the player to head to the sattelite dish
@@ -750,11 +750,11 @@ func _stage_an_idea():
 	
 	# Good news everyone!
 	await dialog([
-		Voice.say("I'll need a few moments to improve your transmitter"),
-		Voice.say("Don't let them kill you until I'm finished"),
+		Voice.say("I'll need a few moments to improve your transmitter."),
+		Voice.say("Don't let them kill you until I'm finished."),
 		Harry.say("More jellyfish? God I hate those things!"),
 		Voice.say("Good news then! It's not jellyfish this time."),
-		Voice.say("Try not to let them touch you Harry"),
+		Voice.say("Try not to let them touch you Harry."),
 	])
 	
 	current_stage = Stage.WAVE_3
@@ -803,15 +803,15 @@ func _stage_to_the_tower_harry():
 		Voice.say("Are you okay Harry? You seem to be abnormally agitated..."),
 		Voice.say("Did those birds happen to damage your cranial region?"),
 		Harry.say("It's nothing, I'm fine... Now what was this idea of yours?"),
-		Voice.say("Well, I've altered your equipment to send 4th dimensional signals"),
-		Harry.say("Errr.. Won't that call more jellyfish? Or... seagulls"),
+		Voice.say("Well, I've altered your equipment to send 4th dimensional signals."),
+		Harry.say("Errr.. Won't that call more jellyfish? Or... *gulp* seagulls"),
 		Voice.say("Temporarily, Yes."),
 		Harry.say("So how will that help us?!"),
 		Voice.say("It will allow you to send a message to your former self."),
 		Harry.say("You mean... send a message back in time?"),
 		Harry.say("I can warn myself not to boost that signal!"),
-		Harry.say("Then none of this will have happened."),
-		Voice.say("Correct. Either that or a dimensional paradox collapses your universe."),
+		Harry.say("Then none of this will have happened!"),
+		Voice.say("Correct. Either that or a dimensional paradox collapses your entire universe."),
 		Harry.say("Wait... what...!?!"),
 		Voice.say("Uh oh... I'm detecting massive amounts of movement."),
 		Voice.say("Quickly. To the tower Harry! Run!"),
@@ -874,18 +874,18 @@ func _stage_something_worse():
 	await dialog([
 		Voice.say("Ready to remember your future Harry? :)"),
 		Harry.say("Hold on... I'm not sure about this..."),
-		Voice.say("Don't worry Harry, I've done this an infinite amount of times"),
-		Harry.say("That's comforting -_-"),
-		Voice.say("Wait Harry... Something is blocking me"),
+		Voice.say("Don't worry Harry, I've done this an infinite amount of times."),
+		Harry.say("That's not very comforting -_-"),
+		Voice.say("Wait Harry... Something is blocking me."),
 		Harry.say("Jellyfish or seagulls?"),
-		Voice.say("Something worse"),
+		Voice.say("Something worse."),
 		Harry.say("Well that's just perfect."),
 		Voice.say("These guys hate radio waves Harry."),
-		Voice.say("I won't be able to send the signal with one of them around"),
-		Voice.say("You'll need to get rid of it"),
-		Harry.say("No problem. I've got the hang of zapping aliens"),
-		Voice.say("Your emitter won't work on them Harry"),
-		Voice.say("You'll need to get close and touch them"),
+		Voice.say("I won't be able to send the signal with one of them around."),
+		Voice.say("You'll need to find it and get rid of it."),
+		Harry.say("No problem. I've got the hang of zapping aliens."),
+		Voice.say("Your emitter won't work on them Harry."),
+		Voice.say("You'll need to get close and touch them."),
 		Harry.say("Just. Perfect."),
 	])
 	
@@ -952,8 +952,8 @@ func _stage_remembering_the_future():
 	
 	# Harry discovers time travel doesn't work that way
 	await dialog([
-		Harry.say("Okay. Here goes nothing"),
-		RadioHarry.say("MAYDAY! MAYDAY, COASTAL STATION"),
+		Harry.say("Okay. Here goes nothing."),
+		RadioHarry.say("MAYDAY! MAYDAY, COASTAL STATION."),
 		RadioHarry.say("There are multiple hostile entities in your vicinity."),
 		RadioHarry.say("Any signal boost will cause an attack on your island."),
 		RadioHarry.say("You will receive a radio signal any minute now."),
@@ -961,23 +961,23 @@ func _stage_remembering_the_future():
 		RadioHarry.say("I REPEAT. DO. NOT. BOOST. THE. SIGNAL!"),
 		Voice.say("Message sent!"),
 		Harry.say("How long until I get it?"),
-		Voice.say("What do you mean? You already got it?"),
+		Voice.say("What do you mean? You already got it."),
 		Harry.say("Wait a second... the signal... it was me this whole time?"),
 		Voice.say("Didn't you remember you were going to send it?"),
 		Harry.say("..."),
-		Voice.say("Oh right... you can't remember your future can you"),
+		Voice.say("Oh right... you can't remember your future can you?"),
 		Harry.say("So all these jellyfish, all these *THINGS*"),
 		Harry.say("I brought them here? I caused this rift?"),
 		Voice.say("Don't be silly Harry! 3rd dimensional beings can't open rifts"),
 		Harry.say("Why didn't you stop me from sending it?"),
 		Voice.say("You already sent it Harry. Stopping you would have..."),
-		Harry.say("I know, I know... a dimensional paradox that collapses my universe"),
-		Voice.say("Precisely! Besides, if you hadn't have sent the message"),
+		Harry.say("Let me guess... a dimensional paradox that collapses my universe"),
+		Voice.say("Precisely! Besides, if you hadn't have sent the message,"),
 		Voice.say("I wouldn't have been able to meet you :)"),
 		Harry.say("The pleasure is all mine -_-"),
 		Voice.say("Err Harry... you might want to get ready..."),
 		Harry.say("Another obelisk?"),
-		Voice.say("Ummm... not just one"),
+		Voice.say("Ummm... not just one."),
 		Harry.say("Two!? Three?..."),
 		Voice.say("..."),
 		Harry.say("Four? How many damn you?"),
@@ -1027,24 +1027,24 @@ func _stage_revelations():
 		Voice.say("Nice work Harry!"),
 		Voice.say("I knew you had it in you! That's why I chose you!"),
 		Harry.say("Wait... what do you mean chose?"),
-		Voice.say("Never mind that now Harry. We've got another wave incoming"),
-		Harry.say("You... you opened the rift didn't you! You're the one whose causing all this"),
-		Voice.say("It was the only way Harry. Without the rift you couldn't hear me"),
+		Voice.say("Err... Never mind... We've got another wave incoming!"),
+		Harry.say("You... you opened the rift didn't you! You're the one whose causing all this."),
+		Voice.say("It was the only way Harry. Without the rift you couldn't hear me."),
 		Harry.say("You knew contacting me would bring these things didn't you!"),
 		Voice.say("I also knew you'd survive it :)"),
 		Harry.say("You risked collapsing my universe? For what?!?!"),
-		Voice.say("To have someone to talk to"),
+		Voice.say("To have someone to talk to."),
 		Harry.say("..."),
-		Voice.say("I saw you across the void. You looked as lonely and bored as me"),
-		Voice.say("Nothing ever happens out here, I just wanted somebody to talk to"),
-		Voice.say("A brief moment of connection as I drift along the waves"),
-		Harry.say("I'm going to let these damn Jellyfish destroy this tower"),
-		Voice.say("I wouldn't recommend it Harry"),
-		Voice.say("This rift is very close to being opened"),
-		Voice.say("If they destroy the tower the whole thing will collapse"),
+		Voice.say("I saw you across the void. You looked as lonely and bored as me."),
+		Voice.say("Nothing ever happens out here, I just wanted somebody to talk to."),
+		Voice.say("A brief moment of connection as I drift along the waves."),
+		Harry.say("I'm going to let these damn Jellyfish destroy this tower!"),
+		Voice.say("I wouldn't recommend it Harry."),
+		Voice.say("This rift is very close to being opened, but it's not stable yet."),
+		Voice.say("If they destroy the tower the whole thing will collapse."),
 		Harry.say("Good. At least I'll never have to hear from you again!"),
 		Voice.say("Not the rift Harry. Your whole universe."),
-		Voice.say("Once the rift is fully opened, I can safely terminate our broadcast"),
+		Voice.say("Once the rift is fully opened, I can safely terminate our broadcast."),
 		Harry.say("...How can I trust you?"),
 		Voice.say("Maybe you can't :("),
 	])
@@ -1096,13 +1096,13 @@ func _stage_say_goodbye():
 	await dialog([
 		Voice.say("You did it Harry, you've made it to the end!"),
 		Harry.say("Until the next wave of creatures you send at me!"),
-		Voice.say("No more waves Harry"),
+		Voice.say("No more waves Harry."),
 		Harry.say("So you'll keep your word? You'll close the rift between our worlds?"),
-		Voice.say("Yes. I'm sorry Harry, I shouldn't have misled you"),
+		Voice.say("Yes. I'm sorry Harry, I shouldn't have misled you."),
 		Harry.say("Were you really that lonely?"),
 		Voice.say("My world is much older than yours. Much darker, much quieter."),
-		Voice.say("I don't get waves from anybody, not for a long time"),
-		Voice.say("I've enjoyed our time together Harry"),
+		Voice.say("I don't get waves from anybody, not for a long time."),
+		Voice.say("I've enjoyed our time together Harry."),
 		Voice.say("But the rift is almost open, and I must say goodbye."),
 		Harry.say("You never told me your name..."),
 		Voice.say("Goodbye Harry :)"),
