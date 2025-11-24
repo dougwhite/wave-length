@@ -9,6 +9,7 @@ signal wave_complete
 # Enemies
 var jellyfish = preload("res://scenes/enemies/jellyfish.tscn")
 var ghostgull = preload("res://scenes/enemies/grossgull.tscn")
+var obelisk = preload("res://scenes/enemies/obelisk.tscn")
 
 var wave_targets = [
 	[
@@ -233,7 +234,7 @@ var waves = [
 	],
 	# Wave 5 @ South Beach - 1 obelisk
 	[
-		{ "elapsed": 1, "spawn": ^"Wave5/obelisk_1", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 1, "spawn": ^"Wave5/obelisk_1", "mob": obelisk, "goal": ^"../Objects/Player", "band": 15 },
 	],
 	# Wave 6 @ Many Obelisks!
 	[
