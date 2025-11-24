@@ -880,18 +880,6 @@ func _stage_something_worse():
 		Harry.say("Just. Perfect."),
 	])
 	
-	# Tell the player to head to the south beach
-	objectives.show_objective("Find the anomaly...")
-	var beach_zone = zone("SouthBeachZone")
-	arrow.objective = beach_zone
-	
-	# Wait for players to find their way to the anomaly
-	await beach_zone.player_entered
-	
-	# Complete the objective
-	objectives.complete_objective()
-	arrow.objective = null
-	
 	current_stage = Stage.WAVE_5
 	start_story()
 	
@@ -900,7 +888,7 @@ func _stage_wave_5():
 	checkpoint()
 
 	# If we are in debug, start on the south Beach
-	teleport(zone("SouthBeachZone"))
+	teleport(zone("RadioHutZone"))
 	
 	# Change the music to something more dramatic
 	set_music(battle_music_2)
@@ -908,7 +896,8 @@ func _stage_wave_5():
 	# Set the objective
 	objectives.show_objective("\n".join([
 		"Wave 5:",
-		"- Disarm the Obelisk",
+		"- Find and disarm the anomaly",
+		"\nHINT:",
 		"Move close and press 'e' to interact"
 	]))
 	

@@ -234,18 +234,18 @@ var waves = [
 	],
 	# Wave 5 @ South Beach - 1 obelisk
 	[
-		{ "elapsed": 1, "spawn": ^"Wave5/obelisk_1", "mob": obelisk, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave5/obelisk_1", "mob": obelisk, "goal": ^"../Objects/Player", "band": 15 },
 	],
 	# Wave 6 @ Many Obelisks!
 	[
-		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_1", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
-		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_2", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
-		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_3", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
-		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_4", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
-		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_5", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
-		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_6", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
-		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_7", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
-		{ "elapsed": 1, "spawn": ^"Wave6/obelisk_8", "mob": jellyfish, "goal": ^"../Objects/Player", "band": 15 },
+		{ "elapsed": 0, "spawn": ^"Wave6/obelisk_1", "mob": obelisk, "goal": ^"../Objects/Player", "band": 3 },
+		{ "elapsed": 0, "spawn": ^"Wave6/obelisk_2", "mob": obelisk, "goal": ^"../Objects/Player", "band": 12 },
+		{ "elapsed": 0, "spawn": ^"Wave6/obelisk_3", "mob": obelisk, "goal": ^"../Objects/Player", "band": 24 },
+		{ "elapsed": 0, "spawn": ^"Wave6/obelisk_4", "mob": obelisk, "goal": ^"../Objects/Player", "band": 36 },
+		{ "elapsed": 0, "spawn": ^"Wave6/obelisk_5", "mob": obelisk, "goal": ^"../Objects/Player", "band": 9 },
+		{ "elapsed": 0, "spawn": ^"Wave6/obelisk_6", "mob": obelisk, "goal": ^"../Objects/Player", "band": 30 },
+		{ "elapsed": 0, "spawn": ^"Wave6/obelisk_7", "mob": obelisk, "goal": ^"../Objects/Player", "band": 21 },
+		{ "elapsed": 0, "spawn": ^"Wave6/obelisk_8", "mob": obelisk, "goal": ^"../Objects/Player", "band": 6 },
 	],
 	# Wave 7 @ Radio Tower - FULL ASSAULT
 	[
