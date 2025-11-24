@@ -245,15 +245,19 @@ _data = {
 }
 
 [node name="GhostGull" type="Area2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_pbag0")
 
 [node name="glow" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_4cv0g")
 animation = &"cruise"
 autoplay = "cruise"
 offset = Vector2(0, -95.385)
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_ywsy2")
 animation = &"cruise"
 autoplay = "cruise"
