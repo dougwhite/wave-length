@@ -23,8 +23,8 @@ func show_objective(objective: String):
 	stylebox.border_color = PROG_COLOR
 	_fade_in()
 
-func show_health_bar(target: Health, label: String):
-	health_bar.set_health_target(target, label)
+func show_health_bar(target: Health, label_text: String):
+	health_bar.set_health_target(target, label_text)
 	health_bar.fade_in()
 
 func complete_objective():
