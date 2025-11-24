@@ -2519,6 +2519,33 @@ position = Vector2(-800, -650)
 [node name="spawn_location_7" type="Node2D" parent="EnemyWaveManager/Wave7"]
 position = Vector2(800, -650)
 
+[node name="spawn_location_8" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(-424, -1001)
+
+[node name="spawn_location_9" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(-206, -198)
+
+[node name="spawn_location_10" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(694, -779)
+
+[node name="spawn_location_11" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(-807, -947)
+
+[node name="spawn_location_12" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(830, -920)
+
+[node name="spawn_location_13" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(-823, -671)
+
+[node name="spawn_location_14" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(748, -624)
+
+[node name="spawn_location_15" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(-846, -456)
+
+[node name="spawn_location_16" type="Node2D" parent="EnemyWaveManager/Wave7"]
+position = Vector2(616, -331)
+
 [node name="Enemies" type="Node2D" parent="EnemyWaveManager"]
 y_sort_enabled = true
 
