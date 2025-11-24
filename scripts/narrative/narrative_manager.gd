@@ -30,6 +30,8 @@ extends Node
 @onready var music = %"Background Music"
 @export var opening_music: AudioStream
 @export var battle_music: AudioStream
+@export var battle_music_2: AudioStream
+@export var battle_music_3: AudioStream
 @export var boss_music: AudioStream
 
 # Sound fx
@@ -603,7 +605,7 @@ func _stage_jellyfish_aftermath():
 	teleport(zone("RadioHutZone"))
 	
 	# Change the music to something more peaceful
-	set_music(opening_music)
+	set_music(battle_music_2)
 	
 	# The radio has a new message for harry
 	radio.light_on = true
@@ -672,7 +674,7 @@ func _stage_wave_2():
 	teleport(zone("SolarPanelZone"))
 	
 	# Change the music to something more dramatic
-	set_music(battle_music)
+	set_music(battle_music_2)
 	
 	# Set the objective
 	objectives.show_objective("\n".join([
@@ -700,7 +702,7 @@ func _stage_an_idea():
 	teleport(zone("SolarPanelZone"))
 	
 	# Change the music to something more peaceful
-	set_music(opening_music)
+	set_music(battle_music_3)
 	
 	# Some backstory reveals
 	await dialog([
@@ -757,7 +759,7 @@ func _stage_wave_3():
 	teleport(zone("SatteliteDishZone"))
 	
 	# Change the music to something more dramatic
-	set_music(battle_music)
+	set_music(battle_music_3)
 	
 	# Set the objective
 	objectives.show_objective("\n".join([
@@ -857,7 +859,7 @@ func _stage_something_worse():
 	teleport(zone("RadioHutZone"))
 	
 	# Change the music to something more peaceful
-	set_music(opening_music)
+	set_music(battle_music_2)
 	
 	# Harry and the voice engage in speculation
 	await dialog([
@@ -901,7 +903,7 @@ func _stage_wave_5():
 	teleport(zone("SouthBeachZone"))
 	
 	# Change the music to something more dramatic
-	set_music(battle_music)
+	set_music(battle_music_2)
 	
 	# Set the objective
 	objectives.show_objective("\n".join([
@@ -927,7 +929,7 @@ func _stage_remembering_the_future():
 	teleport(zone("SouthBeachZone"))
 	
 	# Change the music to something more peaceful
-	set_music(opening_music)
+	set_music(battle_music_2)
 	
 	# Tell harry he's a star
 	await dialog([
@@ -995,7 +997,7 @@ func _stage_wave_6():
 	teleport(zone("RadioHutZone"))
 	
 	# Change the music to something more dramatic
-	set_music(battle_music)
+	set_music(battle_music_3)
 	
 	# Set the objective
 	objectives.show_objective("\n".join([
@@ -1020,7 +1022,7 @@ func _stage_revelations():
 	teleport(zone("RadioHutZone"))
 	
 	# Change the music to something more peaceful
-	set_music(opening_music)
+	set_music(battle_music_3)
 	
 	# Harry gets some revelations
 	await dialog([
