@@ -7,13 +7,20 @@ signal seagull_flee
 @export var escape_vector = Vector2.RIGHT
 @export var seagull_speed = 500
 @export var escape_lifetime = 5
+@export var hittable = false
 
 var flying = false
 var elapsed = 0
 
 func any_hit() -> void:
+	if !hittable:
+		return
+
 	# Play a nice annoyed audio
 	squak_noise.play()
+	
+	# Turn off the hittable flag
+	hittable = false
 	
 	# Play the take off animation
 	glow.play("take_off")
@@ -33,6 +40,9 @@ func any_hit() -> void:
 func _process(delta):
 	# process glow effects
 	super._process(delta)
+	
+	if not hittable:
+		glow.modulate.a = 0.0
 	
 	# We don't need to do anything until we start flying
 	if not flying:

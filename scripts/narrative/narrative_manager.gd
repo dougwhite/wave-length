@@ -476,6 +476,9 @@ func _stage_seagulls():
 		"Find a way to clear the disruption"
 	]))
 	arrow.objective = seagull
+	
+	# Enable the seagull hittable flag
+	seagull.hittable = true
 
 	# Now wait for the player to figure out how to blast the seagull
 	await seagull.seagull_flee
@@ -750,9 +753,9 @@ func _stage_an_idea():
 	
 	# Good news everyone!
 	await dialog([
-		Voice.say("I'll need a few moments to improve your transmitter."),
-		Voice.say("Don't let them kill you until I'm finished."),
-		Harry.say("More jellyfish? God I hate those things!"),
+		Voice.say("I'll need a few moments to upgrade your transmitter."),
+		Voice.say("Try not to let them kill you until I'm finished."),
+		Harry.say("Them? You mean the jellyfish? God I hate those things!"),
 		Voice.say("Good news then! It's not jellyfish this time."),
 		Voice.say("Try not to let them touch you Harry."),
 	])
@@ -957,21 +960,21 @@ func _stage_remembering_the_future():
 		RadioHarry.say("There are multiple hostile entities in your vicinity."),
 		RadioHarry.say("Any signal boost will cause an attack on your island."),
 		RadioHarry.say("You will receive a radio signal any minute now."),
-		RadioHarry.say("WHATEVER YOU DO, DO NOT BOOST the signal!"),
+		RadioHarry.say("WHATEVER YOU DO, DO NOT BOOST THE SIGNAL!"),
 		RadioHarry.say("I REPEAT. DO. NOT. BOOST. THE. SIGNAL!"),
 		Voice.say("Message sent!"),
 		Harry.say("How long until I get it?"),
 		Voice.say("What do you mean? You already got it."),
-		Harry.say("Wait a second... the signal... it was me this whole time?"),
+		Harry.say("Wait a second... the signal from earlier... that was from me this whole time?"),
 		Voice.say("Didn't you remember you were going to send it?"),
 		Harry.say("..."),
 		Voice.say("Oh right... you can't remember your future can you?"),
 		Harry.say("So all these jellyfish, all these *THINGS*"),
 		Harry.say("I brought them here? I caused this rift?"),
-		Voice.say("Don't be silly Harry! 3rd dimensional beings can't open rifts"),
+		Voice.say("Don't be silly Harry! 3rd dimensional beings can't open rifts."),
 		Harry.say("Why didn't you stop me from sending it?"),
 		Voice.say("You already sent it Harry. Stopping you would have..."),
-		Harry.say("Let me guess... a dimensional paradox that collapses my universe"),
+		Harry.say("Let me guess... a dimensional paradox that collapses my universe."),
 		Voice.say("Precisely! Besides, if you hadn't have sent the message,"),
 		Voice.say("I wouldn't have been able to meet you :)"),
 		Harry.say("The pleasure is all mine -_-"),
@@ -1040,7 +1043,7 @@ func _stage_revelations():
 		Voice.say("A brief moment of connection as I drift along the waves."),
 		Harry.say("I'm going to let these damn Jellyfish destroy this tower!"),
 		Voice.say("I wouldn't recommend it Harry."),
-		Voice.say("This rift is very close to being opened, but it's not stable yet."),
+		Voice.say("The rift is very close to being opened, but it's not stable yet."),
 		Voice.say("If they destroy the tower the whole thing will collapse."),
 		Harry.say("Good. At least I'll never have to hear from you again!"),
 		Voice.say("Not the rift Harry. Your whole universe."),
@@ -1066,7 +1069,7 @@ func _stage_wave_7():
 	objectives.show_objective("\n".join([
 		"Wave 7:",
 		"- Protect the tower",
-		"- Wait for the rift to fully open",
+		"- Survive until the rift is fully opened",
 		"- Don't die!",
 	]))
 	

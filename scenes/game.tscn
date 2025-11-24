@@ -2444,6 +2444,24 @@ position = Vector2(-800, -650)
 [node name="spawn_location_7" type="Node2D" parent="EnemyWaveManager/Wave4"]
 position = Vector2(800, -650)
 
+[node name="spawn_location_8" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(-852, -925)
+
+[node name="spawn_location_9" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(943, -907)
+
+[node name="spawn_location_10" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(-890, -696)
+
+[node name="spawn_location_11" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(990, -632)
+
+[node name="spawn_location_12" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(-925, -450)
+
+[node name="spawn_location_13" type="Node2D" parent="EnemyWaveManager/Wave4"]
+position = Vector2(861, -406)
+
 [node name="Wave5" type="Node2D" parent="EnemyWaveManager"]
 position = Vector2(3030, 475)
 
