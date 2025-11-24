@@ -1050,6 +1050,8 @@ func _stage_revelations():
 		Voice.say("Once the rift is fully opened, I can safely terminate our broadcast."),
 		Harry.say("...How can I trust you?"),
 		Voice.say("Maybe you can't :("),
+		Harry.say("Ahhh, What the hell... we've come this far."),
+		Harry.say("GIVE US EVERYTHING YOU'VE GOT!"),
 	])
 	
 	current_stage = Stage.WAVE_7
