@@ -154,6 +154,9 @@ func feature_gate() -> void:
 		player.feature_tuning = true
 		player.feature_firing = true
 	
+	if current_stage > Stage.SEAGULLS:
+		seagull.queue_free()
+	
 	if current_stage >= Stage.WAVE_1:
 		var tween = create_tween()
 		tween.tween_property(player_health_ui, "modulate:a", 1.0, 0.5) \
