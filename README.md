@@ -2,19 +2,20 @@
 
 A game about the waves we make.
 
-## This is a prototype
-
-Uploaded to get some feedback on how the game feels to play / move / tune your emitter. While the broad strokes of the game are here, there is no cinematic or polished pass completed yet.
-
 ## About
 
 Wave/Length follows the story of Harry, a lonely tropical island radio operator, who encounters a series of paranormal entities trying to break through into our universe.
 Players must help Harry uncover the true power of the wave in order to discover secrets and fend off waves of enemies.
 
-Built using Godot 4.1 stable, for the [2025 GitHub Game Off](https://itch.io/jam/game-off-2025) #GitHubGameOff.
-
 [Playable + full download available @ itch.io](https://pooglies.itch.io/wave-length)    
 [Full source code available on GitHub](https://github.com/dougwhite/wave-length/)
+
+This project is my very first attempt at: 
+- Creating a video game (at least since qbasic as a kid)
+- Making my own art assets
+- Joining a game jam
+
+Built using Godot 4.1 stable, for the [2025 GitHub Game Off](https://itch.io/jam/game-off-2025) #GitHubGameOff.
 
 ## Controls
 
@@ -23,27 +24,26 @@ Controls:
 ```
 WASD - Move
 E - Interact
-Q + move mouse - Tune radio emitter (once unlocked)
+Mouse wheel - Tune radio emitter (Hold shift to fine tune)
 Left Mouse Button - Emit a radio burst
 ```
 
 There are two alternative ways to tune the radio, depending on your hardware:
 
 ```
-Mouse wheel - Hold shift to fine tune    
+Hold Q + move mouse left and right - Fine tune radio emitter
 1..7 - Jump to station (use -/= to fine tune)
 ```
 
 ## AI disclaimer:
 
-There are no pure AI assets in this project, however I've marked this project as including AI assets because I used both:
+Everything in the game and source code repository — all code and artwork — is my own handmade work, except for the music and font assets mentioned in the Credits section below, and a backdrop image created by my wife.
 
-a) snippets / questions I asked chatgpt on how to do things in godot / gdscript, and    
-b) concept art / graphics / sprite ideas that i traced over or copied the look of heavily for my own pixel art
-
-I also asked ChatGPT to generate me a krita vaporwave color palette file to keep my colors nice. 
-
-I know some people are funny about AI, but everything in this repo (code & art) is my own handmade work, except for the assets mentioned in the credits section below. I just wanted to be fully transparent that i leaned on AI heavily for learning Godot and pixel art. 
+However I've marked this project as including AI assets because I leaned on ChatGPT heavily for:
+- Learning Godot (Minor code snippets / I asked ChatGPT lots of questions about how to do things in Godot whilst learning)
+- Concept art / sprite ideas (I copied the look and feel of some generative AI picture ideas when creating my own novice pixel art)
+- ChatGPT generated me a Krita vaporwave color palette to keep my colors nice and consistent.
+- The itch.io cover (I asked ChatGPT to create some inspiration concept art based on my game description, I loved the result so much I couldn't NOT use it )
 
 ## Licenses and Attributions
 
