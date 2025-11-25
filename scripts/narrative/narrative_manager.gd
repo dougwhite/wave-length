@@ -233,11 +233,17 @@ func reset_world_state():
 
 func checkpoint():
 	GameState.current_stage = current_stage
-	GameState.player_hp = player_health.current_health
-	GameState.player_max_hp = player_health.max_health
 	GameState.player_position = player.global_position
-	GameState.tower_hp = tower_health.current_health
 	GameState.tower_max_hp = tower_health.max_health
+	GameState.tower_hp = tower_health.max_health
+	GameState.player_max_hp = player_health.max_health
+	GameState.player_hp = player_health.max_health
+
+	# For now we should fully heal the player and the tower before each checkpoint,
+	# but eventually we might want to use a currency or game mechanic to heal them up.
+	# GameState.tower_hp = tower_health.current_health
+	# GameState.player_hp = player_health.current_health
+	
 	# TODO: Add currency?
 	# GameState.energy = 0 	
 
