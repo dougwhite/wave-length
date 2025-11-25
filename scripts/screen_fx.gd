@@ -79,3 +79,49 @@ func show_sky_animation(black_in: float = 0.6, sky_in: float = 0.6, sky_out: flo
 			  .set_ease(Tween.EASE_IN)
 	
 	await _sky_tween.finished
+
+func show_sky_animation_finale(black_in: float = 0.6, sky_in: float = 0.6, sky_out: float = 0.6):
+	# Clear any existing tween
+	if _sky_tween:
+		_sky_tween.kill()
+
+	# Prep the animation correctly
+	tear.animation = "tear_finale"
+	tear.frame = 0
+
+	# Fade to black, fade in sky
+	_sky_tween = create_tween()
+	_sky_tween.tween_property(fade, "modulate:a", 1.0, black_in) \
+			  .set_trans(Tween.TRANS_SINE) \
+			  .set_ease(Tween.EASE_IN)
+	
+	_sky_tween.tween_property(sky, "modulate:a", 1.0, sky_in) \
+			  .set_trans(Tween.TRANS_SINE) \
+			  .set_ease(Tween.EASE_IN)
+	
+	await _sky_tween.finished
+	
+	# Play the sky rip animation
+	tear.play("tear_finale")
+	await tear.animation_finished
+	
+	# Fade back out
+	_sky_tween = create_tween()
+	_sky_tween.tween_property(sky, "modulate:a", 0.0, sky_out) \
+			  .set_trans(Tween.TRANS_SINE) \
+			  .set_ease(Tween.EASE_IN)
+	
+	await _sky_tween.finished
+
+func fade_back(black_out: float = 0.6):
+	# Clear any existing tween
+	if _sky_tween:
+		_sky_tween.kill()
+
+	# Fade back out
+	_sky_tween = create_tween()	
+	_sky_tween.tween_property(fade, "modulate:a", 0.0, black_out) \
+			  .set_trans(Tween.TRANS_SINE) \
+			  .set_ease(Tween.EASE_IN)
+	
+	await _sky_tween.finished

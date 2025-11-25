@@ -1,5 +1,7 @@
 extends Control
 
+@onready var retry_btn = $CenterContainer/VBoxContainer/MarginContainer/HBoxContainer/RetryBtn
+
 signal new_game
 signal retry
 
@@ -8,3 +10,6 @@ func _on_new_game_btn_pressed():
 
 func _on_retry_btn_pressed():
 	emit_signal("retry")
+
+func set_retry_enabled(enabled: bool = true):
+	retry_btn.disabled = !enabled

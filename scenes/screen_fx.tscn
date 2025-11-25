@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6ubfrdfgiibs"]
+[gd_scene load_steps=32 format=3 uid="uid://c6ubfrdfgiibs"]
 
 [ext_resource type="Texture2D" uid="uid://cnxwsb27tyupr" path="res://art/backdrop.png" id="1_578fe"]
 [ext_resource type="Script" uid="uid://dweerstkryh4m" path="res://scripts/screen_fx.gd" id="1_lr15s"]
@@ -12,6 +12,24 @@
 [ext_resource type="Texture2D" uid="uid://cihb51jssibwo" path="res://art/backdrop_tear/backdrop_tear_frame0007.png" id="10_rdves"]
 [ext_resource type="Texture2D" uid="uid://cadlysax05uvu" path="res://art/backdrop_tear/backdrop_tear_frame0008.png" id="11_aljsp"]
 [ext_resource type="Texture2D" uid="uid://cd6nj5mpl6kec" path="res://art/backdrop_tear/backdrop_tear_frame0009.png" id="12_u1nqc"]
+[ext_resource type="Texture2D" uid="uid://e5rjm0aqrnoq" path="res://art/backdrop_tear/backdrop_tear_frame0010.png" id="13_yrq08"]
+[ext_resource type="Texture2D" uid="uid://0nhvu7ntljvo" path="res://art/backdrop_tear/backdrop_tear_frame0011.png" id="14_70d5f"]
+[ext_resource type="Texture2D" uid="uid://d3sch6vuspqj2" path="res://art/backdrop_tear/backdrop_tear_frame0012.png" id="15_mpn8e"]
+[ext_resource type="Texture2D" uid="uid://d0i5mjxugwgug" path="res://art/backdrop_tear/backdrop_tear_frame0013.png" id="16_6bg43"]
+[ext_resource type="Texture2D" uid="uid://4lqlmip20aod" path="res://art/backdrop_tear/backdrop_tear_frame0014.png" id="17_au4el"]
+[ext_resource type="Texture2D" uid="uid://bvqlvpblodnem" path="res://art/backdrop_tear/backdrop_tear_frame0015.png" id="18_o4xdd"]
+[ext_resource type="Texture2D" uid="uid://bt5si8qkc68o3" path="res://art/backdrop_tear/backdrop_tear_frame0016.png" id="19_mpmwr"]
+[ext_resource type="Texture2D" uid="uid://bau1vy5ybx4ln" path="res://art/backdrop_tear/backdrop_tear_frame0017.png" id="20_3kpkd"]
+[ext_resource type="Texture2D" uid="uid://bi8ueubf437pm" path="res://art/backdrop_tear/backdrop_tear_frame0018.png" id="21_2csqg"]
+[ext_resource type="Texture2D" uid="uid://st41jlyii4jc" path="res://art/backdrop_tear/backdrop_tear_frame0019.png" id="22_w4nty"]
+[ext_resource type="Texture2D" uid="uid://bamjbb3n554pj" path="res://art/backdrop_tear/backdrop_tear_frame0020.png" id="23_vkji8"]
+[ext_resource type="Texture2D" uid="uid://bx5aa27eqx00f" path="res://art/backdrop_tear/backdrop_tear_frame0021.png" id="24_adwv4"]
+[ext_resource type="Texture2D" uid="uid://0qc6ar2qcktm" path="res://art/backdrop_tear/backdrop_tear_frame0022.png" id="25_70ggf"]
+[ext_resource type="Texture2D" uid="uid://cm4or2dhkp5av" path="res://art/backdrop_tear/backdrop_tear_frame0023.png" id="26_g37fm"]
+[ext_resource type="Texture2D" uid="uid://cefgfhsjab0hp" path="res://art/backdrop_tear/backdrop_tear_frame0024.png" id="27_bvjmu"]
+[ext_resource type="Texture2D" uid="uid://d061y1gl3wrvv" path="res://art/backdrop_tear/backdrop_tear_frame0025.png" id="28_03juq"]
+[ext_resource type="Texture2D" uid="uid://dgfe4owf2rgui" path="res://art/backdrop_tear/backdrop_tear_frame0026.png" id="29_pnvvm"]
+[ext_resource type="Texture2D" uid="uid://dpr8fkbgm1abu" path="res://art/backdrop_tear/backdrop_tear_frame0027.png" id="30_syyb6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n7ed0"]
 animations = [{
@@ -49,6 +67,149 @@ animations = [{
 "loop": false,
 "name": &"tear_1",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("12_u1nqc")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_yrq08")
+}, {
+"duration": 2.0,
+"texture": ExtResource("14_70d5f")
+}, {
+"duration": 2.0,
+"texture": ExtResource("15_mpn8e")
+}, {
+"duration": 2.0,
+"texture": ExtResource("16_6bg43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_au4el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_o4xdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mpmwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3kpkd")
+}, {
+"duration": 4.0,
+"texture": ExtResource("21_2csqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_w4nty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vkji8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_adwv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_70ggf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_g37fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_bvjmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_03juq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_pnvvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_syyb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_bvjmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_03juq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_pnvvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_syyb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_bvjmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_03juq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_pnvvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_adwv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vkji8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_w4nty")
+}, {
+"duration": 4.0,
+"texture": ExtResource("21_2csqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3kpkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mpmwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_o4xdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_au4el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6bg43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_mpn8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_70d5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yrq08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_u1nqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aljsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rdves")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l0syh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u1nqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aljsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rdves")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lr15s")
+}],
+"loop": false,
+"name": &"tear_finale",
+"speed": 4.0
 }]
 
 [node name="ScreenFX" type="CanvasLayer"]
@@ -76,4 +237,4 @@ centered = false
 position = Vector2(1041, 399)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_n7ed0")
-animation = &"tear_1"
+animation = &"tear_finale"

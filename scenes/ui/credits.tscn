@@ -1,0 +1,222 @@
+[gd_scene load_steps=8 format=3 uid="uid://b66w7lneg1kfv"]
+
+[ext_resource type="FontFile" uid="uid://m5i6ula2m2pt" path="res://fonts/nimblebeastscollective.itch.io/KarenFat.ttf" id="1_oap8i"]
+[ext_resource type="Script" uid="uid://bxi8x3a3v1kce" path="res://scripts/ui/credits.gd" id="1_pqmjv"]
+[ext_resource type="FontFile" uid="uid://bflvrjrnrrjgu" path="res://fonts/nimblebeastscollective.itch.io/Habbo.ttf" id="2_jkvjv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqmjv"]
+bg_color = Color(0.003921569, 0.003921569, 0.13333334, 1)
+anti_aliasing_size = 10.0
+
+[sub_resource type="Animation" id="Animation_e5ls7"]
+resource_name = "roll_credits"
+length = 70.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 68.03333, 70),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CreditText:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 70),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(130, 1084), Vector2(130, -2600)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_y0bee"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CreditText:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(130, 1084)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gleon"]
+_data = {
+&"RESET": SubResource("Animation_y0bee"),
+&"roll_credits": SubResource("Animation_e5ls7")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -960.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_pqmjv")
+
+[node name="CreditText" type="Label" parent="."]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 1084.0
+offset_right = 830.0
+offset_bottom = 3609.0
+theme_override_colors/font_color = Color(0.16862746, 0.72156864, 1, 1)
+theme_override_colors/font_outline_color = Color(0.010756838, 0.18588749, 0.24201125, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_jkvjv")
+theme_override_font_sizes/font_size = 36
+text = "Thanks for playing WAVE / LENGTH
+
+Design, code & artwork by POOGLIES
+
+---
+
+With great love and respect, I'd like to thank the following creators whose artwork was included in this project <3
+
+Full credits and links to all creators are available on the WAVE / LENGTH itch.io page and in the README.md
+
+Pizza Doggy
+=============
+Floating Dream (Opening music)
+Alien remarks (Jellyfish SFX)
+
+Zeeey
+=======
+The Litch (Final boss wave music)
+
+alkakrab
+==========
+Aliens (Battle music 1)
+To The Space (Battle music 2)
+Lost Planet (Battle music 3)
+
+Kronbits
+==========
+Retro Swooosh 16 (Wave emitter SFX)
+Retro Explosion Long 02 (Sky explosion SFX)
+Retro Crow 01 (Seagulls SFX)
+
+norwayjohn
+============
+ocean (Ambient wave noises)
+
+ArcadeParty
+=============
+humanYell3 (Harry pain SFX)
+humanDeath1 (Harry death SFX)
+
+SubspaceAudio
+===============
+sfx_exp_cluster1 (Tower death SFX)
+sfx_exp_medium13 (Obelisk collapse SFX)
+sfx_exp_short_hard6 (Jellyfish detonate SFX)
+sfx_exp_short_soft6 (Jellyfish damage SFX)
+sfx_sounds_damage3 (Seagull invulnerable SFX)
+
+NimbleBeasts Collective Fonts
+===============================
+KarenFat by PaulSpades
+Habbo by Omni
+TinyUnicode by DuffsDevice
+
+Nonsensical 2D
+================
+Autotile tilemap tutorial
+
+Github Gameoff Discord
+========================
+Playtesting / Advice
+
+---
+
+Last but certainly not least thanks to my lovely wife, who didn't divorce me after I entered a month-long game jam. 
+
+She also created the wonderful backdrop for the sky tearing animation coz I was too bad at art to make it lol. <3
+
+---
+
+Thank you for playing <3
+
+#GitHubGameOff"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 166.61
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pqmjv")
+
+[node name="Title" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 33.0
+offset_right = 830.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(1, 0.24705882, 0.6431373, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 128
+text = "CREDITS"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gleon")
+}

@@ -16,6 +16,7 @@ extends Node
 @onready var arrow = $"../Objects/Player/Arrow"
 @onready var screen_fx = %ScreenFX
 @onready var player_health_ui = $"../CanvasLayer/PlayerHealthUI"
+@onready var credits = $"../CanvasLayer/Credits"
 
 # Objects / Interactables / Tunables
 @onready var radio = $"../Objects/Radio"
@@ -1124,6 +1125,35 @@ func _stage_say_goodbye():
 	start_story()
 	
 func _stage_credits():
-	current_stage = Stage.PROTOTYPE_OVER
-	start_story()
+	# If we are in debug, start next to the tower
+	teleport(zone("RadioHutZone"))
 	
+	# Disable the player control
+	player.input_enabled = false
+	
+	# Hide the player ui
+	player_health_ui.visible = false
+	
+	# Play an explosion sound
+	explosion_sound.play()
+	
+	# Show the final cinematic wave
+	screen_fx.shake()
+	await screen_fx.show_sky_animation_finale()
+
+	# Put harry back where he started
+	player.global_position = zone("PlayerStart").global_position
+	player.animated_sprite.play("sleep")
+	
+	# The camera starts focused on the credits
+	camera_2d.position_smoothing_enabled = false
+	camera_2d.position = title.camera_start
+	
+	# Fade back to the screen
+	await screen_fx.fade_back()
+
+	# Roll the credits
+	await credits.roll_credits()
+
+	# Show a game over screen
+	game_manager.game_over(false)
