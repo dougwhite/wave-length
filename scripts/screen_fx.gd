@@ -52,6 +52,10 @@ func show_sky_animation(black_in: float = 0.6, sky_in: float = 0.6, sky_out: flo
 	if _sky_tween:
 		_sky_tween.kill()
 
+	# Prep the animation correctly
+	tear.animation = "tear_1"
+	tear.frame = 0
+
 	# Fade to black, fade in sky
 	_sky_tween = create_tween()
 	_sky_tween.tween_property(fade, "modulate:a", 1.0, black_in) \
