@@ -37,7 +37,7 @@ Hold Q + move mouse left and right - Fine tune radio emitter
 
 ## AI disclaimer:
 
-Everything in the game and source code repository — all code and artwork — is my own handmade work, except for the music and font assets mentioned in the Credits section below, and a backdrop image created by my wife.
+Everything in the game and source code repository - all code and artwork - is my own handmade work, except for the music and font assets mentioned in the Credits section below, and a backdrop image created by my wife.
 
 However I've marked this project as including AI assets because I leaned on ChatGPT heavily for:
 - Learning Godot (Minor code snippets / I asked ChatGPT lots of questions about how to do things in Godot whilst learning)
