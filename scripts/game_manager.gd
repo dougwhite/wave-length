@@ -68,15 +68,21 @@ func spawn_wave(position: Vector2, direction: Vector2):
 	sfx.pitch_scale = randf_range(pitch_min, pitch_max)
 	sfx.play()
 
+var is_game_over: bool = false
+
 func game_over(allow_retry: bool = true):
+	is_game_over = true
 	get_tree().paused = true
 	game_over_ui.set_retry_enabled(allow_retry)
 	game_over_ui.visible = true
 
-func _on_game_over_ui_new_game():
+func start_new_game():
 	narrative_manager.reset_world_state()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+func _on_game_over_ui_new_game():
+	start_new_game()
 
 func _on_game_over_ui_retry():
 	get_tree().paused = false

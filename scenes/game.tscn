@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://bitk03lsj4gwk"]
+[gd_scene load_steps=61 format=4 uid="uid://bitk03lsj4gwk"]
 
 [ext_resource type="Texture2D" uid="uid://68ynldakbewt" path="res://art/tileset-water.png" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://qn65kok013c8" path="res://art/tileset-sand.png" id="1_yqjtg"]
@@ -43,6 +43,7 @@
 [ext_resource type="AudioStream" uid="uid://bmjmqojtni8cy" path="res://music/kronbits.itch.io/Retro Swooosh 16.wav" id="33_v2yb1"]
 [ext_resource type="PackedScene" uid="uid://ck53ghi561hyq" path="res://scenes/tunables/seagull.tscn" id="34_js0lu"]
 [ext_resource type="PackedScene" uid="uid://b66w7lneg1kfv" path="res://scenes/ui/credits.tscn" id="35_h3rex"]
+[ext_resource type="PackedScene" uid="uid://cjkyha2crir0k" path="res://scenes/ui/settings.tscn" id="36_fedci"]
 [ext_resource type="AudioStream" uid="uid://dvdsqsgnk1ogn" path="res://music/officialzeeey.itch.io/TheEnigmaFinished.mp3" id="36_pr1ej"]
 [ext_resource type="AudioStream" uid="uid://cojsgds1poten" path="res://music/alkakrab.itch.io/Sci-Fi 2 Loop.ogg" id="38_oaba0"]
 [ext_resource type="AudioStream" uid="uid://c6gccsnytlvyx" path="res://music/alkakrab.itch.io/Sci-Fi 1 Loop.ogg" id="39_458eo"]
@@ -2270,6 +2271,9 @@ player = NodePath("../../Objects/Player")
 heart_scene = ExtResource("31_m4url")
 
 [node name="Credits" parent="CanvasLayer" instance=ExtResource("35_h3rex")]
+
+[node name="Settings" parent="CanvasLayer" instance=ExtResource("36_fedci")]
+z_index = 3
 
 [node name="ScreenFX" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("30_02fa5")]
 unique_name_in_owner = true

@@ -14,3 +14,6 @@ var tower_max_hp
 
 # Energy
 var energy: int
+
+# Volume (Doesn't reset)
+var volume: float = 1.0

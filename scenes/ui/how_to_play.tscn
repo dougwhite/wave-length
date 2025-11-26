@@ -1,0 +1,304 @@
+[gd_scene load_steps=14 format=3 uid="uid://dfiuyredjiyr5"]
+
+[ext_resource type="FontFile" uid="uid://bflvrjrnrrjgu" path="res://fonts/nimblebeastscollective.itch.io/Habbo.ttf" id="1_rx6sf"]
+[ext_resource type="Script" uid="uid://dwvqk7ej1o2rh" path="res://scripts/ui/how_to_play.gd" id="1_svix1"]
+[ext_resource type="Texture2D" uid="uid://ctdphpxxi8nqb" path="res://art/help.png" id="2_svix1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfe6v"]
+bg_color = Color(0.03498002, 0.007699999, 0.11, 0.9411765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.43137255, 0.9411765, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svix1"]
+atlas = ExtResource("2_svix1")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfe6v"]
+atlas = ExtResource("2_svix1")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d56r8"]
+atlas = ExtResource("2_svix1")
+region = Rect2(900, 0, 150, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrmmo"]
+atlas = ExtResource("2_svix1")
+region = Rect2(900, 300, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnuh7"]
+atlas = ExtResource("2_svix1")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvdkt"]
+atlas = ExtResource("2_svix1")
+region = Rect2(0, 300, 450, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wb41"]
+atlas = ExtResource("2_svix1")
+region = Rect2(600, 300, 300, 300)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d56r8"]
+bg_color = Color(0.03529412, 0.007843138, 0.10980392, 0.9411765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.43137255, 0.9411765, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrmmo"]
+bg_color = Color(0.03529412, 0.007843138, 0.10980392, 0.9411765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.24705882, 0.6431373, 1)
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_svix1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mfe6v")
+
+[node name="HOW TO PLAY" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -710.0
+offset_right = 710.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 128
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+
+[node name="move_graphic" type="TextureRect" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 135.0
+offset_right = 488.0
+offset_bottom = 435.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_svix1")
+stretch_mode = 2
+
+[node name="WASD TO MOVE" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 440.0
+offset_right = 447.0
+offset_bottom = 478.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 48
+text = "WASD TO MOVE"
+
+[node name="dodge_graphic" type="TextureRect" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 136.0
+offset_right = 822.0
+offset_bottom = 436.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_mfe6v")
+stretch_mode = 2
+
+[node name="SPACE TO DODGE" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 440.0
+offset_right = 874.0
+offset_bottom = 519.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 48
+text = "SPACE TO DODGE 
+"
+
+[node name="shoot_graphic" type="TextureRect" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 908.0
+offset_top = 136.0
+offset_right = 1058.0
+offset_bottom = 436.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_d56r8")
+stretch_mode = 2
+
+[node name="LEFT CLICK SHOOTS" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 440.0
+offset_right = 1122.0
+offset_bottom = 519.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 48
+text = "LEFT CLICK FIRES
+A RADIO PULSE"
+horizontal_alignment = 1
+
+[node name="interact_graphic" type="TextureRect" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 1149.0
+offset_top = 137.0
+offset_right = 1449.0
+offset_bottom = 437.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_jrmmo")
+stretch_mode = 2
+
+[node name="E INTERACTS" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 440.0
+offset_right = 1445.0
+offset_bottom = 519.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 48
+text = "E TO INTERACT"
+horizontal_alignment = 1
+
+[node name="tune_graphic" type="TextureRect" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 547.0
+offset_right = 438.0
+offset_bottom = 847.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_hnuh7")
+stretch_mode = 2
+
+[node name="MOUSE WHEEL TUNES" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 870.0
+offset_right = 466.0
+offset_bottom = 949.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 48
+text = "MOUSE WHEEL TO TUNE
+RADIO EMITTER"
+horizontal_alignment = 1
+
+[node name="(shift to fine tune)" type="Label" parent="MarginContainer/Panel/MOUSE WHEEL TUNES"]
+layout_mode = 0
+offset_top = 79.0
+offset_right = 342.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 36
+text = "(SHIFT TO FINE TUNE)"
+horizontal_alignment = 1
+
+[node name="alt_graphic" type="TextureRect" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 537.0
+offset_right = 978.0
+offset_bottom = 837.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_lvdkt")
+stretch_mode = 2
+
+[node name="hold q + move mouse" type="Label" parent="MarginContainer/Panel/alt_graphic"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 121.0
+offset_right = 486.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 36
+text = "HOLD Q + MOVE MOUSE"
+
+[node name="1__7 change station" type="Label" parent="MarginContainer/Panel/alt_graphic"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 251.0
+offset_right = 498.0
+offset_bottom = 312.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 36
+text = "1..7 CHANGE STATION  (+/-) FINE TUNING"
+
+[node name="ALTERNATIVE TUNING CONTROLS" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 870.0
+offset_right = 1055.0
+offset_bottom = 949.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 48
+text = "ALTERNATE 
+TUNING CONTROLS"
+horizontal_alignment = 1
+
+[node name="match_graphic" type="TextureRect" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 1170.0
+offset_top = 557.0
+offset_right = 1470.0
+offset_bottom = 857.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_8wb41")
+stretch_mode = 2
+
+[node name="MATCH THE BANDWIDTH" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 1085.0
+offset_top = 870.0
+offset_right = 1580.0
+offset_bottom = 949.0
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 48
+text = "MATCH THE FREQUENCY OF YOUR 
+TARGET FOR MAXIMUM DAMAGE!"
+
+[node name="BACK_BTN" type="Button" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 26.0
+offset_right = 254.0
+offset_bottom = 87.0
+size_flags_horizontal = 3
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.43137255, 0.9411765, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.24705882, 0.6431373, 1)
+theme_override_fonts/font = ExtResource("1_rx6sf")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_d56r8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jrmmo")
+text = "< BACK"
+
+[connection signal="pressed" from="MarginContainer/Panel/BACK_BTN" to="." method="_on_back_btn_pressed"]
