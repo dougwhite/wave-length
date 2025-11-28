@@ -13,7 +13,7 @@ config_version=5
 config/name="wave-length"
 run/main_scene="uid://bitk03lsj4gwk"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bngl4qcdhm78p"
 
 [autoload]
 
