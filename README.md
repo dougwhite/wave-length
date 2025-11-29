@@ -121,6 +121,6 @@ This `.psd` file was provided without an explicit license listed, and I couldn't
 
 #### My Wife
 
-Thanks to my beautiful wife, who not only didn't divorce me for entering a month long game jam; but also contributed the wonderful backdrop artwork for the backdrop image: `art/backdrop.kra`. 
+Thanks to my beautiful wife, who not only didn't divorce me for entering a month long game jam; but also contributed the wonderful backdrop artwork and supernova animation (`art/backdrop.kra` and `art/backdrop_tear.kra` respectively).
 
-This file IS covered under the broader project license, I just wanted to say thanks to her for helping with art I was too bad to make lol <3
+These files ARE covered under the broader project license, I just wanted to say a special thanks to her for helping with art I was too bad to make lol <3
