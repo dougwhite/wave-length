@@ -13,6 +13,8 @@ config_version=5
 config/name="wave-length"
 run/main_scene="uid://bitk03lsj4gwk"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0.019607844, 0.011764706, 0.101960786, 1)
+boot_splash/image="uid://btuqg0ee254aj"
 config/icon="uid://bngl4qcdhm78p"
 
 [autoload]
