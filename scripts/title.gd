@@ -10,7 +10,7 @@ signal start_game  # emit when the fade out finishes
 @onready var prompt_label = $"prompt"
 
 var _labels : Array[Label]
-var _state = 0      # 0 = intro, 1 = idle, 2 = outro
+var _state = 0      # 0 = intro, 1 = idle, 2 = outro, 3 = gone
 
 const INITIAL_DELAY = 2
 const DELAY_BETWEEN = 1  
@@ -88,5 +88,6 @@ func fade_out_and_start() -> void:
 	# Let the player know he's good to go
 	emit_signal("start_game")
 	
-	# remove ourself from the scene
-	queue_free()
+	# hide ourselves
+	visible = false
+	_state = 3

@@ -527,6 +527,9 @@ func _stage_explosion_get_ready():
 	# Change the music to something more dramatic
 	set_music(battle_music)
 	
+	# Disable the player input
+	player.input_enabled = false
+	
 	# Blow the sky up
 	await screen_fx.shake()
 	await screen_fx.show_sky_animation()
@@ -534,6 +537,9 @@ func _stage_explosion_get_ready():
 	# The radio has a new message for harry
 	radio.light_on = true
 	radio.glow.modulate.a = 0.0
+	
+	# Re-enable player input
+	player.input_enabled = false
 	
 	# Harry realises that he might have goofed
 	await dialog([

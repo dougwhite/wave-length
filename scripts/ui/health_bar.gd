@@ -22,6 +22,10 @@ func _ready():
 	panel.modulate.a = 0.0	
 
 func set_health_target(_health: Health, label_text: String):
+	# If we are already connected to something, disconnect
+	if health:
+		health.health_changed.disconnect(_on_health_changed)
+	
 	# Set the current health target
 	health = _health
 	label.text = label_text
