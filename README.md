@@ -5,7 +5,7 @@ A game about the waves we make.
 ## About
 
 Wave/Length follows the story of Harry, a lonely tropical island radio operator, who encounters a series of paranormal entities trying to break through into our universe.
-Players must help Harry uncover the true power of the wave in order to discover secrets and fend off waves of enemies.
+Players must help Harry uncover the true power of the wave in order to protect his universe from a catastrophic paradoxical reality collapse.
 
 [Playable + full download available @ itch.io](https://pooglies.itch.io/wave-length)    
 [Full source code available on GitHub](https://github.com/dougwhite/wave-length/)
