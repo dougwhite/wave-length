@@ -43,7 +43,6 @@ However I've marked this project as including AI assets because I leaned on Chat
 - Learning Godot (Minor code snippets / I asked ChatGPT lots of questions about how to do things in Godot whilst learning)
 - Concept art / sprite ideas (I copied the look and feel of some generative AI picture ideas when creating my own novice pixel art)
 - ChatGPT generated me a Krita vaporwave color palette to keep my colors nice and consistent.
-- The itch.io cover (I asked ChatGPT to create some inspiration concept art based on my game description, I loved the result so much I couldn't NOT use it )
 
 ## Licenses and Attributions
 
