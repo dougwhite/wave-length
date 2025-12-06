@@ -118,6 +118,10 @@ The layer masks used in the `art/tileset-sand-path.kra` and `art/tileset-water.k
 
 This `.psd` file was provided without an explicit license listed, and I couldn't find a way to get in touch with him, and so I didn't include any of his original work in the project repo. He has my thanks regardless.
 
+#### My Daughter
+
+Thanks to my daughter EpicNewGirl for teaching me how to draw tumble animations in a convincing way!
+
 #### My Wife
 
 Thanks to my beautiful wife, who not only didn't divorce me for entering a month long game jam; but also contributed the wonderful backdrop artwork and supernova animation (`art/backdrop.kra` and `art/backdrop_tear.kra` respectively).
