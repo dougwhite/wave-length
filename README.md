@@ -17,6 +17,10 @@ This project is my very first attempt at:
 
 Built using Godot 4.1 stable, for the [2025 GitHub Game Off](https://itch.io/jam/game-off-2025) #GitHubGameOff.
 
+## Support
+
+Enjoyed Wave/Length? You can [buy me a coffee ☕](https://buymeacoffee.com/dougwhite) to support my projects.
+
 ## Controls
 
 Controls:
